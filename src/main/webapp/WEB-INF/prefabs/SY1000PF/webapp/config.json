@@ -1,0 +1,94 @@
+{
+  "displayName" : "QR Scanner",
+  "group" : "",
+  "templateUrl" : "/pages/Main/Main.html",
+  "controllerUrl" : "/pages/Main/Main.js",
+  "variablesUrl" : "/pages/Main/Main.variables.json",
+  "iconUrl" : "/resources/images/imagelists/51f-htohKXL.png",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ "/resources/war/jsPretty/jsqrscanner.nocache.js" ],
+    "modules" : [ ]
+  },
+  "properties" : {
+    "disable" : {
+      "type" : "boolean",
+      "displayName" : "Disabled",
+      "bindable" : "in-bound",
+      "value" : false,
+      "widget" : "checkbox",
+      "show" : true,
+      "disabled" : false
+    },
+    "caption" : {
+      "type" : "string",
+      "displayName" : "Caption",
+      "bindable" : "in-bound",
+      "value" : "",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    },
+    "datavalue" : {
+      "type" : "string",
+      "displayName" : "datavalue",
+      "bindable" : "in-out-bound",
+      "value" : "bind:Widgets.txtQr.datavalue",
+      "widget" : "string",
+      "show" : false,
+      "disabled" : false
+    },
+    "onChange" : {
+      "type" : "event",
+      "displayName" : "Change",
+      "widget" : "eventlist",
+      "show" : true,
+      "disabled" : false
+    },
+    "readonly" : {
+      "type" : "boolean",
+      "displayName" : "Read only",
+      "bindable" : "in-bound",
+      "value" : false,
+      "widget" : "checkbox",
+      "show" : true,
+      "disabled" : false
+    },
+    "show" : {
+      "type" : "boolean",
+      "displayName" : "Show",
+      "bindable" : "in-bound",
+      "value" : true,
+      "widget" : "checkbox",
+      "show" : true,
+      "disabled" : false
+    },
+    "clear" : {
+      "type" : "method",
+      "displayName" : "Clear",
+      "method" : "cleartext"
+    },
+    "scan" : {
+      "type" : "method",
+      "displayName" : "Scan",
+      "method" : "autoopen"
+    },
+    "placeholder" : {
+      "type" : "string",
+      "displayName" : "Placeholder",
+      "bindable" : "in-out-bound",
+      "value" : "Qr Code Value",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    },
+    "defaultvalue" : {
+      "type" : "string",
+      "displayName" : "Default Value",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    }
+  }
+}

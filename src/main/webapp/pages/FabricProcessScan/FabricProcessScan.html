@@ -1,0 +1,170 @@
+<wm-page name="page1" data-ng-controller="FabricProcessScanPageController" pagetitle="Fabric Process Scan"> 
+    <wm-content name="content1"> 
+        <wm-page-content accessroles="Everyone" name="page_content1" columnwidth="12"> 
+            <wm-layoutgrid show="true" width="95%" name="layoutgrid1" height="100%" class="bordered"> 
+                <wm-gridrow name="gridrow1" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn name="gridcolumn2" padding="5px unset unset unset" horizontalalign="center" columnwidth="11"> 
+                        <wm-label fontunit="em" fontweight="bold" class="h3" name="lblProcessScan" borderwidth="1.5px" caption="Process Scan" color="#000000" padding="unset 0.5em"></wm-label> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn horizontalalign="right" padding="10px unset unset unset" name="gridcolumn14_2" columnwidth="1"></wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow12_1"> 
+                    <wm-gridcolumn padding="5px unset unset 5px" name="gridcolumn12_1" columnwidth="12"> 
+                        <wm-prefab defaultvalue="bind:pageParams.pBarcode" on-change="txtBarcodeChange($scope, newVal, oldVal)" caption="Scan Qr Code" width="95%" name="txtBarcode" prefabname="SY1000PF"></wm-prefab> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow5" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn name="gridcolumn14" padding="5px unset unset 5px" horizontalalign="center" columnwidth="12"> 
+                        <wm-container show="true" horizontalalign="left" name="containerDetails"> 
+                            <wm-container name="container3" padding="5px unset 0px unset" horizontalalign="left"> 
+                                <wm-label textalign="center" width="95%" fontsize="18" fontunit="px" name="lblFabSeq" borderstyle="solid" borderwidth="1px" bordercolor="#417194" backgroundcolor="#ffffff" fontweight="bold" caption="bind:Variables.svProcFd724pk0ScanDet.dataSet.poutFabdet" padding="unset 0.5em 0em 0.5em"></wm-label> 
+                            </wm-container> 
+                            <wm-list fontweight="bold" width="95%" title="Choose Dyejobs" show="true" listclass="list-group media-list" class="media-list listborder" navigation="None" dataset="bind:Variables.svProcFd724pk0ScanDet.dataSet.poutDyejobList" name="executeProcFd724pk0ScanDetList1" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1"> 
+                                <wm-listtemplate name="listtemplate3" layout="inline"> 
+                                    <wm-container name="container14_1" class="media-body"> 
+                                        <wm-layoutgrid class="bordered" name="layoutgrid4"> 
+                                            <wm-gridrow padding="unset 0px unset unset" name="gridrow14_1"> 
+                                                <wm-gridcolumn class="bordered-right" padding="11px unset unset unset" name="gridcolumn15" columnwidth="2"> 
+                                                    <wm-label show="true" textalign="center" name="Order" class="p media-heading" caption="bind:Variables.svProcFd724pk0ScanDet.dataSet.poutDyejobList[$i].ordnum" fontsize="1.143" fontunit="em"></wm-label> 
+                                                </wm-gridcolumn> 
+                                                <wm-gridcolumn class="bordered-right" padding="11px unset unset unset" name="gridcolumn19" columnwidth="1"> 
+                                                    <wm-label name="Fabseq" show="false" textalign="center" class="p media-heading btn-primary" caption="bind:Variables.svProcFd724pk0ScanDet.dataSet.poutDyejobList[$i].fabseq" fontsize="1.143" fontunit="em"></wm-label> 
+                                                    <wm-label name="Fabdes" on-tap="FabseqTap($event, $scope, item, currentItemWidgets)" show="true" textalign="center" class="p media-heading btn-primary" caption="bind:Variables.svProcFd724pk0ScanDet.dataSet.poutDyejobList[$i].fabdes" fontsize="1.143" fontunit="em"></wm-label> 
+                                                </wm-gridcolumn> 
+                                                <wm-gridcolumn padding="unset unset unset 10px" horizontalalign="center" name="gridcolumn16_1" columnwidth="9"> 
+                                                    <wm-checkboxset selectedvalues="bind:Variables.svProcFd724pk0ScanDet.dataSet.poutDeffabseq === Widgets.executeProcFd724pk0ScanDetList1.currentItem.fabseq?Variables.svProcFd724pk0ScanDet.dataSet.poutDefDyejob:null" datafield="All Fields" dataset="bind:Variables.svProcFd724pk0ScanDet.dataSet.poutDyejobList[$i].jobs" margin="0px unset" layout="inline" name="cbDyejobs" height="auto"></wm-checkboxset> 
+                                                </wm-gridcolumn> 
+                                            </wm-gridrow> 
+                                        </wm-layoutgrid> 
+                                    </wm-container> 
+                                    <wm-container name="container15" class="media-right media-top"></wm-container> 
+                                </wm-listtemplate> 
+                            </wm-list> 
+                        </wm-container> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow6" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn name="gridcolumn17" padding="5px unset 5px 5px" horizontalalign="left" columnwidth="12"> 
+                        <wm-container show="true" horizontalalign="left" padding="unset unset 5px unset" name="containerProcess"> 
+                            <wm-label fontsize="18" fontunit="px" class="label-info btn-lg" name="lblProcess" borderwidth="1px" borderstyle="solid" bordercolor="#417194" caption="Process :" padding="unset 0.5em"></wm-label> 
+                            <wm-container width="95%" name="container5" borderwidth="1.5px" borderstyle="solid" bordercolor="#417194"> 
+                                <wm-text fontunit="em" color="#000000" datavalue="bind:Variables.svProcFd724pk0ScanDet.dataSet.poutDefProcess" on-tap="Widgets.ChooseProcessPop.open()" name="txtProcess" updateon="default" readonly="true" fontsize="2" height="100%" backgroundcolor="#ffffff" placeholder="Tap To Choose Process"></wm-text> 
+                            </wm-container> 
+                        </wm-container> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow9"> 
+                    <wm-gridcolumn horizontalalign="left" padding="unset unset unset 5px" name="gridcolumn24" columnwidth="12"> 
+                        <wm-container show="bind:Widgets.containerProcess.show==true?true:false" name="container8" padding="unset unset 5px unset"> 
+                            <wm-label fontunit="px" fontsize="18" class="label-info btn-lg" name="lblMachine" borderwidth="1px" borderstyle="solid" bordercolor="#417194" caption="Machine :" padding="unset 0.5em"></wm-label> 
+                            <wm-container width="95%" name="container9" borderwidth="1.5px" borderstyle="solid" bordercolor="#417194"> 
+                                <wm-prefab name="txtMachine" prefabname="SY1000PF"></wm-prefab> 
+                                <wm-button name="btnChooseManually" textalign="left" fontunit="px" on-tap="Widgets.MachinesPop.open()" iconposition="left" iconclass="wi wi-keyboard fa-lg" class="btn-default btn-lg" caption="Choose Manually" type="button"></wm-button> 
+                            </wm-container> 
+                            <wm-container padding="5px unset" name="container10"> 
+                                <wm-label fontsize="18" fontunit="px" class="label-info btn-lg" name="lblOperator" borderwidth="1px" borderstyle="solid" bordercolor="#417194" caption="Operator :" padding="unset 0.5em"></wm-label> 
+                                <wm-prefab defaultvalue="bind:Variables.statOperator.dataSet.dataValue" readonly="false" on-change="txtOperatorChange($scope, newVal, oldVal)" width="95%" caption="Scan Operator Code" name="txtOperator" prefabname="SY1000PF"></wm-prefab> 
+                            </wm-container> 
+                            <wm-container padding="5px unset" name="container11"> 
+                                <wm-label fontsize="18" fontunit="px" class="label-info btn-lg" name="lblMeters" borderwidth="1px" borderstyle="solid" bordercolor="#417194" caption="Meter :" padding="unset 0.5em"></wm-label> 
+                            </wm-container> 
+                            <wm-container width="95%" name="container13" borderwidth="1.5px" borderstyle="solid" bordercolor="#417194"> 
+                                <wm-text on-keypress="txtMeterKeypress($event, $scope)" fontunit="em" minvalue="0" type="number" color="#000000" name="txtMeter" updateon="default" readonly="false" fontsize="2" height="100%" backgroundcolor="#ffffff" placeholder="Enter Meter"></wm-text> 
+                            </wm-container> 
+                        </wm-container> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow7" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn horizontalalign="left" name="gridcolumn20" padding="5px unset 5px 5px" columnwidth="12"> 
+                        <wm-button width="95%" fontsize="2" fontunit="em" on-tap="btnSaveTap($event, $scope)" name="btnSave" disabled="bind:Widgets.txtProcess.datavalue==null || Widgets.txtProcess.datavalue=== undefined || Widgets.txtOperator.datavalue ===&quot;&quot; || Widgets.txtOperator.datavalue === null || Widgets.txtOperator.datavalue === undefined || Variables.statTrnWIP.dataSet.dataValue === 'Y' ?true:false" show="bind:Widgets.container8.show==true?true:false" class="btn-default btn-success" caption="bind:Variables.svProcFd724pk0ScanDet.dataSet.poutDefProcessAction===&quot;START-PROCESS&quot;?&quot;START&quot;:&quot;END&quot;" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow14"> 
+                    <wm-gridcolumn horizontalalign="left" columnwidth="12" name="gridcolumn17_2" padding="5px unset 5px 5px"> 
+                        <wm-button width="95%" fontsize="2" fontunit="em" on-tap="Widgets.dialogPGremark.open()" name="btnHaltJob" disabled="bind:(!Widgets.txtProcess.datavalue) || (!Widgets.txtOperator.datavalue) || (!Variables.svProcFd724pk0ScanDet.dataSet.poutHaltProcessAction || Variables.statTrnWIP.dataSet.dataValue === 'Y')? true:false" show="bind:Widgets.container8.show==true &amp;&amp; Variables.svProcFd724pk0ScanDet.dataSet.poutHaltProcessAction =='HALT-JOB' ?true:false" class="btn-default btn-danger" caption="Halt Job" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow12"> 
+                    <wm-gridcolumn padding="5px unset 5px 5px" name="gridcolumn12" columnwidth="12"> 
+                        <wm-button width="95%" fontsize="2" fontunit="em" on-tap="button5Tap($event, $scope)" name="button5" show="bind:Widgets.containerDetails.show==true?true:false" class="btn-default btn-warning" caption="Cancel" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow13"> 
+                    <wm-gridcolumn padding="5px unset 5px 5px" name="gridcolumn13" columnwidth="12"> 
+                        <wm-button width="95%" fontsize="2" fontunit="em" on-tap="button4Tap($event, $scope)" name="button4" iconclass="wi wi-keyboard-arrow-left" class="btn-default" caption="Back To Main" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-view name="view1" class="dialog-view"> 
+        <wm-dialog width="100%" name="ChooseProcessPop" dialogtype="design-dialog" modal="true" title="Process" iconclass="wi wi-build"> 
+            <wm-layoutgrid name="layoutgrid2"> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow8"> 
+                    <wm-gridcolumn name="gridcolumn22" columnwidth="12"> 
+                        <wm-list name="livelistProcess" pagesize="51" navigation="None" dataset="bind:Variables.svProcFd724pk0ScanDet.dataSet.poutProcessList" listclass="list-group" itemsperrow="xs-2 sm-2 md-3 lg-6" template="true" class="list-card"> 
+                            <wm-listtemplate name="listtemplate1" layout="media"> 
+                                <wm-container width="100%" name="container7" padding="5px"> 
+                                    <wm-label width="100%" name="lblProcesses" on-tap="lblProcessesTap($event, $scope, item, currentItemWidgets)" fontweight="bold" color="#000000" borderwidth="1px" borderstyle="solid" bordercolor="#417194" textalign="center" fontsize="2" fontunit="em" margin="0px unset" caption="bind:Variables.svProcFd724pk0ScanDet.dataSet.poutProcessList[$i].process" whitespace="nowrap"></wm-label> 
+                                    <wm-label show="false" caption="bind:Variables.svProcFd724pk0ScanDet.dataSet.poutProcessList[$i].mclist" name="lblMachineList" padding="unset 0.5em"></wm-label> 
+                                </wm-container> 
+                                <wm-label show="false" caption="bind:Variables.svProcFd724pk0ScanDet.dataSet.poutProcessList[$i].processaction" name="lblAction" padding="unset 0.5em"></wm-label> 
+                            </wm-listtemplate> 
+                        </wm-list> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow16"> 
+                    <wm-gridcolumn horizontalalign="right" padding="unset 5px unset unset" name="gridcolumn16" columnwidth="12"> 
+                        <wm-button on-tap="button6Tap($event, $scope)" name="button6" iconclass="wi wi-keyboard-arrow-left" class="btn-default" caption="Back" type="button" margin="unset 0.5em"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+    <wm-view name="view2" class="dialog-view"> 
+        <wm-dialog width="100%" name="MachinesPop" dialogtype="design-dialog" modal="true" title="Machines" iconclass="fa fa-plug"> 
+            <wm-layoutgrid name="layoutgrid3"> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow9_1"> 
+                    <wm-gridcolumn name="gridcolumn23_1" columnwidth="12"> 
+                        <wm-list name="livelistMachines" pagesize="30" navigation="Scroll" dataset="bind:Variables.statMachines.dataSet" listclass="list-group" itemsperrow="xs-2 sm-2 md-3 lg-6" template="true" class="list-card"> 
+                            <wm-listtemplate name="listtemplate2" layout="media"> 
+                                <wm-container width="100%" name="container14" padding="5px"> 
+                                    <wm-label width="100%" name="lblMachines" on-tap="label15Tap($event, $scope, item, currentItemWidgets)" fontweight="bold" color="#000000" borderwidth="1px" borderstyle="solid" bordercolor="#417194" textalign="center" fontsize="2" fontunit="em" margin="0px unset" caption="bind:Variables.statMachines.dataSet[$i].dataValue" whitespace="nowrap"></wm-label> 
+                                </wm-container> 
+                                <wm-label name="label16" show="false" caption="bind:Variables.svProcFd724pk0ScanDet.dataSet.poutProcessList[$i].processaction" padding="unset 0.5em"></wm-label> 
+                            </wm-listtemplate> 
+                        </wm-list> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow17"> 
+                    <wm-gridcolumn horizontalalign="right" padding="unset 5px unset unset" name="gridcolumn17_1" columnwidth="12"> 
+                        <wm-button on-tap="button8Tap($event, $scope)" name="button8" iconclass="wi wi-keyboard-arrow-left" class="btn-default" caption="Back" type="button" margin="unset 0.5em"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+    <wm-view name="view4" class="dialog-view"> 
+        <wm-alertdialog modal="true" closable="false" on-ok="alertdialog1Ok($event, $scope)" message="bind:Variables.svProcFd724UpdateScanProcess.dataSet.poutErrmsg" name="alertdialog1"></wm-alertdialog> 
+    </wm-view> 
+    <wm-view class="dialog-view" name="view4_1"> 
+        <wm-dialog width="75%" dialogtype="design-dialog" modal="true" title="Reason for Halt Process" iconclass="wi wi-file-text" name="dialogPGremark"> 
+            <wm-dialogactions name="dialogactions1"> 
+                <wm-button class="btn-default btn-lg" caption="Back" on-click="closeDialog()" name="button8_1" iconclass="wi wi-keyboard-arrow-left"></wm-button> 
+                <wm-button class="btn-default btn-success btn-lg" caption="Save" type="button" margin="unset 0.5em" name="butSavePG" on-tap="butSavePGTap($event, $scope)" show="bind:(!!Widgets.txtHaltRemarks.datavalue)"></wm-button> 
+            </wm-dialogactions> 
+            <wm-layoutgrid name="layoutgrid6"> 
+                <wm-gridrow name="gridrow18"> 
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn25"> 
+                        <wm-composite name="composite1"> 
+                            <wm-label class="col-md-3 control-label" name="label19" caption="Halt Reason"></wm-label> 
+                            <wm-container class="col-md-9" name="container14_2"> 
+                                <wm-textarea name="txtHaltRemarks" placeholder="Enter reason"></wm-textarea> 
+                            </wm-container> 
+                        </wm-composite> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+</wm-page>

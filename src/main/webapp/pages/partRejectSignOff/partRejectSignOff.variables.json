@@ -1,0 +1,54 @@
+{
+  "svQrySignOffDyeJobFabRoute" : {
+    "_id" : "wm-svQrySignOffDyeJobFabRoute-wm.ServiceVariable-1558965769343",
+    "name" : "svQrySignOffDyeJobFabRoute",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "dyejob",
+      "value" : "bind:pageParams.pDyejob",
+      "type" : "string"
+    }, {
+      "target" : "fabseq",
+      "value" : "bind:pageParams.pFabseq",
+      "type" : "integer"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.query.QrySignOffRejectDyeJobFabRouteResponse",
+    "service" : "pfsdb",
+    "operation" : "executeQrySignOffRejectDyeJobFabRoute",
+    "operationId" : "QueryExecutionController_executeQrySignOffRejectDyeJobFabRoute",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 90,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svSprocFd107pk0_cqprocGetRejCod" : {
+    "_id" : "wm-svSprocFd107pk0_cqprocGetRejCod-wm.ServiceVariable-1559369724594",
+    "name" : "svSprocFd107pk0_cqprocGetRejCod",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.SprocFd107pk0CqprocGetRejCodResponse",
+    "service" : "pfsdb",
+    "operation" : "executeSprocFd107pk0_cqprocGetRejCod",
+    "operationId" : "ProcedureExecutionController_executeSprocFd107pk0_cqprocGetRejCod",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

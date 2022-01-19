@@ -1,0 +1,46 @@
+<wm-page name="page1" data-ng-controller="FabricIntersectionAcknowledgePageController" pagetitle="Fabric Intersection Acknowledge"> 
+    <wm-content name="content1"> 
+        <wm-page-content accessroles="DYEFLR_ACKDEL" name="page_content1" columnwidth="12"> 
+            <wm-layoutgrid height="100%" width="95%" name="layoutgrid1" class="bordered"> 
+                <wm-gridrow name="gridrow1" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn name="gridcolumn2" padding="unset unset 10px unset" horizontalalign="center" columnwidth="12"> 
+                        <wm-label class="h3" fontunit="em" fontweight="bold" name="lblAcknowHeader" borderwidth="1.5px" caption="Acknowledge" color="#000000" padding="unset 0.5em"></wm-label> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow3" padding="unset 00px unset unset"> 
+                    <wm-gridcolumn name="gridcolumn8" padding="unset unset unset 5px" columnwidth="12"> 
+                        <wm-prefab on-change="txtBarcodeChange($scope, newVal, oldVal)" caption="Scan Qr Code" name="txtBarcode" prefabname="SY1000PF"></wm-prefab> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow6"> 
+                    <wm-gridcolumn horizontalalign="left" padding="5px unset unset 5px" name="gridcolumn17" columnwidth="12"> 
+                        <wm-label textalign="center" width="95%" fontsize="18" fontunit="px" show="bind:Widgets.lblDyeJob.show==true||Widgets.lblFabSeq.show==true?true:false" name="lblDest" borderwidth="1px" borderstyle="solid" bordercolor="#417194" backgroundcolor="#ffffff" fontweight="bold" caption="bind:&quot;Location : &quot;+Variables.svProcFd723pk0GetDeliveryInDetails.dataSet.poutDestLcn" padding="unset 0.5em"></wm-label> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow8"> 
+                    <wm-gridcolumn padding="unset unset unset 5px" name="gridcolumn8_1" columnwidth="12"> 
+                        <wm-text height="0" name="btnScroll1" placeholder="" class="btn-transparent" on-keypress="btnScroll1Keypress($event, $scope)" updateon="default" width="0" show="true"></wm-text> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow4" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn name="gridcolumn11" padding="5px unset 10px 5px" horizontalalign="left" columnwidth="12"> 
+                        <wm-container name="container3" padding="5px unset unset unset" horizontalalign="left"> 
+                            <wm-label textalign="center" width="95%" fontsize="18" fontunit="px" class="h" name="lblFabSeq" borderstyle="solid" borderwidth="1px" bordercolor="#417194" backgroundcolor="#ffffff" fontweight="bold" caption="bind:Variables.svProcFd723pk0GetDeliveryInDetails.dataSet.poutFabdet" padding="unset 0.5em 0em 0.5em"></wm-label> 
+                        </wm-container> 
+                        <wm-button width="95%" fontsize="2" fontunit="em" on-tap="btnFabSeqTap($event, $scope)" name="btnFabSeq" class="btn-default btn-primary btn-lg" caption="Ack Fab Seq" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow11" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn padding="unset unset 10px 5px" name="gridcolumn29" horizontalalign="left" columnwidth="12"> 
+                        <wm-button width="95%" fontsize="2" fontunit="em" on-tap="btnCancelTap($event, $scope)" name="btnCancel" show="bind:Widgets.btnDyeJob.show==true||Widgets.btnFabSeq.show==true?true:false" class="btn-default btn-warning" caption="Cancel" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow7"> 
+                    <wm-gridcolumn padding="unset unset 5px 5px" horizontalalign="left" name="gridcolumn7" columnwidth="12"> 
+                        <wm-button width="95%" fontunit="em" fontsize="2" on-tap="Variables.goToPage_FabricIntersectionMenu.invoke()" name="button3" iconclass="wi wi-keyboard-arrow-left" class="btn-default" caption="Back To Main" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+</wm-page>

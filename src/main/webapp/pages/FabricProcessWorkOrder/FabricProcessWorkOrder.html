@@ -1,0 +1,283 @@
+<wm-page data-ng-controller="FabricProcessWorkOrderPageController" pagetitle="Fabric Process Work Order" name="page1">
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-layoutgrid name="layoutgrid1" class="bordered">
+                <wm-gridrow name="gridrow1" padding="unset 0px unset unset">
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn1" padding="5px unset unset 5px"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn5" horizontalalign="center">
+                        <wm-label fontweight="bold" class="h3" borderwidth="1.5px" caption="bind:&quot;Work Order : &quot;+Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[$i].procseq+&quot;.&quot;+Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[$i].processtoscan"
+                            color="#000000" padding="unset 0.5em" name="label1"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn2" padding="unset 5px unset unset"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3" padding="unset 0px unset unset">
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn7"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn8">
+                        <wm-layoutgrid name="layoutgrid8">
+                            <wm-gridrow name="gridrow19" padding="unset 0px unset unset">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn41_1">
+                                    <wm-label textalign="left" fontsize="14" fontweight="bold" caption="bind:&quot;Order No. : &quot; +Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[$i].ordnum + &quot;<br>Batch No. : &quot;+Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[$i].bchseq + &quot;<br>Job No. : &quot;+Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[$i].dyejob + &quot;<br>Fab : &quot;+Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[$i].fabseq +  &quot; &quot; + Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[$i].fabdesc + &quot;<br>Clr Des : &quot; + Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[$i].clrdes"
+                                        borderwidth="1px" backgroundcolor="#ffffff" borderstyle="solid" bordercolor="#1c5c86" padding="unset 0.5em" name="label3"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow20" padding="unset 0px unset unset">
+                                <wm-gridcolumn columnwidth="2" name="gridcolumn43">
+                                    <wm-label textalign="left" fontsize="14" fontweight="bold" caption="bind:&quot;Machine : &quot;+ Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[$i].fmchgrp" borderwidth="1px" backgroundcolor="#ffffff"
+                                        borderstyle="solid" bordercolor="#1c5c86" padding="unset 0.5em" name="label4"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="10" name="gridcolumn53">
+                                    <wm-list fontweight="bold" width="100%" title="Choose Dyejobs" show="true" listclass="list-group media-list" class="media-list listborder" navigation="None" dataset="bind:Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutDyejobList"
+                                        template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" name="listDyejobWO">
+                                        <wm-listtemplate layout="inline" name="listtemplate3">
+                                            <wm-container class="media-body" name="container9">
+                                                <wm-layoutgrid class="bordered" name="layoutgrid9">
+                                                    <wm-gridrow padding="unset 0px unset unset" name="gridrow19_1">
+                                                        <wm-gridcolumn class="bordered-right" padding="11px unset unset unset" columnwidth="2" name="gridcolumn37_2">
+                                                            <wm-label show="true" textalign="center" class="p media-heading" caption="bind:Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutDyejobList[$i].ordnum" fontsize="1.143" fontunit="em" name="label14_1"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn class="bordered-right" padding="11px unset unset unset" columnwidth="1" name="gridcolumn38_2">
+                                                            <wm-label show="false" textalign="center" class="p media-heading btn-primary" caption="bind:Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutDyejobList[$i].fabseq" fontsize="1.143" fontunit="em"
+                                                                name="WOFabseq"></wm-label>
+                                                            <wm-label on-tap="FabseqTap($event, $scope, item, currentItemWidgets)" show="true" textalign="center" class="p media-heading btn-primary" caption="bind:Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutDyejobList[$i].fabdes"
+                                                                fontsize="1.143" fontunit="em" name="label16"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn padding="unset unset unset 10px" horizontalalign="center" columnwidth="9" name="gridcolumn39_2">
+                                                            <wm-checkboxset selectedvalues="bind:Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[0].fabseq === Widgets.listDyejobWO.currentItem.fabseq?Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[0].dyejob:null"
+                                                                datafield="All Fields" dataset="bind:Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutDyejobList[$i].jobs" margin="0px unset" layout="inline" height="auto" name="cbWODyejob"></wm-checkboxset>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-container>
+                                            <wm-container class="media-right media-top" name="container10"></wm-container>
+                                        </wm-listtemplate>
+                                    </wm-list>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn9" padding="unset 100px unset unset" horizontalalign="right">
+                        <wm-layoutgrid name="layoutgrid2" show="true">
+                            <wm-gridrow name="gridrow8" padding="unset 0px unset unset">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn22" horizontalalign="right" padding="unset unset unset 0px">
+                                    <wm-button fontsize="2" fontunit="em" show="true" class="btn-default btn-primary" caption="" type="button" name="btnArrow" iconclass="wi wi-keyboard-arrow-left fa-lg" margin="unset 5px unset unset" on-tap="btnArrowTap($event, $scope)"></wm-button>
+                                    <wm-button fontsize="2" fontunit="em" show="true" class="btn-default btn-primary" caption="" type="button" iconclass="wi wi-keyboard-arrow-right fa-lg" name="btnArrow2" margin="unset unset unset 5px" on-tap="btnArrow2Tap($event, $scope)"></wm-button>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow5" padding="unset 0px unset unset">
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn13"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn24">
+                        <wm-composite name="composite1">
+                            <wm-container class="col-md-12" name="container1">
+                                <wm-switch datavalue="Grid View" name="switchView" dataset="Grid View" on-change="switch1Change($event, $scope, newVal, oldVal)" class="btn-lg"></wm-switch>
+                            </wm-container>
+                        </wm-composite>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn15"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow6" padding="unset 0px unset unset">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn17" padding="unset 100px unset 5px">
+                        <wm-panel iconclass="wi wi-view-list" autoclose="outsideClick" title="Grid View" name="panelGridView" class="panel-primary" show="bind:Widgets.switchView.datavalue === &quot;Grid View&quot;?true:false">
+                            <wm-list template="true" itemsperrow="xs-2 sm-2 md-2 lg-2" class="media-list" dataset="bind:Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutFnparamlist" navigation="None" name="list1">
+                                <wm-listtemplate layout="media" name="listtemplate1">
+                                    <wm-container class="btn-lg  media-body" padding="unset 1.5em unset 1.25em" name="container5" borderstyle="solid" bordercolor="#1c5c86" borderwidth="1px" horizontalalign="center">
+                                        <wm-label class="input-lg col-md-6" caption="bind:Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutFnparamlist.paramdesc.toUpperCase()" name="ParamDes" margin="0em unset 0.5em unset" fontsize="1.143" fontunit="em"
+                                            fontweight="bold" textalign="center" width="100%"></wm-label>
+                                        <wm-label caption="bind:Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutFnparamlist.paramval" name="paramVal" borderwidth="1px" textalign="center" on-tap="paramValTap($event, $scope, item, currentItemWidgets)"
+                                            fontweight="bold" conditionalclass="bind:Widgets.list1.currentItem.canEditParam === &quot;Y&quot;?&quot;caneditparam btn-lg&quot;:&quot;cannoteditparam btn-lg&quot;"></wm-label>
+                                    </wm-container>
+                                </wm-listtemplate>
+                            </wm-list>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow7" padding="unset 0px unset unset">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn20" padding="unset 100px unset 5px">
+                        <wm-panel iconclass="wi wi-screen-lock-landscape" autoclose="outsideClick" title="Machine View" class="panel-primary" name="panelMachineView" show="bind:Widgets.switchView.datavalue === &quot;Machine View&quot;?true:false">
+                            <wm-layoutgrid name="layoutgrid3">
+                                <wm-gridrow name="gridrow9" padding="unset 0px unset unset">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn26_1" horizontalalign="center">
+                                        <wm-container name="containerImage" class="ctna" width="90%" height="90%">
+                                            <wm-picture name="picture1" picturesource="bind:Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[0].mcimagelink" width="100%"></wm-picture>
+                                            <wm-button caption="" type="button" name="button1" id="button1" paramcod="1" textalign="center" class="btn-default btn-lg btna" show="false" on-click="btnClick($event, $scope)" caneditparam="N"
+                                                conditionalclass="bind:Widgets.button1.caneditparam === &quot;Y&quot;?&quot;btn-success btn-lg btna&quot;:&quot;btn-lg btn-default btna&quot;"></wm-button>
+                                            <wm-button caption="" type="button" name="button2" id="button2" paramcod="2" textalign="center" class="btn-default btn-lg btna" show="false" on-click="btnClick($event, $scope)" caneditparam="N" conditionalclass="bind:Widgets.button2.caneditparam === &quot;Y&quot;?&quot;btn-success btn-lg btna&quot;:&quot;btn-lg btn-default btna&quot;"></wm-button>
+                                            <wm-button caption="" type="button" name="button3" id="button3" paramcod="3" textalign="center" class="btn-default btn-lg btna" show="false" on-click="btnClick($event, $scope)" caneditparam="N" conditionalclass="bind:Widgets.button3.caneditparam === &quot;Y&quot;?&quot;btn-success btn-lg btna&quot;:&quot;btn-lg btn-default btna&quot;"></wm-button>
+                                            <wm-button caption="" type="button" name="button4" id="button4" paramcod="4" textalign="center" class="btn-default btn-lg btna" show="false" on-click="btnClick($event, $scope)" caneditparam="N" conditionalclass="bind:Widgets.button4.caneditparam === &quot;Y&quot;?&quot;btn-success btn-lg btna&quot;:&quot;btn-lg btn-default btna&quot;"></wm-button>
+                                            <wm-button caption="" type="button" name="button5" id="button5" paramcod="5" textalign="center" class="btn-default btn-lg btna" show="false" on-click="btnClick($event, $scope)" caneditparam="N" conditionalclass="bind:Widgets.button5.caneditparam === &quot;Y&quot;?&quot;btn-success btn-lg btna&quot;:&quot;btn-lg btn-default btna&quot;"></wm-button>
+                                            <wm-button caption="" type="button" name="button6" id="button6" paramcod="6" textalign="center" class="btn-default btn-lg btna" show="false" on-click="btnClick($event, $scope)" caneditparam="N" conditionalclass="bind:Widgets.button6.caneditparam === &quot;Y&quot;?&quot;btn-success btn-lg btna&quot;:&quot;btn-lg btn-default btna&quot;"></wm-button>
+                                            <wm-button caption="" type="button" name="button7" id="button7" paramcod="7" textalign="center" class="btn-default btn-lg btna" show="false" on-click="btnClick($event, $scope)" caneditparam="N" conditionalclass="bind:Widgets.button7.caneditparam === &quot;Y&quot;?&quot;btn-success btn-lg btna&quot;:&quot;btn-lg btn-default btna&quot;"></wm-button>
+                                            <wm-button caption="" type="button" name="button8" id="button8" paramcod="8" textalign="center" class="btn-default btn-lg btna" show="false" on-click="btnClick($event, $scope)" caneditparam="N" conditionalclass="bind:Widgets.button8.caneditparam === &quot;Y&quot;?&quot;btn-success btn-lg btna&quot;:&quot;btn-lg btn-default btna&quot;"></wm-button>
+                                            <wm-button caption="" type="button" name="button9" id="button9" paramcod="9" textalign="center" class="btn-default btn-lg btna" show="false" on-click="btnClick($event, $scope)" caneditparam="N" conditionalclass="bind:Widgets.button9.caneditparam === &quot;Y&quot;?&quot;btn-success btn-lg btna&quot;:&quot;btn-lg btn-default btna&quot;"></wm-button>
+                                            <wm-button caption="" type="button" name="button10" id="button10" paramcod="10" textalign="center" class="btn-default btn-lg btna" show="false" on-click="btnClick($event, $scope)" caneditparam="N"
+                                                conditionalclass="bind:Widgets.button10.caneditparam === &quot;Y&quot;?&quot;btn-success btn-lg btna&quot;:&quot;btn-lg btn-default btna&quot;"></wm-button>
+                                            <wm-button caption="" type="button" name="button11" id="button11" paramcod="11" textalign="center" class="btn-default btn-lg btna" show="false" on-click="btnClick($event, $scope)" caneditparam="N"
+                                                conditionalclass="bind:Widgets.button11.caneditparam === &quot;Y&quot;?&quot;btn-success btn-lg btna&quot;:&quot;btn-lg btn-default btna&quot;"></wm-button>
+                                            <wm-button caption="" type="button" name="button12" id="button12" paramcod="12" textalign="center" class="btn-default btn-lg btna" show="false" on-click="btnClick($event, $scope)" caneditparam="N"
+                                                conditionalclass="bind:Widgets.button12.caneditparam === &quot;Y&quot;?&quot;btn-success btn-lg btna&quot;:&quot;btn-lg btn-default btna&quot;"></wm-button>
+                                            <wm-button caption="" type="button" name="button13" id="button13" paramcod="13" textalign="center" class="btn-default btn-lg btna" show="false" on-click="btnClick($event, $scope)" caneditparam="N"
+                                                conditionalclass="bind:Widgets.button13.caneditparam === &quot;Y&quot;?&quot;btn-success btn-lg btna&quot;:&quot;btn-lg btn-default btna&quot;"></wm-button>
+                                            <wm-button caption="" type="button" name="button14" id="button14" paramcod="14" textalign="center" class="btn-default btn-lg btna" show="false" on-click="btnClick($event, $scope)" caneditparam="N"
+                                                conditionalclass="bind:Widgets.button14.caneditparam === &quot;Y&quot;?&quot;btn-success btn-lg btna&quot;:&quot;btn-lg btn-default btna&quot;"></wm-button>
+                                            <wm-button caption="" type="button" name="button15" id="button15" paramcod="15" textalign="center" class="btn-default btn-lg btna" show="false" on-click="btnClick($event, $scope)" caneditparam="N"
+                                                conditionalclass="bind:Widgets.button15.caneditparam === &quot;Y&quot;?&quot;btn-success btn-lg btna&quot;:&quot;btn-lg btn-default btna&quot;"></wm-button>
+                                        </wm-container>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow13_1" padding="unset 0px unset unset">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn28" padding="unset 100px unset 5px">
+                        <wm-list listclass="list-group poanel-primary" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list panel-primary table-striped" dataset="bind:Variables.svFD800WPK0_MCSETUPSprocGetPreTestResults.dataSet.poutTestresults"
+                            navigation="None" name="listtestresult" on-beforedatarender="listtestresultBeforedatarender($scope, $data)" show="bind:Widgets.switchView.datavalue === &quot;Test Result&quot;?true:false" orderby="cqstage:desc" title="PRE-PROCESS"
+                            padding="unset unset 1px unset">
+                            <wm-listtemplate layout="inline" name="listtemplate2">
+                                <wm-layoutgrid name="layoutgrid7_1">
+                                    <wm-gridrow name="gridrow17_1" padding="unset 0em unset 1.2em">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn48_1"></wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn42" horizontalalign="center" padding="5px unset unset unset">
+                                            <wm-label caption="TARGET" class="input-lg" margin="0px unset unset unset" borderwidth="1px" textalign="center" show="bind:Variables.statHideLabel.dataSet.dataValue === Widgets.listtestresult.currentItem.cqcod?true:false"
+                                                fontsize="18" fontweight="bold" color="#000000" backgroundcolor="#35b7ff" name="label12"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn39_1" horizontalalign="center" padding="5px unset unset unset">
+                                            <wm-label caption="ACTUAL" class="input-lg" margin="0px unset unset unset" borderwidth="1px" textalign="center" show="bind:Variables.statHideLabel.dataSet.dataValue === Widgets.listtestresult.currentItem.cqcod?true:false"
+                                                fontsize="18" fontweight="bold" color="#000000" backgroundcolor="#bababa" name="label13"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                                <wm-container padding="unset unset unset 1.25em" name="container7" backgroundcolor="#ffffff" bordercolor="#1c5c86" borderstyle="solid" borderwidth="1px" on-tap="container7Tap($event, $isolateScope, item, currentItemWidgets)"
+                                    margin="-5px unset 0px unset">
+                                    <wm-layoutgrid name="layoutgrid5_1">
+                                        <wm-gridrow name="gridrow14" padding="unset 0px unset unset">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn29">
+                                                <wm-label name="Name" class="media-heading pull-left h3" caption="bind:Variables.svFD800WPK0_MCSETUPSprocGetPreTestResults.dataSet.poutTestresults.cqdesc + &quot; (&quot; + Variables.svFD800WPK0_MCSETUPSprocGetPreTestResults.dataSet.poutTestresults[$i].uom + &quot;)&quot;"
+                                                    fontunit="em" fontweight="bold" textalign="center"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn30" horizontalalign="center" padding="5px unset unset unset">
+                                                <wm-label caption="bind:Variables.svFD800WPK0_MCSETUPSprocGetPreTestResults.dataSet.poutTestresults[$i].targetval" class="input-lg" margin="0px unset unset unset" borderwidth="1px" textalign="center" show="true"
+                                                    fontsize="18" fontweight="bold" name="Target" color="#000000" backgroundcolor="#35b7ff"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn37_1" horizontalalign="center" padding="5px unset unset unset">
+                                                <wm-label caption="bind:Variables.svFD800WPK0_MCSETUPSprocGetPreTestResults.dataSet.poutTestresults[$i].actval" class="input-lg" margin="0px unset unset unset" name="ActVal" borderwidth="1px" textalign="center"
+                                                    on-tap="ActValTap($event, $scope, item, currentItemWidgets)" show="true" fontsize="18" fontweight="bold" color="#000000" backgroundcolor="#bababa"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-listtemplate>
+                        </wm-list>
+                        <wm-list listclass="list-group poanel-primary" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list panel-primary table-striped" dataset="bind:Variables.svProcFD800WPK0_MCSETUPSprocGetPOSTTestResults.dataSet.poutTestresults"
+                            navigation="None" show="bind:Widgets.switchView.datavalue === &quot;Test Result&quot;?true:false" name="listPosttestresults" title="POST-PROCESS" padding="0px unset unset unset">
+                            <wm-listtemplate layout="inline" name="listtemplate5">
+                                <wm-layoutgrid name="layoutgrid11"></wm-layoutgrid>
+                                <wm-container padding="unset unset unset 1.25em" backgroundcolor="#ffffff" bordercolor="#1c5c86" borderstyle="solid" borderwidth="1px" on-tap="container7Tap($event, $isolateScope, item, currentItemWidgets)"
+                                    margin="1px unset 0px unset" name="container12">
+                                    <wm-layoutgrid name="layoutgrid12">
+                                        <wm-gridrow padding="unset 0px unset unset" name="gridrow22">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn46">
+                                                <wm-label class="media-heading pull-left h3" caption="bind:Variables.svProcFD800WPK0_MCSETUPSprocGetPOSTTestResults.dataSet.poutTestresults.cqdesc + &quot; (&quot; + Variables.svProcFD800WPK0_MCSETUPSprocGetPOSTTestResults.dataSet.poutTestresults[$i].uom + &quot;)&quot;"
+                                                    fontunit="em" fontweight="bold" textalign="center" name="label22"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="3" horizontalalign="center" padding="5px unset unset unset" name="gridcolumn47">
+                                                <wm-label caption="bind:Variables.svProcFD800WPK0_MCSETUPSprocGetPOSTTestResults.dataSet.poutTestresults[$i].targetval" class="input-lg" margin="0px unset unset unset" borderwidth="1px" textalign="center" show="true"
+                                                    fontsize="18" fontweight="bold" color="#000000" backgroundcolor="#35b7ff" name="label23"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="3" horizontalalign="center" padding="5px unset unset unset" name="gridcolumn48">
+                                                <wm-label caption="bind:Variables.svProcFD800WPK0_MCSETUPSprocGetPOSTTestResults.dataSet.poutTestresults[$i].actval" class="input-lg" margin="0px unset unset unset" borderwidth="1px" textalign="center" on-tap="ActValPostTap($event, $scope, item, currentItemWidgets)"
+                                                    show="true" fontsize="18" fontweight="bold" color="#000000" backgroundcolor="#bababa" name="ActValPost"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-listtemplate>
+                        </wm-list>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow12_1" padding="unset 0px unset unset">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn33_2" padding="unset 100px unset 5px">
+                        <wm-panel iconclass="wi wi-short-text fa-lg" autoclose="outsideClick" title="Remarks" class="panel-primary" show="bind:Widgets.switchView.datavalue === &quot;Test Result&quot;?false:(Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[$i].fnwoRemarks === null || Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[$i].fnwoRemarks === undefined || Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[$i].fnwoRemarks === &quot;&quot;) ? false :true"
+                            name="panel3">
+                            <wm-composite name="composite3">
+                                <wm-container class="col-md-12" name="container6">
+                                    <wm-textarea name="txtRemarks" class="input-lg" placeholder="Work Order remarks" readonly="true" datavalue="bind:Variables.svFD800WPK0_MCSETUPSprocGetProcessWO.dataSet.poutJobdetails[$i].fnwoRemarks"></wm-textarea>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow24" padding="unset 0px unset unset">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn52">
+                        <wm-button fontunit="em" fontsize="2" accessroles="Everyone" fontweight="bold" on-tap="button23_1Tap($event, $scope)" class="btn-default btn-primary btn-lg" caption="Scan" type="button" width="95%" margin="unset unset 10px unset" name="button23_1"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow18_1" padding="unset 0px unset unset">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn41">
+                        <wm-button width="95%" fontsize="2" fontunit="em" on-tap="button22_1Tap($event, $scope)" iconclass="wi wi-keyboard-arrow-left" class="btn-default" caption="Back To Main" type="button" name="button23"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-view class="dialog-view" name="view2">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="bind:&quot;Set &quot;+Variables.statParamDesc.dataSet.dataValue" iconclass="fa fa-warning" name="setParameterPop" width="80%">
+            <wm-layoutgrid name="layoutgrid5">
+                <wm-gridrow name="gridrow12" padding="unset 0px unset unset">
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn32"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn32_1">
+                        <wm-composite name="composite2">
+                            <wm-label class="col-md-3 control-label" name="label9" caption="bind:Variables.statParamDesc.dataSet.dataValue" fontsize="19"></wm-label>
+                            <wm-container class="col-md-9" name="container3">
+                                <wm-text name="txtParamVal" class="input-lg" placeholder="" datavalue="bind:Variables.statParamValue.dataSet.dataValue"></wm-text>
+                            </wm-container>
+                        </wm-composite>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn33"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow13" padding="unset 0px unset unset">
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn34"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="7" name="gridcolumn33_1"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn35">
+                        <wm-button class="btn-default btn-success btn-lg" caption="Save" type="button" margin="unset 0.5em" name="btnOk" on-tap="btnOkTap($event, $scope)"></wm-button>
+                        <wm-button class="btn-default btn-warning  btn-lg" caption="Cancel" type="button" margin="unset 0.5em" name="btnClose" on-tap="Widgets.setParameterPop.close()"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-dialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="view2_1">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="bind:&quot;Set &quot;+ Variables.statTestSltItem.dataSet.cqdesc" iconclass="fa fa-warning" name="SetTestValuesPop" width="80%">
+            <wm-layoutgrid name="layoutgrid7">
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow17">
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn35_1"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn36">
+                        <wm-composite name="composite4">
+                            <wm-label class="col-md-3 control-label" caption="bind:Variables.statTestSltItem.dataSet.cqdesc" fontsize="19" name="label14"></wm-label>
+                            <wm-container class="col-md-9" name="container8_1">
+                                <wm-text class="input-lg" placeholder="" datavalue="bind:Variables.statTestSltItem.dataSet.actval" name="txtTestValue" type="number" on-change="txtTestValueChange($event, $scope, newVal, oldVal)" minvalue="bind:Variables.statTestSltItem.dataSet.minval"
+                                    maxvalue="bind:Variables.statTestSltItem.dataSet.maxval"></wm-text>
+                            </wm-container>
+                        </wm-composite>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn37"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow23" padding="unset 0px unset unset">
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn49"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn50"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn51"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow18">
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn38"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="7" name="gridcolumn39"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn40">
+                        <wm-button class="btn-default btn-success btn-lg" caption="Save" type="button" margin="unset 0.5em" name="button21" on-tap="button21Tap($event, $scope)"></wm-button>
+                        <wm-button class="btn-default btn-warning btn-lg" caption="Cancel" type="button" margin="unset 0.5em" on-tap="Widgets.SetTestValuesPop.close()" name="button22"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-dialog>
+    </wm-view>
+</wm-page>

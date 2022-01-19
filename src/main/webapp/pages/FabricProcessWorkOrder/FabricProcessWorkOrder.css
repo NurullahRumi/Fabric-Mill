@@ -1,0 +1,21 @@
+.btna{
+    position: absolute;
+    top: 1px;
+    left: 1px;
+}
+.ctna{
+   position:relative;    
+}
+
+.caneditparam{
+      font-weight: bold;
+      font-size: 15px;
+      color : #000000;
+      background-color : #6bed6d;
+}
+.cannoteditparam{
+      font-weight: bold;
+      font-size: 15px;
+      color : #000000;
+      background-color : #a6a6a6;
+}

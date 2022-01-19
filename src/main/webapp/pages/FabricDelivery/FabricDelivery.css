@@ -1,0 +1,91 @@
+/*PickUp location dropdown*/
+.wm-app .dropdown-menu {
+    font-size: 15px !important;
+    width: auto !important;
+}
+
+.wm-app .dropdown-menu > li > a {
+    padding: 20px 20px !important;
+}
+
+
+.wm-app .input-lg {
+    padding: 1px 1px!important;
+    border-radius: 3px !important;
+}
+
+/*Undelivered Jobs Card Group Header*/
+.app-livelist li.app-list-item-header h4{
+    color: #002b50 !important;
+    text-transform: uppercase !important;
+    font-weight: bold !important; 
+    background-color: #e0dbda !important;
+}
+
+/*Panel Heading*/
+.wm-app .panel-default > .panel-heading {
+    color: #ffffff !important;
+    background-color: #002b50 !important;
+    border-color: #002b50 !important;
+    height: 33px !important;
+}
+/*Panel Undelivered Job Border*/
+/*.wm-app .panel-primary {
+    border-color: #002b50 !important;
+}*/
+
+/*Icon DN Count Caption*/
+.app-icon-wrapper .app-label{
+    font-weight: bold !important;
+    font-size: 10px !important;
+    position: absolute; top: 0px; left: 25px !important;
+    text-align: center !important;
+    padding: 4px 3px 0 2px !important;
+    color: #ffffff !important;
+    background-color: #ff2400 !important;
+    border: 3px solid #FFF !important;
+    border-radius: 18px !important;
+    box-shadow: 0 0 2px #ff9933 !important;
+    height: 23px !important;
+    width: 23px !important;
+}
+
+/*Parking Zone Header*/
+.backgroundGradientSearch {
+    background-image: linear-gradient(-195deg, #002b50, #d7d2cc) !important;
+}
+
+/*Delivery Details Header*/
+.backgroundGradientDNDet{
+    background-image: linear-gradient(to right bottom, #002b50, #244763, #486375, #6e8087, #989c9d) !important;
+}
+
+/*Undelivered list Sub Header*/
+.backgroundGradientSubHeader{
+    background-image: linear-gradient(to left, #bec3c9, #96a0ad, #6f7e92, #4a5e78, #253f5e) !important;
+}
+
+/*List Item*/
+.wm-app .list-group-item.active, .wm-app .list-group-item.active:hover, .wm-app .list-group-item.active:focus {
+    background-color: #253F5E !important;
+    border-color: #253F5E !important;
+}
+
+/*Shadow*/
+.shadow{
+   box-shadow: 0px 10px 10px #A1A1A1 !important; 
+}
+
+/*Dialog Title*/
+.wm-app .modal-title {
+    font-weight: bold !important;
+}
+
+/*List-Items*/
+.wm-app .list-group-item{
+    border-radius: 0px !important;
+    border-bottom: 1px solid #dddddd !important;
+    border-top: 1px solid #dddddd !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+}

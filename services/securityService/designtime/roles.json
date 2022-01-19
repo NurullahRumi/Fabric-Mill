@@ -1,0 +1,145 @@
+[ {
+  "name" : "DYEFLR_PLACEMENT",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_CQ",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_SCANPROCESS",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_INSPECTION",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_SCANPROCESS_SUPERUSR",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_REMOVEFAB",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_RELDOUBT",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_RELREPROCESS",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_RELREJECT",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_RELEASE",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_INSPECTREJECT",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_INSPECTREPROCESS",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_INSPECTRELEASE",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_REQSIGNOFF",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_INSPECTRELEASEHLD",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_INSPECTCONDUPD",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_RELEASEHLD",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DYEFLR_QRYSIGNOFFLIST",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricIntersectionMenu"
+  }
+}, {
+  "name" : "DELIVERY_PREPARE_DN",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "DELIVERY_CONFIRM_DN",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "DELIVERY_EXCEPTION_JOB",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "DELIVERY_VIEW_PAGE",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "JOB_PALLETREADY_UPDATE",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "SCANBCHWGT_RESET_WGT",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+} ]

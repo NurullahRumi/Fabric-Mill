@@ -1,0 +1,11 @@
+<wm-page name="page1" data-ng-controller="FabricProcessCQPageController" pagetitle="Fabric Process Cq"> 
+    <wm-content name="content1"> 
+        <wm-page-content padding="0px" name="page_content1" columnwidth="12"> 
+            <wm-container show="bind:Variables.svProcFd107pk0_cqprocCheckUser.dataSet.poutUserid === null || Variables.svProcFd107pk0_cqprocCheckUser.dataSet.poutUserid === undefined || Variables.svProcFd107pk0_cqprocCheckUser.dataSet.poutUserid === &quot;&quot;? false:true" accessroles="Everyone" content="partFabricProcessCQ" height="100%" width="100%" name="container1"> 
+                <wm-param name="pBarcode" value="bind:pageParams.pBarcode" type="string"></wm-param> 
+                <wm-param name="pGenid" value="bind:pageParams.psyslocusr" type="string"></wm-param> 
+                <wm-param name="pCallingPage" value="FD1015W04" type="string"></wm-param> 
+            </wm-container> 
+        </wm-page-content> 
+    </wm-content> 
+</wm-page>

@@ -1,0 +1,250 @@
+<wm-partial name="partial1" data-ng-controller="partFabricProcessCQPageController"> 
+    <wm-layoutgrid width="95%" name="layoutgrid1" class="bordered"> 
+        <wm-gridrow name="gridrow1" padding="unset 0px unset unset"> 
+            <wm-gridcolumn name="gridcolumn2" padding="unset unset 10px unset" horizontalalign="center" columnwidth="11"> 
+                <wm-label fontunit="em" fontweight="bold" class="h3" name="lblProcessHeader" borderwidth="1.5px" caption="Process Sign-Off" color="#000000" padding="unset 0.5em"></wm-label> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn padding="10px unset unset unset" horizontalalign="right" name="gridcolumn27_1" columnwidth="1"></wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow11_1"> 
+            <wm-gridcolumn horizontalalign="left" padding="unset unset unset 5px" name="gridcolumn29_1" columnwidth="12"> 
+                <wm-prefab defaultvalue="bind:pageParams.pBarcode" on-change="txtBarcodeChange($scope, newVal, oldVal)" caption="Scan Qr Code" name="txtBarcode" prefabname="SY1000PF"></wm-prefab> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow13"> 
+            <wm-gridcolumn horizontalalign="left" padding="unset unset 5px 5px" name="gridcolumn28" columnwidth="12"> 
+                <wm-container padding="unset unset unset 0px" horizontalalign="left" name="cntFabSeqDet"> 
+                    <wm-container width="95%" name="container8" horizontalalign="left"> 
+                        <wm-label width="100%" fontsize="18" fontunit="px" textalign="center" name="lblFabSeq" borderstyle="solid" borderwidth="1px" bordercolor="#417194" backgroundcolor="#ffffff" fontweight="bold" caption="bind:Variables.svProcFd107pk0_CqprocGetDetails.dataSet.poutJobDet[0].jobdet" padding="unset 0.5em 0em 0.5em"></wm-label> 
+                    </wm-container> 
+                    <wm-list name="list3" fontweight="bold" width="95%" title="Choose Dyejobs" show="bind:Widgets.cntFabSeqDet.show === true ? true : false;" listclass="list-group media-list" class="media-list listborder" navigation="None" dataset="bind:Variables.svProcFd107pk0_CqprocGetDetails.dataSet.poutDyejobList" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1"> 
+                        <wm-listtemplate name="listtemplate3" layout="inline"> 
+                            <wm-container name="container7_1" class="media-body"> 
+                                <wm-layoutgrid name="layoutgrid5" class="bordered"> 
+                                    <wm-gridrow name="gridrow16_1" padding="unset 0px unset unset"> 
+                                        <wm-gridcolumn name="gridcolumn21_3" class="bordered-right" padding="11px unset unset unset" columnwidth="2"> 
+                                            <wm-label name="label8" show="true" textalign="center" class="p media-heading" caption="bind:Variables.svProcFd107pk0_CqprocGetDetails.dataSet.poutDyejobList[$i].ordnum" fontsize="1.143" fontunit="em"></wm-label> 
+                                        </wm-gridcolumn> 
+                                        <wm-gridcolumn name="gridcolumn22_2" class="bordered-right" padding="11px unset unset unset" columnwidth="1"> 
+                                            <wm-label name="Fabseq" show="false" textalign="center" class="p media-heading btn-primary" caption="bind:Variables.svProcFd107pk0_CqprocGetDetails.dataSet.poutDyejobList[$i].fabseq" fontsize="1.143" fontunit="em"></wm-label> 
+                                            <wm-label name="label10" on-tap="label10Tap($event, $scope, item, currentItemWidgets)" show="true" textalign="center" class="p media-heading btn-primary" caption="bind:Variables.svProcFd107pk0_CqprocGetDetails.dataSet.poutDyejobList[$i].fabdes" fontsize="1.143" fontunit="em"></wm-label> 
+                                        </wm-gridcolumn> 
+                                        <wm-gridcolumn name="gridcolumn23_1" padding="unset unset unset 10px" horizontalalign="center" columnwidth="9"> 
+                                            <wm-checkboxset name="cbDyejobs" selectedvalues="bind:Variables.svProcFd107pk0_CqprocGetDetails.dataSet.poutDeffabseq === Widgets.list3.currentItem.fabseq?Variables.svProcFd107pk0_CqprocGetDetails.dataSet.poutDefDyejob:null" datafield="All Fields" dataset="bind:Variables.svProcFd107pk0_CqprocGetDetails.dataSet.poutDyejobList[$i].jobs" margin="0px unset" layout="inline" height="auto"></wm-checkboxset> 
+                                        </wm-gridcolumn> 
+                                    </wm-gridrow> 
+                                </wm-layoutgrid> 
+                            </wm-container> 
+                            <wm-container name="container8_1" class="media-right media-top"></wm-container> 
+                        </wm-listtemplate> 
+                    </wm-list> 
+                    <wm-button width="95%" fontsize="2" fontunit="em" on-tap="btnFabSeqTap($event, $scope)" name="btnFabSeq" class="btn-default btn-primary btn-lg" caption="Sign-Off Fab Seq" type="button"></wm-button> 
+                </wm-container> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow17"> 
+            <wm-gridcolumn padding="5px unset 5px 5px" name="gridcolumn21" columnwidth="12"> 
+                <wm-button on-tap="btnChecklistOpenTap($event, $scope)" width="95%" fontsize="18" fontunit="px" iconclass="wi wi-list" show="bind:Widgets.btnChecklistOpen.show === true ? true:false" name="btnChecklistOpen" class="btn-default btn-primary" caption="Redo Checking List" type="button"></wm-button> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px 5px unset" name="gridrow12_2"> 
+            <wm-gridcolumn padding="5px unset 5px 5px" horizontalalign="left" name="gridcolumn22_1" columnwidth="12"></wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow14"> 
+            <wm-gridcolumn horizontalalign="left" padding="unset unset unset 5px" name="gridcolumn30_2" columnwidth="12"> 
+                <wm-composite width="95%" show="bind:Widgets.btnChecklistOpen.show === true ? true:false" horizontalalign="left" name="compoRemarks"> 
+                    <wm-label fontsize="18" fontunit="px" fontweight="bold" width="150" caption="Remarks :" textalign="left" name="lblRemarks" class="label-info btn-lg"></wm-label> 
+                    <wm-textarea datavalue="bind:Variables.svProcFd107pk0_CqprocGetDetails.dataSet.poutJobDet[0].cqremark === null ? &quot;&quot; :Variables.svProcFd107pk0_CqprocGetDetails.dataSet.poutJobDet[0].cqremark" fontsize="2" fontunit="em" updateon="default" placeholder="Enter your Remarks" name="txtRemarks"></wm-textarea> 
+                </wm-composite> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow14_1"> 
+            <wm-gridcolumn padding="5px unset 5px 5px" name="gridcolumn30_3" columnwidth="12"> 
+                <wm-label show="bind:Widgets.btnChecklistOpen.show === true ? true:false" fontsize="18" fontunit="px" textalign="left" padding="8px unset unset 5px" caption="Overall Status :" fontweight="bold" name="lblMainSts" class="col-label-info btn-lg btn-info"></wm-label> 
+                <wm-container show="bind:Widgets.btnChecklistOpen.show === true ? true:false" width="95%" horizontalalign="left" padding="5px 5px unset 5px" name="containerMainsts"> 
+                    <wm-radioset selectedvalue="bind:Variables.svProcFd107pk0_CqprocGetDetails.dataSet.poutJobDet[$i].apvsts" displayfield="displayvalue" datafield="itemvalue" margin="unset unset unset 10px" required="false" class="h3" dataset="bind:Variables.svProcFd107pk0_CqprocGetDetails.dataSet.poutStsList" layout="inline" name="radioset1"></wm-radioset> 
+                </wm-container> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow15_2"> 
+            <wm-gridcolumn padding="unset 5% unset 1%" name="gridcolumn21_2" columnwidth="12"> 
+                <wm-prefab on-change="txtoperatorChange($scope, newVal, oldVal)" caption="Scan Operator" defaultvalue="bind:Variables.statOperator.dataSet.dataValue" show="bind:Widgets.containerMainsts.show === true ? true:false" readonly="false" name="txtoperator" prefabname="SY1000PF"></wm-prefab> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow15"> 
+            <wm-gridcolumn padding="5pt unset 5pt 5pt" name="gridcolumn19" columnwidth="12"> 
+                <wm-button disabled="true" on-tap="btnSaveTap($event, $scope)" width="95%" fontsize="2" fontunit="em" show="bind:Widgets.radioset1.datavalue === null || Widgets.radioset1.datavalue === undefined || Widgets.txtoperator.datavalue === null || Widgets.txtoperator.datavalue === undefined || Widgets.txtoperator.datavalue === &quot;&quot; ? false:Widgets.btnChecklistOpen.show === true ? true:false" name="btnSave" class="btn-default btn-success" caption="Save" type="button"></wm-button> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow14_3"> 
+            <wm-gridcolumn padding="5px unset 5px 5px" name="gridcolumn18" columnwidth="12"> 
+                <wm-button width="95%" fontunit="em" on-tap="btnCancelTap($event, $scope)" name="btnCancel" fontsize="2" show="bind:Widgets.btnChecklistOpen.show === true ? true:false" class="btn-default btn-warning" caption="Cancel" type="button"></wm-button> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow name="gridrow6" padding="unset 0px unset unset"> 
+            <wm-gridcolumn name="gridcolumn17" padding="5px unset 5px 5px" horizontalalign="left" columnwidth="12"> 
+                <wm-button width="95%" fontunit="em" on-tap="button3Tap($event, $scope)" name="button3" fontsize="2" iconclass="wi wi-keyboard-arrow-left" class="btn-default" caption="Back To Main" type="button"></wm-button> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+    </wm-layoutgrid> 
+    <wm-view name="view2" class="dialog-view"> 
+        <wm-dialog height="100%" width="100%" showheader="false" name="ChecklistPop" dialogtype="design-dialog" modal="true" title="" iconclass="wi wi-file-text"> 
+            <wm-layoutgrid height="100%" name="layoutgrid7"> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow16"> 
+                    <wm-gridcolumn padding="unset 10px unset unset" name="gridcolumn21_1" columnwidth="4"> 
+                        <wm-table show="false" class="panel-primary" gridclass="table-bordered table-hover" gridfirstrowselect="true" navigation="None" dataset="bind:Variables.statCategory.dataSet" title="" name="statCategoryTable1"> 
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" col-class="input-lg" textalignment="center" caption="CATEGORIES" binding="dataValue"></wm-table-column> 
+                        </wm-table> 
+                        <wm-list selectfirstitem="true" navigation="None" dataset="bind:Variables.statCategory.dataSet" name="statCategoryList1" listclass="list-group" itemsperrow="xs-3 sm-2 md-1 lg-1" template="true" class="list-card"> 
+                            <wm-listtemplate name="listtemplate2_1" layout="media"> 
+                                <wm-container conditionalclass="bind:Widgets.statCategoryList1.currentItem === Widgets.statCategoryList1.selecteditem ? &quot;blue-d1&quot;:&quot;&quot;" name="container6"> 
+                                    <wm-card on-tap="PictureTap($event, $scope, item, currentItemWidgets)" margin="0px unset" name="Picture"> 
+                                        <wm-card-content borderwidth="0px" padding="0px unset" name="card_content1"> 
+                                            <wm-label fontweight="bold" height="100%" width="100%" on-tap="NameTap($event, $scope, item, currentItemWidgets)" textalign="center" name="Name" class="h4" margin="0px unset" caption="bind:Widgets.statCategoryList1.currentItem.dataValue" whitespace="nowrap"></wm-label> 
+                                        </wm-card-content> 
+                                    </wm-card> 
+                                </wm-container> 
+                            </wm-listtemplate> 
+                        </wm-list> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn padding="unset unset unset 10px" name="gridcolumn34" columnwidth="8"> 
+                        <wm-list nodatamessage="Choose a Category" disableitem="false" on-reorder="list2Reorder($event, $data, $changedItem)" on-beforedatarender="list2Beforedatarender($scope, $data)" name="list2" expanded="false" itemclass="media list-group-item" selectfirstitem="false" title="" pagesize="100" navigation="Scroll" dataset="bind:Variables.statCondList.dataSet" listclass="list-group media-list" template="true" itemsperrow="xs-2 sm-1 md-1 lg-1" class="media-list listborder panel-primary"> 
+                            <wm-listtemplate name="listtemplate2" layout="inline"> 
+                                <wm-container margin="10px unset 0px unset" name="container7" borderwidth=".1px" class="media-body"> 
+                                    <wm-layoutgrid name="layoutgrid4"> 
+                                        <wm-gridrow name="gridrow15_1" padding="5px 0px 0px unset"> 
+                                            <wm-gridcolumn name="gridcolumn22" padding="5px unset unset 0px" columnwidth="5"> 
+                                                <wm-label name="label7" fontsize="2" class="h4" padding="unset unset unset 5px" fontweight="bold" caption="bind:Variables.statCondList.dataSet[$i].qualdesc" fontunit="em"></wm-label> 
+                                            </wm-gridcolumn> 
+                                            <wm-gridcolumn name="gridcolumn23" padding="0px unset unset 5px" horizontalalign="left" columnwidth="5"> 
+                                                <wm-radioset selectedvalue="bind:Widgets.list2.currentItem.actval === null ? undefined: Widgets.list2.currentItem.actval" name="radioset3" on-change="radioset3Change($event, $scope, item, currentItemWidgets, newVal, oldVal)" show="bind:Widgets.list2.currentItemWidgets.toggle2.show === true?false:true" datafield="All Fields" usekeys="false" dataset="bind:Widgets.list2.currentItem.condval" layout="inline" height="auto"></wm-radioset> 
+                                            </wm-gridcolumn> 
+                                            <wm-gridcolumn name="gridcolumn22_3" columnwidth="2"> 
+                                                <wm-checkbox on-tap="toggle2Tap($event, $scope, item, currentItemWidgets)" name="toggle2" datavalue="bind:Widgets.list2.currentItem.actval" on-change="toggleCondChange($event, $scope, item, currentItemWidgets, newVal, oldVal)" show="bind:Widgets.list2.currentItem.condtype === &quot;TOGGLE&quot;?true:false" checkedvalue="Y" caption="Toggle" type="toggle"></wm-checkbox> 
+                                            </wm-gridcolumn> 
+                                        </wm-gridrow> 
+                                    </wm-layoutgrid> 
+                                </wm-container> 
+                            </wm-listtemplate> 
+                        </wm-list> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow12_1"> 
+                    <wm-gridcolumn horizontalalign="right" padding="5px 5px unset unset" name="gridcolumn24_1" columnwidth="12"> 
+                        <wm-layoutgrid name="layoutgrid4_1"> 
+                            <wm-gridrow padding="unset 0px unset unset" name="gridrow14_2"> 
+                                <wm-gridcolumn padding="unset 5px 10px unset" name="gridcolumn19_1" columnwidth="6"> 
+                                    <wm-button on-tap="btnDoneCheckTap($event, $scope)" width="100%" name="btnDoneCheck" class="btn-primary btn-lg" caption="Done"></wm-button> 
+                                </wm-gridcolumn> 
+                                <wm-gridcolumn name="gridcolumn20" columnwidth="6"> 
+                                    <wm-button width="100%" on-tap="button9Tap($event, $scope)" name="button9" class="btn-lg btn-warning" caption="Cancel"></wm-button> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                        </wm-layoutgrid> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+    <wm-view name="view2_1" class="dialog-view"> 
+        <wm-dialog name="alertpop1" dialogtype="design-dialog" modal="true" title="" iconclass="wi wi-warning"> 
+            <wm-layoutgrid name="layoutgrid6"> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow17_1"> 
+                    <wm-gridcolumn name="gridcolumn24" columnwidth="12"> 
+                        <wm-label caption="bind:Variables.statErrMsg.dataSet.dataValue" color="#f03535" fontsize="15" name="lblErrMsg" padding="unset 0.5em"></wm-label> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow18"> 
+                    <wm-gridcolumn name="gridcolumn26" columnwidth="6"></wm-gridcolumn> 
+                    <wm-gridcolumn horizontalalign="right" name="gridcolumn27" columnwidth="6"> 
+                        <wm-button on-tap="button10Tap($event, $scope)" fontunit="px" fontsize="16" name="button10" class="btn-default btn-warning" caption="Cancel" type="button" margin="unset 0.5em"></wm-button> 
+                        <wm-button accessroles="DYEFLR_REQSIGNOFF" on-tap="Widgets.ReqSignoffPop.open();Variables.svProcFd107pk0_cqprocReqSignOffJobList.invoke();Widgets.alertpop1.close()" show="bind:Variables.statReqSignOff.dataSet.dataValue === &quot;Y&quot;?true:false" fontsize="16" fontunit="px" name="button9_1" class="btn-primary" caption="Request  Sign-off" type="button" margin="unset 0.5em"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+    <wm-view name="view3" class="dialog-view"> 
+        <wm-dialog width="75%" name="ReqSignoffPop" dialogtype="design-dialog" modal="true" title="Request Sign-Off" iconclass="wi wi-list-ol"> 
+            <wm-layoutgrid name="layoutgrid7_1"> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow20"> 
+                    <wm-gridcolumn name="gridcolumn29" columnwidth="12"> 
+                        <wm-list name="listReqNewSignOff" fontweight="bold" width="95%" title="Choose Dyejobs" show="true" listclass="list-group media-list" class="media-list listborder" navigation="None" dataset="bind:Variables.svProcFd107pk0_cqprocReqSignOffJobList.dataSet.poutDyejobList" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1"> 
+                            <wm-listtemplate name="listtemplate4" layout="inline"> 
+                                <wm-container name="container8_2" class="media-body"> 
+                                    <wm-layoutgrid name="layoutgrid8" class="bordered"> 
+                                        <wm-gridrow name="gridrow21_1" padding="unset 0px unset unset"> 
+                                            <wm-gridcolumn name="gridcolumn31_2" class="bordered-right" padding="11px unset unset unset" columnwidth="2"> 
+                                                <wm-label name="label11" show="true" textalign="center" class="p media-heading" caption="bind:Variables.svProcFd107pk0_cqprocReqSignOffJobList.dataSet.poutDyejobList[$i].ordnum" fontsize="1.143" fontunit="em"></wm-label> 
+                                            </wm-gridcolumn> 
+                                            <wm-gridcolumn name="gridcolumn32_1" class="bordered-right" padding="11px unset unset unset" columnwidth="1"> 
+                                                <wm-label name="lblfabseq" show="false" textalign="center" class="p media-heading btn-primary" caption="bind:Variables.svProcFd107pk0_cqprocReqSignOffJobList.dataSet.poutDyejobList[$i].fabseq" fontsize="1.143" fontunit="em"></wm-label> 
+                                                <wm-label name="label13" on-tap="label13Tap($event, $scope, item, currentItemWidgets)" show="true" textalign="center" class="p media-heading btn-primary" caption="bind:Variables.svProcFd107pk0_cqprocReqSignOffJobList.dataSet.poutDyejobList[$i].fabdes" fontsize="1.143" fontunit="em"></wm-label> 
+                                            </wm-gridcolumn> 
+                                            <wm-gridcolumn name="gridcolumn33" padding="unset unset unset 10px" horizontalalign="center" columnwidth="9"> 
+                                                <wm-checkboxset name="cbDyejobsCQReq" selectedvalues="bind:Variables.svProcFd107pk0_cqprocReqSignOffJobList.dataSet.poutDeffabseq === Widgets.list4.currentItem.fabseq?Variables.svProcFd107pk0_cqprocReqSignOffJobList.dataSet.poutDefDyejob:null" datafield="All Fields" dataset="bind:Variables.svProcFd107pk0_cqprocReqSignOffJobList.dataSet.poutDyejobList[$i].jobs" margin="0px unset" layout="inline" height="auto"></wm-checkboxset> 
+                                            </wm-gridcolumn> 
+                                        </wm-gridrow> 
+                                    </wm-layoutgrid> 
+                                </wm-container> 
+                                <wm-container name="container9" class="media-right media-top"></wm-container> 
+                            </wm-listtemplate> 
+                        </wm-list> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow21"> 
+                    <wm-gridcolumn name="gridcolumn31" columnwidth="4"></wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn31_1" columnwidth="4"></wm-gridcolumn> 
+                    <wm-gridcolumn horizontalalign="right" name="gridcolumn32" columnwidth="4"> 
+                        <wm-button name="btnSaveReqSO" class="btn-default btn-success btn-lg" caption="Ok" type="button" margin="unset 0.5em" on-click="btnSaveReqSOClick($event, $scope)"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+    <wm-view name="view4" class="dialog-view"> 
+        <wm-dialog width="100%" name="RelDoubtPop" dialogtype="design-dialog" modal="true" title="Insert 100% Inspection" iconclass="fa fa-info"> 
+            <wm-layoutgrid name="layoutgrid9"> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow22"> 
+                    <wm-gridcolumn name="gridcolumn34_1" columnwidth="12"> 
+                        <wm-list navigation="None" dataset="bind:Variables.statDyejobList.dataSet" name="statDyejobListList1" listclass="list-group" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1"> 
+                            <wm-listtemplate name="listtemplate5" layout="inline"> 
+                                <wm-container content="partReleaseDoubtful" name="container13" class="media-body bordered" padding="unset unset unset 1.25em"> 
+                                    <wm-param name="pDyejob" value="bind:Widgets.statDyejobListList1.currentItem.dyejob" type="string"></wm-param> 
+                                    <wm-param name="pFabseq" value="bind:Widgets.statDyejobListList1.currentItem.fabseq" type="integer"></wm-param> 
+                                </wm-container> 
+                            </wm-listtemplate> 
+                        </wm-list> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow23"> 
+                    <wm-gridcolumn name="gridcolumn36" columnwidth="4"></wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn38" columnwidth="4"></wm-gridcolumn> 
+                    <wm-gridcolumn horizontalalign="left" name="gridcolumn39" columnwidth="4"> 
+                        <wm-button on-tap="Widgets.RelDoubtPop.close()" name="btnCancelRelDoubt" fontunit="px" fontsize="16" class="btn-default btn-warning btn-lg" caption="Cancel" type="button" margin="unset 0.5em"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+    <wm-view name="view5" class="dialog-view"> 
+        <wm-dialog on-opened="Variables.svSprocFd107pk0_cqprocGGetRejCod.invoke()" width="100%" name="RejectPop" dialogtype="design-dialog" modal="true" title="Reject Jobs" iconclass="fa fa-close"> 
+            <wm-layoutgrid name="layoutgrid11"> 
+                <wm-gridrow name="gridrow26" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn name="gridcolumn42" columnwidth="12"> 
+                        <wm-list name="list6" navigation="None" dataset="bind:Variables.statDyejobList.dataSet" listclass="list-group" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1"> 
+                            <wm-listtemplate name="listtemplate6" layout="inline"> 
+                                <wm-container name="container11" content="partRejectSignOff" class="bordered"> 
+                                    <wm-param name="pDyejob" value="bind:Widgets.list6.currentItem.dyejob" type="string"></wm-param> 
+                                    <wm-param name="pFabseq" value="bind:Widgets.list6.currentItem.fabseq" type="integer"></wm-param> 
+                                    <wm-param name="pCqsheetid" value="bind:Widgets.list6.currentItem.cqsheetid" type="string"></wm-param> 
+                                    <wm-param name="pAppCall" value="SIGNOFF" type="string"></wm-param> 
+                                </wm-container> 
+                            </wm-listtemplate> 
+                        </wm-list> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+</wm-partial>

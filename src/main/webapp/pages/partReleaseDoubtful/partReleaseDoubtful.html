@@ -1,0 +1,33 @@
+<wm-partial name="partial1" data-ng-controller="partReleaseDoubtfulPageController"> 
+    <wm-layoutgrid name="layoutgrid1"> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow3"> 
+            <wm-gridcolumn name="gridcolumn4_1" columnwidth="12"> 
+                <wm-label caption="Choose after which process to add Inspection :" fontweight="bold" backgroundcolor="#ffffff" fontunit="px" fontsize="18" name="label2" padding="unset 0.5em"></wm-label> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow1"> 
+            <wm-gridcolumn columnwidth="1" name="gridcolumn9"> 
+                <wm-label padding="unset 0.5em" name="label2_1" caption="bind:'Dyejob<br>' + pageParams.pDyejob + '<br>' + 'Fab ' + pageParams.pFabseq"></wm-label> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn1" columnwidth="11"> 
+                <wm-list name="list1" navigation="None" dataset="bind:Variables.svQrySignOffDyeJobFabRoute.dataSet" listclass="list-group" itemsperrow="xs-2 sm-3 md-6 lg-6" template="true" loadingicon=""> 
+                    <wm-listtemplate name="listtemplate1" layout="media"> 
+                        <wm-container on-tap="container1Tap($event, $isolateScope, item, currentItemWidgets)" horizontalalign="center" name="container1" padding="5px"> 
+                            <wm-button on-tap="btnlblProcessTap($event, $scope, item, currentItemWidgets)" iconclass="bind:Widgets.list1.selecteditem === Widgets.list1.currentItem?&quot;wi wi-check fa-lg&quot;:&quot;&quot;" fontweight="bold" fontsize="12" fontunit="pt" conditionalclass="bind:Widgets.list1.currentItem.procsubsts === &quot;CMP&quot;?&quot;cmp&quot;:Widgets.list1.currentItem.procsubsts === &quot;TDEL&quot;?&quot;todel&quot;:Widgets.list1.currentItem.procsubsts === &quot;TRCV&quot;?&quot;torec&quot;:Widgets.list1.currentItem.procsubsts === &quot;WIP&quot;?&quot;wip&quot;:Widgets.list1.currentItem.procsubsts === &quot;QUE&quot;?&quot;trg&quot;:Widgets.list1.currentItem.procsubsts === &quot;TBREL&quot; ? &quot;red-d2&quot; : &quot;grey-l3&quot;" width="140" name="btnlblProcess" caption="bind:Variables.svQrySignOffDyeJobFabRoute.dataSet[$i].procseq+&quot;.&quot;+Variables.svQrySignOffDyeJobFabRoute.dataSet[$i].process" type="button" margin="unset 0.5em"></wm-button> 
+                        </wm-container> 
+                    </wm-listtemplate> 
+                </wm-list> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow3_1"> 
+            <wm-gridcolumn name="gridcolumn3" columnwidth="2"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn4" columnwidth="2"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn6" columnwidth="2"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn7" columnwidth="1"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn8" columnwidth="3"></wm-gridcolumn> 
+            <wm-gridcolumn horizontalalign="right" name="gridcolumn5" columnwidth="2"> 
+                <wm-button on-tap="btnRelDoubtTap($event, $scope)" fontunit="em" fontsize="2" name="btnRelDoubt" class="btn-default btn-success btn-lg" caption="Save" type="button" margin="unset 0.5em"></wm-button> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+    </wm-layoutgrid> 
+</wm-partial>

@@ -1,0 +1,934 @@
+{
+  "QryCheckEmpcode" : {
+    "name" : "QryCheckEmpcode",
+    "description" : "QryCheckEmpcode",
+    "version" : "V2",
+    "queryString" : "select wrknam\nfrom rft270\nwhere wrkid = :p_usrid\nand  scncod in ('DY','FN')\nand wrksts is null",
+    "countQueryString" : "select count(*) from (select wrknam\nfrom rft270\nwhere wrkid = :p_usrid\nand  scncod in ('DY','FN')\nand wrksts is null) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "004136",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QryCheckEmpcodeResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "WRKNAM",
+        "fieldName" : "wrknam",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "QryDefEmpcode" : {
+    "name" : "QryDefEmpcode",
+    "description" : "QryDefEmpcode",
+    "version" : "V2",
+    "queryString" : "select paycode \nfrom rft160 \nwhere usrid = :p_usrid",
+    "countQueryString" : "select count(*) from (select paycode \nfrom rft160 \nwhere usrid = :p_usrid) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QryDefEmpcodeResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "PAYCODE",
+        "fieldName" : "paycode",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "QryDelDN" : {
+    "name" : "QryDelDN",
+    "description" : "Delete DN(details) when DN is removed from main.",
+    "version" : "V2",
+    "queryString" : "delete from fdt730_wktdet \n    where ddelnum = :pDDelNum",
+    "countQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : false,
+    "type" : "DELETE",
+    "parameters" : [ {
+      "name" : "pDDelNum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LK000060",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "DELETE"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
+  },
+  "QryDyejobFabRoutes" : {
+    "name" : "QryDyejobFabRoutes",
+    "description" : "QryDyejobFabRoutes",
+    "version" : "V2",
+    "queryString" : "--AG101-V2 Modification: concatenation of sortseq and sortsubseq for new column\nselect fdt101.dyejob, fdt101.redye, fdt101.fabseq, fdt101.procseq, fdt101.SORTSEQ,fdt101.SORTSUBSEQ, (fdt101.sortseq || fdt101.sortsubseq) sortsub, fdt101.PROCESS,fdt101.SCNCOD,fdt101.OPTIND,trunc(sysdate) + (fdt101.esthrs/24) EstHrs,fdt101.PROCSTS,fdt101.ACTDAT,fdt101.scanmts, fdt101.startdat,fdt101.procsubsts,\n  fdt101.postcq_req postcqreq,  \n  (select fdt107c.apvsts || ' ' || to_char(fdt107c.trgdat,'dd/mm/yy hh24:mi') from fdt107_cqprocmain fdt107c where fdt107c.cqsheetid = fdt101.postcq_sheetid) signoffrem, fdt101.postcq_cmpdat postcqcmpdat\nfrom fdt101, fdt100\nwhere fdt101.dyejob = :dyejob\n and fdt101.fabseq = :fabseq\n and fdt100.dyejob = fdt101.dyejob\n and ((fdt100.redye = fdt101.redye)\n     or (fdt100.redye >  fdt101.redye and fdt101.procsts ='Y'))\norder by fdt101.redye, fdt101.procseq",
+    "countQueryString" : "select count(*) from (--AG101-V2 Modification: concatenation of sortseq and sortsubseq for new column\nselect fdt101.dyejob, fdt101.redye, fdt101.fabseq, fdt101.procseq, fdt101.SORTSEQ,fdt101.SORTSUBSEQ, (fdt101.sortseq || fdt101.sortsubseq) sortsub, fdt101.PROCESS,fdt101.SCNCOD,fdt101.OPTIND,trunc(sysdate) + (fdt101.esthrs/24) EstHrs,fdt101.PROCSTS,fdt101.ACTDAT,fdt101.scanmts, fdt101.startdat,fdt101.procsubsts,\n  fdt101.postcq_req postcqreq,  \n  (select fdt107c.apvsts || ' ' || to_char(fdt107c.trgdat,'dd/mm/yy hh24:mi') from fdt107_cqprocmain fdt107c where fdt107c.cqsheetid = fdt101.postcq_sheetid) signoffrem, fdt101.postcq_cmpdat postcqcmpdat\nfrom fdt101, fdt100\nwhere fdt101.dyejob = :dyejob\n and fdt101.fabseq = :fabseq\n and fdt100.dyejob = fdt101.dyejob\n and ((fdt100.redye = fdt101.redye)\n     or (fdt100.redye >  fdt101.redye and fdt101.procsts ='Y'))\norder by fdt101.redye, fdt101.procseq) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "dyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002000017",
+      "required" : false
+    }, {
+      "name" : "fabseq",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QryDyejobFabRoutesResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "DYEJOB",
+        "fieldName" : "dyejob",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "REDYE",
+        "fieldName" : "redye",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Byte",
+          "list" : false
+        }
+      }, {
+        "name" : "FABSEQ",
+        "fieldName" : "fabseq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Byte",
+          "list" : false
+        }
+      }, {
+        "name" : "PROCSEQ",
+        "fieldName" : "procseq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Short",
+          "list" : false
+        }
+      }, {
+        "name" : "SORTSEQ",
+        "fieldName" : "sortseq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Byte",
+          "list" : false
+        }
+      }, {
+        "name" : "SORTSUBSEQ",
+        "fieldName" : "sortsubseq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "SORTSUB",
+        "fieldName" : "sortsub",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "PROCESS",
+        "fieldName" : "process",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "SCNCOD",
+        "fieldName" : "scncod",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "OPTIND",
+        "fieldName" : "optind",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "ESTHRS",
+        "fieldName" : "esthrs",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.time.LocalDateTime",
+          "list" : false
+        }
+      }, {
+        "name" : "PROCSTS",
+        "fieldName" : "procsts",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "ACTDAT",
+        "fieldName" : "actdat",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.time.LocalDateTime",
+          "list" : false
+        }
+      }, {
+        "name" : "SCANMTS",
+        "fieldName" : "scanmts",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Double",
+          "list" : false
+        }
+      }, {
+        "name" : "STARTDAT",
+        "fieldName" : "startdat",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.time.LocalDateTime",
+          "list" : false
+        }
+      }, {
+        "name" : "PROCSUBSTS",
+        "fieldName" : "procsubsts",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "POSTCQREQ",
+        "fieldName" : "postcqreq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "SIGNOFFREM",
+        "fieldName" : "signoffrem",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "POSTCQCMPDAT",
+        "fieldName" : "postcqcmpdat",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.time.LocalDateTime",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "QryEmployeeCodeSignOff" : {
+    "name" : "QryEmployeeCodeSignOff",
+    "description" : "QryEmployeeCodeSignOff",
+    "version" : "V2",
+    "queryString" : "select paycode\nfrom rft160\nwhere usrid = :p_usrid",
+    "countQueryString" : "select count(*) from (select paycode\nfrom rft160\nwhere usrid = :p_usrid) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QryEmployeeCodeSignOffResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "PAYCODE",
+        "fieldName" : "paycode",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "QryFabseqLOV" : {
+    "name" : "QryFabseqLOV",
+    "description" : "fetch fabseq for weight that can be updated",
+    "version" : "V2",
+    "queryString" : "select fabseq\nfrom fdt150\nwhere dyejob = :pdyejob\nand wgtreq is null",
+    "countQueryString" : "select count(*) from (select fabseq\nfrom fdt150\nwhere dyejob = :pdyejob\nand wgtreq is null) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "pdyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002240132",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QryFabseqLovResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "FABSEQ",
+        "fieldName" : "fabseq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Byte",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "QrySignOffRejectDyeJobFabRoute" : {
+    "name" : "QrySignOffRejectDyeJobFabRoute",
+    "description" : "QrySignOffRejectDyeJobFabRoute",
+    "version" : "V2",
+    "queryString" : "select fdt101.dyejob, fdt101.redye, fdt101.fabseq, fdt101.procseq, fdt101.SORTSEQ,fdt101.SORTSUBSEQ,fdt101.PROCESS,fdt101.SCNCOD,OPTIND,trunc(sysdate) + (fdt101.esthrs/24) EstHrs,fdt101.PROCSTS,fdt101.ACTDAT,fdt101.scanmts, fdt101.startdat,fdt101.procsubsts,\n  fdt101.postcq_req postcqreq,  \n  (select fdt107c.apvsts || ' ' || to_char(fdt107c.trgdat,'dd/mm/yy hh24:mi') from fdt107_cqprocmain fdt107c where fdt107c.cqsheetid = fdt101.postcq_sheetid) signoffrem, fdt101.postcq_cmpdat postcqcmpdat\nfrom fdt101, fdt100\nwhere fdt101.dyejob = :dyejob\nand fdt101.fabseq = :fabseq\nand fdt100.dyejob = fdt101.dyejob\nand fdt100.redye = fdt101.redye\nand fdt101.procsts is null\nand fdt101.startprocsts is null\norder by fdt101.redye, fdt101.procseq",
+    "countQueryString" : "select count(*) from (select fdt101.dyejob, fdt101.redye, fdt101.fabseq, fdt101.procseq, fdt101.SORTSEQ,fdt101.SORTSUBSEQ,fdt101.PROCESS,fdt101.SCNCOD,OPTIND,trunc(sysdate) + (fdt101.esthrs/24) EstHrs,fdt101.PROCSTS,fdt101.ACTDAT,fdt101.scanmts, fdt101.startdat,fdt101.procsubsts,\n  fdt101.postcq_req postcqreq,  \n  (select fdt107c.apvsts || ' ' || to_char(fdt107c.trgdat,'dd/mm/yy hh24:mi') from fdt107_cqprocmain fdt107c where fdt107c.cqsheetid = fdt101.postcq_sheetid) signoffrem, fdt101.postcq_cmpdat postcqcmpdat\nfrom fdt101, fdt100\nwhere fdt101.dyejob = :dyejob\nand fdt101.fabseq = :fabseq\nand fdt100.dyejob = fdt101.dyejob\nand fdt100.redye = fdt101.redye\nand fdt101.procsts is null\nand fdt101.startprocsts is null\norder by fdt101.redye, fdt101.procseq) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "dyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "003068751",
+      "required" : false
+    }, {
+      "name" : "fabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "4",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QrySignOffRejectDyeJobFabRouteResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "DYEJOB",
+        "fieldName" : "dyejob",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "REDYE",
+        "fieldName" : "redye",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Byte",
+          "list" : false
+        }
+      }, {
+        "name" : "FABSEQ",
+        "fieldName" : "fabseq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Byte",
+          "list" : false
+        }
+      }, {
+        "name" : "PROCSEQ",
+        "fieldName" : "procseq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Short",
+          "list" : false
+        }
+      }, {
+        "name" : "SORTSEQ",
+        "fieldName" : "sortseq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Byte",
+          "list" : false
+        }
+      }, {
+        "name" : "SORTSUBSEQ",
+        "fieldName" : "sortsubseq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "PROCESS",
+        "fieldName" : "process",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "SCNCOD",
+        "fieldName" : "scncod",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "OPTIND",
+        "fieldName" : "optind",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "ESTHRS",
+        "fieldName" : "esthrs",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.time.LocalDateTime",
+          "list" : false
+        }
+      }, {
+        "name" : "PROCSTS",
+        "fieldName" : "procsts",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "ACTDAT",
+        "fieldName" : "actdat",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.time.LocalDateTime",
+          "list" : false
+        }
+      }, {
+        "name" : "SCANMTS",
+        "fieldName" : "scanmts",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Double",
+          "list" : false
+        }
+      }, {
+        "name" : "STARTDAT",
+        "fieldName" : "startdat",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.time.LocalDateTime",
+          "list" : false
+        }
+      }, {
+        "name" : "PROCSUBSTS",
+        "fieldName" : "procsubsts",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "POSTCQREQ",
+        "fieldName" : "postcqreq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "SIGNOFFREM",
+        "fieldName" : "signoffrem",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "POSTCQCMPDAT",
+        "fieldName" : "postcqcmpdat",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.time.LocalDateTime",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "QrySignOffReldoubtDyeJobFabRoute" : {
+    "name" : "QrySignOffReldoubtDyeJobFabRoute",
+    "description" : "used only in Sign-off Release Doubtful and Reject.",
+    "version" : "V2",
+    "queryString" : "select fdt101.dyejob, fdt101.redye, fdt101.fabseq, fdt101.procseq, fdt101.SORTSEQ,fdt101.SORTSUBSEQ,fdt101.PROCESS,fdt101.SCNCOD,OPTIND,trunc(sysdate) + (fdt101.esthrs/24) EstHrs,fdt101.PROCSTS,fdt101.ACTDAT,fdt101.scanmts, fdt101.startdat,fdt101.procsubsts,\n  fdt101.postcq_req postcqreq,  \n  (select fdt107c.apvsts || ' ' || to_char(fdt107c.trgdat,'dd/mm/yy hh24:mi') from fdt107_cqprocmain fdt107c where fdt107c.cqsheetid = fdt101.postcq_sheetid) signoffrem, fdt101.postcq_cmpdat postcqcmpdat\nfrom fdt101, fdt100\nwhere fdt101.dyejob = :dyejob\n and fdt101.fabseq = :fabseq\n and fdt100.dyejob = fdt101.dyejob\n and ((fdt101.procsts = 'Y' and fdt101.procsubsts = 'TBREL') or fdt101.procsts is null)\n and ((fdt100.redye = fdt101.redye)\n     or (fdt100.redye >  fdt101.redye and fdt101.procsts ='Y'))\norder by fdt101.redye, fdt101.procseq",
+    "countQueryString" : "select count(*) from (select fdt101.dyejob, fdt101.redye, fdt101.fabseq, fdt101.procseq, fdt101.SORTSEQ,fdt101.SORTSUBSEQ,fdt101.PROCESS,fdt101.SCNCOD,OPTIND,trunc(sysdate) + (fdt101.esthrs/24) EstHrs,fdt101.PROCSTS,fdt101.ACTDAT,fdt101.scanmts, fdt101.startdat,fdt101.procsubsts,\n  fdt101.postcq_req postcqreq,  \n  (select fdt107c.apvsts || ' ' || to_char(fdt107c.trgdat,'dd/mm/yy hh24:mi') from fdt107_cqprocmain fdt107c where fdt107c.cqsheetid = fdt101.postcq_sheetid) signoffrem, fdt101.postcq_cmpdat postcqcmpdat\nfrom fdt101, fdt100\nwhere fdt101.dyejob = :dyejob\n and fdt101.fabseq = :fabseq\n and fdt100.dyejob = fdt101.dyejob\n and ((fdt101.procsts = 'Y' and fdt101.procsubsts = 'TBREL') or fdt101.procsts is null)\n and ((fdt100.redye = fdt101.redye)\n     or (fdt100.redye >  fdt101.redye and fdt101.procsts ='Y'))\norder by fdt101.redye, fdt101.procseq) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "dyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "003033745",
+      "required" : false
+    }, {
+      "name" : "fabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "3",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QrySignOffReldoubtDyeJobFabRouteResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "DYEJOB",
+        "fieldName" : "dyejob",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "REDYE",
+        "fieldName" : "redye",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Byte",
+          "list" : false
+        }
+      }, {
+        "name" : "FABSEQ",
+        "fieldName" : "fabseq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Byte",
+          "list" : false
+        }
+      }, {
+        "name" : "PROCSEQ",
+        "fieldName" : "procseq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Short",
+          "list" : false
+        }
+      }, {
+        "name" : "SORTSEQ",
+        "fieldName" : "sortseq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Byte",
+          "list" : false
+        }
+      }, {
+        "name" : "SORTSUBSEQ",
+        "fieldName" : "sortsubseq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "PROCESS",
+        "fieldName" : "process",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "SCNCOD",
+        "fieldName" : "scncod",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "OPTIND",
+        "fieldName" : "optind",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "ESTHRS",
+        "fieldName" : "esthrs",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.time.LocalDateTime",
+          "list" : false
+        }
+      }, {
+        "name" : "PROCSTS",
+        "fieldName" : "procsts",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "ACTDAT",
+        "fieldName" : "actdat",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.time.LocalDateTime",
+          "list" : false
+        }
+      }, {
+        "name" : "SCANMTS",
+        "fieldName" : "scanmts",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Double",
+          "list" : false
+        }
+      }, {
+        "name" : "STARTDAT",
+        "fieldName" : "startdat",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.time.LocalDateTime",
+          "list" : false
+        }
+      }, {
+        "name" : "PROCSUBSTS",
+        "fieldName" : "procsubsts",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "POSTCQREQ",
+        "fieldName" : "postcqreq",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "SIGNOFFREM",
+        "fieldName" : "signoffrem",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "POSTCQCMPDAT",
+        "fieldName" : "postcqcmpdat",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.time.LocalDateTime",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "QrySy9200pk0CallWmakerapp" : {
+    "name" : "QrySy9200pk0CallWmakerapp",
+    "description" : "QrySy9200pk0CallWmakerapp",
+    "version" : "V2",
+    "queryString" : "select sy9200pk0.sproc_call_wmakerapp(:pWmprogid,:pParamList) as urlwavemaker from dual",
+    "countQueryString" : "select count(*) from (select sy9200pk0.sproc_call_wmakerapp(:pWmprogid,:pParamList) as urlwavemaker from dual) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "pWmprogid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1000W11",
+      "required" : false
+    }, {
+      "name" : "pParamList",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "pBarcode=",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QrySy9200pk0callWmakerappResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "URLWAVEMAKER",
+        "fieldName" : "urlwavemaker",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "qyProcessCQRadioset2Values" : {
+    "name" : "qyProcessCQRadioset2Values",
+    "description" : "qyProcessCQRadioset2Values",
+    "version" : "V2",
+    "queryString" : "SELECT '1.APV' displayvalue,'APV' itemvalue from dual\nUNION ALL SELECT '2.REJ','REJ' from dual\nUNION ALL SELECT '3.NA','NA' from dual\nUNION ALL SELECT '4.HLD','HLD' from dual",
+    "countQueryString" : "select count(*) from (SELECT '1.APV' displayvalue,'APV' itemvalue from dual\nUNION ALL SELECT '2.REJ','REJ' from dual\nUNION ALL SELECT '3.NA','NA' from dual\nUNION ALL SELECT '4.HLD','HLD' from dual) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QyProcessCqradioset2valuesResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "DISPLAYVALUE",
+        "fieldName" : "displayvalue",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "ITEMVALUE",
+        "fieldName" : "itemvalue",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "qyProcessCQRadiosetValues" : {
+    "name" : "qyProcessCQRadiosetValues",
+    "description" : "Query to return Process CQ Radio set 1 Values",
+    "version" : "V2",
+    "queryString" : "SELECT 'Ok' displayvalue,'APV' itemvalue from dual\nUNION ALL SELECT 'Reject','REJ' from dual\nUNION ALL SELECT 'Hold','HLD' from dual",
+    "countQueryString" : "select count(*) from (SELECT 'Ok' displayvalue,'APV' itemvalue from dual\nUNION ALL SELECT 'Reject','REJ' from dual\nUNION ALL SELECT 'Hold','HLD' from dual) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QyProcessCqradiosetValuesResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "DISPLAYVALUE",
+        "fieldName" : "displayvalue",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "ITEMVALUE",
+        "fieldName" : "itemvalue",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "statLinkProceslist" : {
+    "_id" : "wm-statLinkProceslist-wm.Variable-1554461497840",
+    "name" : "statLinkProceslist",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statPrgid" : {
+    "_id" : "wm-statPrgid-wm.Variable-1511520234493",
+    "name" : "statPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "FD1015W01",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svProcFd107pk0_cqprocCheckUser" : {
+    "_id" : "wm-svProcFd107pk0_cqprocCheckUser-wm.ServiceVariable-1553925718752",
+    "name" : "svProcFd107pk0_cqprocCheckUser",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pAccessKey",
+      "value" : "bind:pageParams.pappky",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd107pk0CqprocCheckUserResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd107pk0_cqprocCheckUser",
+    "operationId" : "ProcedureExecutionController_executeProcFd107pk0_cqprocCheckUser",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcFd107pk0_cqprocCheckUseronSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFd723pk0GetFabDetails" : {
+    "_id" : "wm-svProcFd723pk0GetFabDetails-wm.ServiceVariable-1547873060526",
+    "name" : "svProcFd723pk0GetFabDetails",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pUsrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd723pk0getFabDetailsResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd723pk0GetFabDetails",
+    "operationId" : "ProcedureExecutionController_executeProcFd723pk0GetFabDetails",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcFd723pk0GetFabDetailsonSuccess($event, $scope)",
+    "onError" : "Javascript",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcfd723pk0GetJobissueHis" : {
+    "_id" : "wm-svProcfd723pk0GetJobissueHis-wm.ServiceVariable-1548140145232",
+    "name" : "svProcfd723pk0GetJobissueHis",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pUsrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pBarcode",
+      "value" : "bind:Widgets.SY1000PF1.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.Procfd723pk0getJobissueHisResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcfd723pk0GetJobissueHis",
+    "operationId" : "ProcedureExecutionController_executeProcfd723pk0GetJobissueHis",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFd724pk0CheckEmpCode" : {
+    "_id" : "wm-svProcFd724pk0CheckEmpCode-wm.ServiceVariable-1554882300513",
+    "name" : "svProcFd724pk0CheckEmpCode",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd724pk0checkEmpCodeResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd724pk0CheckEmpCode",
+    "operationId" : "ProcedureExecutionController_executeProcFd724pk0CheckEmpCode",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcFd724pk0CheckEmpCodeonSuccess($event, $scope)",
+    "onError" : "svProcFd724pk0CheckEmpCodeonError($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svQryDefEmpcode" : {
+    "_id" : "wm-svQryDefEmpcode-wm.ServiceVariable-1555070896306",
+    "name" : "svQryDefEmpcode",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "p_usrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.query.QryDefEmpcodeResponse",
+    "service" : "pfsdb",
+    "operation" : "executeQryDefEmpcode",
+    "operationId" : "QueryExecutionController_executeQryDefEmpcode",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svQryDefEmpcodeonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svQryDyejobFabRoutes" : {
+    "_id" : "wm-svQryDyejobFabRoutes-wm.ServiceVariable-1554705471681",
+    "name" : "svQryDyejobFabRoutes",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "dyejob",
+      "value" : "bind:Variables.svProcFd723pk0GetFabDetails.dataSet.poutDyejob",
+      "type" : "string"
+    }, {
+      "target" : "fabseq",
+      "value" : "bind:Variables.svProcFd723pk0GetFabDetails.dataSet.poutFabseq",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.query.QryDyejobFabRoutesResponse",
+    "service" : "pfsdb",
+    "operation" : "executeQryDyejobFabRoutes",
+    "operationId" : "QueryExecutionController_executeQryDyejobFabRoutes",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 500,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  }
+}

@@ -1,0 +1,90 @@
+<wm-page name="page1" data-ng-controller="FabricCQPendingPageController" pagetitle="Fabric Cq Pending"> 
+    <wm-content name="content1"> 
+        <wm-page-content accessroles="DYEFLR_CQ,DYEFLR_QRYSIGNOFFLIST" name="page_content1" columnwidth="12"> 
+            <wm-layoutgrid width="95%" name="layoutgrid1"> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow1"> 
+                    <wm-gridcolumn horizontalalign="center" name="gridcolumn12" columnwidth="11"> 
+                        <wm-label name="lblCqpendingHeader" fontweight="bold" class="h3" borderwidth="1.5px" caption="Sign-Off &amp; Held List" color="#000000" padding="unset 0.5em"></wm-label> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn padding="10px unset unset unset" horizontalalign="right" name="gridcolumn9" columnwidth="1"> 
+                        <wm-button name="button2" on-tap="Actions.logoutAction.invoke()" class="btn-default btn-warning" caption="Log Out" type="button" margin="unset 0.5em unset 0.1em"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow6"> 
+                    <wm-gridcolumn padding="12px 10px unset unset" name="gridcolumn7" columnwidth="4"> 
+                        <wm-composite name="composite2_1"> 
+                            <wm-label caption="Process :" name="label2" class="col-md-3 control-label"></wm-label> 
+                            <wm-container name="container2_1" class="col-md-9"> 
+                                <wm-select displayfield="proclist" datavalue="%" datafield="proclist" dataset="bind:Variables.svProcFd107pk0_cqprocGetProcessList.dataSet.poutProcesslist" name="sltProcess"></wm-select> 
+                            </wm-container> 
+                        </wm-composite> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn6" columnwidth="4"> 
+                        <wm-composite name="composite2"> 
+                            <wm-container name="container2" class="col-md-12"> 
+                                <wm-radioset margin="0px unset unset unset" selectedvalue="TBREL" displayfield="itemdes" datafield="itemcod" dataset="bind:Variables.statStsTyp.dataSet" layout="inline" name="radioset1" height="auto"></wm-radioset> 
+                            </wm-container> 
+                        </wm-composite> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn padding="12px 10px unset 5px" name="gridcolumn8" columnwidth="4"> 
+                        <wm-composite name="composite3"> 
+                            <wm-label name="label3" caption="Location :" class="col-md-3 control-label"></wm-label> 
+                            <wm-container name="container3" class="col-md-9"> 
+                                <wm-select orderby="loclist:desc" name="select2" displayfield="loclist" datavalue="%" datafield="loclist" dataset="bind:Variables.svProcFd107pk0_cqprocGetLocationList.dataSet.poutLocationList"></wm-select> 
+                            </wm-container> 
+                        </wm-composite> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow7"> 
+                    <wm-gridcolumn name="gridcolumn17" columnwidth="12"> 
+                        <wm-table width="100%" on-select="gridCqPendingSelect($event, $scope, $rowData)" class="panel-primary" name="gridCqPending" navigation="None" dataset="bind:Variables.svProcFd107pk0_cqprocCqPendingList.dataSet.poutPendList" title="CQ Pending List"> 
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="100px" caption="Order" binding="ordnum"></wm-table-column> 
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Dyejob" binding="dyejob"></wm-table-column> 
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Process" binding="process"></wm-table-column> 
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Batch Seq" binding="bchseq"></wm-table-column> 
+                            <wm-table-column readonly="false" show="true" type="byte" edit-widget-type="number" width="50px" caption="Color Seq" binding="clrseq"></wm-table-column> 
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="150px" caption="Clrdes" binding="clrdes"></wm-table-column> 
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="150px" caption="Remark" binding="cqremark"></wm-table-column> 
+                            <wm-table-column readonly="false" show="false" type="string" edit-widget-type="text" caption="Barcode" binding="barcode"></wm-table-column> 
+                            <wm-table-column readonly="false" show="false" type="string" edit-widget-type="text" caption="Sign-Off Sts" binding="apvsts"></wm-table-column> 
+                            <wm-table-column readonly="false" show="false" type="string" edit-widget-type="text" caption="Cqsheetid" binding="cqsheetid"></wm-table-column> 
+                            <wm-table-column-group col-class="blue-l1" caption="Fabric" name="group"> 
+                                <wm-table-column readonly="false" show="true" type="byte" edit-widget-type="number" caption="Seq" binding="fabseq"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Compo" binding="fabcps"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Type" binding="fabtyp"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="integer" edit-widget-type="number" caption="G/m2" binding="fabwgt"></wm-table-column> 
+                            </wm-table-column-group> 
+                            <wm-table-column-group col-class="yellow-l1" caption="Sign-Off" name="group2"> 
+                                <wm-table-column readonly="false" show="true" type="datetime" edit-widget-type="datetime" caption="Trg Date" binding="tbreldat"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="long" edit-widget-type="number" caption="Ld Time(Days)" binding="tbrelldtime"></wm-table-column> 
+                            </wm-table-column-group> 
+                            <wm-table-column-group col-class="red-l1" caption="Held" name="group1"> 
+                                <wm-table-column readonly="false" show="true" type="datetime" edit-widget-type="datetime" caption="Hld Date" binding="pndtrgdat"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="long" edit-widget-type="number" caption="Ld Time(Days)" binding="pndldtime"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="By" binding="pndby"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="200px" caption="Reason" binding="pendingdesc"></wm-table-column> 
+                            </wm-table-column-group> 
+                            <wm-table-column readonly="undefined" show="false" type="string" caption="Inspreq" binding="inspreq"></wm-table-column> 
+                        </wm-table> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow3"> 
+                    <wm-gridcolumn name="gridcolumn3" columnwidth="12"></wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow4"> 
+                    <wm-gridcolumn padding="5px unset unset 5px" name="gridcolumn4" columnwidth="12"></wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow5"> 
+                    <wm-gridcolumn padding="5px unset unset 5px" name="gridcolumn5" columnwidth="12"> 
+                        <wm-button name="BtnBackToMain" width="95%" fontunit="em" on-tap="Variables.goToPage_FabricIntersectionMenu.invoke()" fontsize="2" iconclass="wi wi-keyboard-arrow-left" class="btn-default" caption="Back To Main" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-view name="view1" class="dialog-view"> 
+        <wm-pagedialog height="100%" width="100%" iconclass="" title="" content="partFabricProcessCQ" closable="true" showactions="false" name="partFabricProcessCQPop"> 
+            <wm-param name="pBarcode" value="bind:Widgets.gridCqPending.selecteditem.barcode" type="string"></wm-param> 
+        </wm-pagedialog> 
+    </wm-view> 
+</wm-page>

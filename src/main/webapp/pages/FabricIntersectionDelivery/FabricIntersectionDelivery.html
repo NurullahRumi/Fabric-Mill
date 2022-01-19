@@ -1,0 +1,152 @@
+<wm-page name="page1" data-ng-controller="FabricIntersectionDeliveryPageController" pagetitle="Fabric Intersection Delivery"> 
+    <wm-content name="content1"> 
+        <wm-page-content name="page_content1" columnwidth="12"> 
+            <wm-layoutgrid height="100%" width="95%" class="bordered" name="layoutgrid1"> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow15_1"> 
+                    <wm-gridcolumn horizontalalign="center" name="gridcolumn15" columnwidth="12"> 
+                        <wm-label fontunit="em" fontweight="bold" class="h3" borderwidth="1.5px" caption="Delivery" color="#000000" name="lblDeliveryHeader" padding="unset 0.5em"></wm-label> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="5px unset unset 5px" name="gridrow18_1"> 
+                    <wm-gridcolumn padding="unset 0px unset unset" name="gridcolumn18_1" columnwidth="12"> 
+                        <wm-prefab width="95%" on-change="txtBarcodeChange($scope, newVal, oldVal)" caption="Scan Qr Code" name="txtBarcode" prefabname="SY1000PF"></wm-prefab> 
+                        <wm-text name="txtScroll" height="0" placeholder="" class="btn-transparent" on-keypress="txtScrollKeypress($event, $scope)" updateon="default" width="0" show="true"></wm-text> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow18"> 
+                    <wm-gridcolumn padding="unset unset unset 5px" horizontalalign="left" name="gridcolumn18" columnwidth="12"> 
+                        <wm-container padding="6px unset 0px unset" name="container4" horizontalalign="left"> 
+                            <wm-label textalign="center" width="95%" fontunit="px" fontsize="18" borderstyle="solid" borderwidth="1px" bordercolor="#417194" backgroundcolor="#ffffff" name="lblFabSeqDet" fontweight="bold" caption="bind:Variables.svProcFd723pk0DeliveryOutDetails.dataSet.poutFabdet" padding="unset 0.5em 0em 0.5em"></wm-label> 
+                        </wm-container> 
+                        <wm-button textalign="center" fontunit="em" fontsize="2" on-tap="btnFabSeqTap($event, $scope)" width="95%" name="btnFabSeq" class="btn-default btn-primary btn-lg" caption="Deliver Fab Seq" type="button"></wm-button> 
+                        <wm-text height="0" placeholder="" class="btn-transparent" name="txtScroll2" on-keypress="txtScroll2Keypress($event, $scope)" updateon="default" width="0" show="true"></wm-text> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow19"> 
+                    <wm-gridcolumn padding="unset unset unset 5px" horizontalalign="left" name="gridcolumn19" columnwidth="12"> 
+                        <wm-container name="layoutLcnSlt"> 
+                            <wm-label fontsize="18" fontunit="px" class="label-info btn-lg" name="lblSrcLcn" borderwidth=".1px" borderstyle="solid" bordercolor="#417194" caption="Source :" padding="unset 0.5em"></wm-label> 
+                            <wm-container width="95%" padding="5px unset" name="container5" borderwidth=".1px"> 
+                                <wm-text fontsize="2" fontunit="em" class="input-lg" color="#000000" readonly="true" disabled="false" datavalue="bind:Variables.svProcFd723pk0DeliveryOutDetails.dataSet.poutDefSrclcn" on-tap="Widgets.SrcLocationsPop.open()" name="txtChooseSrc" height="100%" backgroundcolor="#ffffff" placeholder="Tap to Choose Source Location"></wm-text> 
+                            </wm-container> 
+                            <wm-label fontunit="px" fontsize="18" class="label-info btn-lg" name="lblDesLcn" borderwidth=".1px" borderstyle="solid" bordercolor="#417194" caption="Destination :" padding="unset 0.5em"></wm-label> 
+                            <wm-container width="95%" padding="5px unset" name="container9_1"> 
+                                <wm-text fontsize="2" fontunit="em" class="input-lg" datavalue="bind:Variables.svProcFd723pk0DeliveryOutDetails.dataSet.poutDefDsestMainlcn" on-tap="Widgets.DestLocationsPop.open()" textalign="left" color="#000000" readonly="true" disabled="false" name="txtChooseDestination" height="100%" backgroundcolor="#ffffff" placeholder="Destination"></wm-text> 
+                            </wm-container> 
+                            <wm-label fontunit="px" fontsize="18" class="label-info btn-lg" name="lblUnitDest" borderwidth=".1px" borderstyle="solid" bordercolor="#417194" caption="Section :" padding="unset 0.5em"></wm-label> 
+                            <wm-container width="95%" padding="5px unset" name="container9" borderwidth=".1px"> 
+                                <wm-text fontsize="2" fontunit="em" class="input-lg" datavalue="bind:Variables.svProcFd723pk0DeliveryOutDetails.dataSet.poutDefDestlcn" on-tap="Widgets.UnitDestinationPop.open()" name="txtUnitDest" color="#000000" readonly="true" disabled="bind:Widgets.txtChooseDestination.datavalue==null||Widgets.txtChooseDestination.datavalue==undefined?true:false" height="100%" backgroundcolor="#ffffff" placeholder="Section"></wm-text> 
+                            </wm-container> 
+                            <wm-label fontunit="px" fontsize="18" class="label-info btn-lg" name="label10" borderwidth=".1px" borderstyle="solid" bordercolor="#417194" caption="DN No. :" padding="unset 0.5em"></wm-label> 
+                            <wm-container width="95%" padding="5px unset unset unset" name="container11"> 
+                                <wm-text on-keypress="txtDnNoKeypress($event, $scope)" show="true" class="input-lg" updateon="blur" color="#000000" name="txtDnNo" readonly="false" disabled="false" height="100%" backgroundcolor="#ffffff" placeholder="Enter DN No."></wm-text> 
+                            </wm-container> 
+                        </wm-container> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow20"> 
+                    <wm-gridcolumn padding="10px unset unset 5px" horizontalalign="left" name="gridcolumn20" columnwidth="12"> 
+                        <wm-button textalign="center" width="95%" fontsize="2" fontunit="em" on-tap="Variables.svProcFd723pk0UpdateDeliveryOut.invoke()" show="bind:Widgets.layoutLcnSlt.show==true?true:false" name="btnDeliver" class="btn-default btn-success" caption="Deliver" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow21"> 
+                    <wm-gridcolumn padding="5px unset 5px 5px" horizontalalign="left" name="gridcolumn21" columnwidth="12"> 
+                        <wm-button textalign="center" width="95%" fontunit="em" fontsize="2" on-tap="btnCancelTap($event, $scope)" show="bind:Widgets.btnDyeJob.show==true||Widgets.btnFabSeq.show==true?true:false" name="btnCancel" class="btn-default btn-warning" caption="Cancel" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow22"> 
+                    <wm-gridcolumn padding="unset unset 5px 5px" horizontalalign="left" name="gridcolumn22_1" columnwidth="12"> 
+                        <wm-button textalign="center" width="95%" fontsize="2" fontunit="em" on-tap="Variables.goToPage_FabricIntersectionMenu.invoke()" iconclass="wi wi-keyboard-arrow-left" name="btnDelBackToMain" class="btn-default" caption="Back To Main" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-view name="view1" class="dialog-view"> 
+        <wm-dialog closable="true" width="100%" name="SrcLocationsPop" dialogtype="design-dialog" modal="true" title="Source Locations" iconclass="wi wi-edit-location"> 
+            <wm-layoutgrid name="layoutgrid3"> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow8"> 
+                    <wm-gridcolumn name="gridcolumn22" columnwidth="12"> 
+                        <wm-list pagesize="30" name="listpoutSrc" navigation="Scroll" dataset="bind:Variables.svProcFd723pk0DeliveryOutDetails.dataSet.poutSrclcnList" listclass="list-group" itemsperrow="xs-1 sm-1 md-3 lg-6" template="true" class="list-card"> 
+                            <wm-listtemplate name="listtemplate3" layout="media"> 
+                                <wm-container width="100%" horizontalalign="center" padding="5px" name="container8"> 
+                                    <wm-label on-tap="NameTap($event, $scope, item, currentItemWidgets)" width="100%" fontweight="bold" color="#000000" borderwidth="1px" borderstyle="solid" bordercolor="#417194" textalign="left" fontsize="18" fontunit="px" name="Name" margin="0px unset" caption="bind:Variables.svProcFd723pk0DeliveryOutDetails.dataSet.poutSrclcnList[$i].indexi+&quot;.&quot;+Variables.svProcFd723pk0DeliveryOutDetails.dataSet.poutSrclcnList.srclcncod+&quot;-&quot;+Variables.svProcFd723pk0DeliveryOutDetails.dataSet.poutSrclcnList[$i].lcndes" whitespace="nowrap"></wm-label> 
+                                </wm-container> 
+                            </wm-listtemplate> 
+                        </wm-list> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow12"> 
+                    <wm-gridcolumn padding="unset unset unset 5px" horizontalalign="left" name="gridcolumn12" columnwidth="12"> 
+                        <wm-container backgroundcolor="#ffffff" borderstyle="solid" borderwidth="1px" bordercolor="#417194" width="50%" horizontalalign="center" name="container13" class="col-md-9"> 
+                            <wm-text color="#000000" backgroundcolor="#ffffff" height="100%" maxvalue="bind:Variables.svProcFd723pk0DeliveryOutDetails.dataSet.poutSrclcnList.length+1" minvalue="1" autofocus="true" updateon="default" type="number" on-keypress="txtSrcNoKeypress($event, $scope)" fontsize="18" fontunit="px" class="input-lg" placeholder="SrcNo" name="txtSrcNo"></wm-text> 
+                        </wm-container> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow15"> 
+                    <wm-gridcolumn padding="unset 5px unset unset" horizontalalign="right" name="gridcolumn15_1" columnwidth="12"> 
+                        <wm-button on-tap="button6Tap($event, $scope)" iconclass="wi wi-keyboard-arrow-left" name="button6" class="btn-default" caption="Back" type="button" margin="unset 0.5em"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+    <wm-view name="view2" class="dialog-view"> 
+        <wm-dialog width="100%" name="DestLocationsPop" dialogtype="design-dialog" modal="true" title="Destinations" iconclass="wi wi-edit-location"> 
+            <wm-layoutgrid name="layoutgrid5"> 
+                <wm-gridrow name="gridrow11" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn name="gridcolumn27" columnwidth="12"> 
+                        <wm-list name="livelist3" navigation="Scroll" dataset="bind:Variables.svProcFd723pk0DeliveryOutDetails.dataSet.poutMainDestlcnList" listclass="list-group" itemsperrow="xs-1 sm-1 md-3 lg-6" template="true" class="list-card"> 
+                            <wm-listtemplate name="listtemplate3_1" layout="media"> 
+                                <wm-container width="100%" padding="5px" name="container9_2"> 
+                                    <wm-label on-tap="MainDestTap($event, $scope, item, currentItemWidgets)" width="100%" fontweight="bold" borderwidth="1px" borderstyle="solid" bordercolor="#417194" color="#000000" fontsize="18" fontunit="px" textalign="left" name="MainDest" margin="0px unset" caption="bind:Variables.svProcFd723pk0DeliveryOutDetails.dataSet.poutMainDestlcnList[$i].indexi+&quot;.&quot;+Variables.svProcFd723pk0DeliveryOutDetails.dataSet.poutMainDestlcnList.mainlcncod" whitespace="nowrap"></wm-label> 
+                                </wm-container> 
+                            </wm-listtemplate> 
+                        </wm-list> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow13_1"> 
+                    <wm-gridcolumn padding="unset unset unset 5px" name="gridcolumn13" columnwidth="12"> 
+                        <wm-container borderwidth="1px" borderstyle="solid" bordercolor="#417194" backgroundcolor="#ffffff" name="container13_1" width="50%" horizontalalign="center" class="col-md-9"> 
+                            <wm-text height="100%" backgroundcolor="#ffffff" color="#000000" name="txtDestNo" minvalue="1" autofocus="true" updateon="default" type="number" on-keypress="txtDestNoKeypress($event, $scope)" fontsize="18" fontunit="px" class="input-lg" placeholder="DestNo."></wm-text> 
+                        </wm-container> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow16_2"> 
+                    <wm-gridcolumn padding="unset 5px unset unset" horizontalalign="right" name="gridcolumn16_1" columnwidth="12"> 
+                        <wm-button on-tap="button7Tap($event, $scope)" name="button7" iconclass="wi wi-keyboard-arrow-left" class="btn-default" caption="Back" type="button" margin="unset 0.5em"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+    <wm-view name="view4" class="dialog-view"> 
+        <wm-dialog width="100%" name="UnitDestinationPop" dialogtype="design-dialog" modal="true" title="Sections" iconclass="wi wi-my-location"> 
+            <wm-layoutgrid name="layoutgrid7"> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow16"> 
+                    <wm-gridcolumn name="gridcolumn37" columnwidth="12"> 
+                        <wm-list width="100%" name="livelist3_1" navigation="Scroll" dataset="bind:Variables.statFilterDest.dataSet" listclass="list-group" itemsperrow="xs-1 sm-1 md-3 lg-6" template="true" class="list-card"> 
+                            <wm-listtemplate name="listtemplate3_2" layout="media"> 
+                                <wm-container width="100%" horizontalalign="center" padding="5px" name="container10"> 
+                                    <wm-label on-tap="UnitDestTap($event, $scope, item, currentItemWidgets)" width="100%" fontweight="bold" borderwidth="1px" borderstyle="solid" bordercolor="#417194" fontsize="18" fontunit="px" textalign="left" name="UnitDest" margin="0px unset" caption="bind:Variables.statFilterDest.dataSet[$i].indexi+&quot;.&quot;+Variables.statFilterDest.dataSet[$i].dataValue+&quot;-&quot;+Variables.statFilterDest.dataSet[$i].lcndes" whitespace="nowrap"></wm-label> 
+                                </wm-container> 
+                            </wm-listtemplate> 
+                        </wm-list> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow14"> 
+                    <wm-gridcolumn padding="unset unset unset 5px" name="gridcolumn14" columnwidth="12"> 
+                        <wm-container borderwidth="1px" borderstyle="solid" bordercolor="#417194" name="container14" width="50%" horizontalalign="center" class="col-md-9"> 
+                            <wm-text backgroundcolor="#ffffff" color="#000000" height="100%" name="txtUnitDestNo" minvalue="1" autofocus="true" updateon="default" type="number" on-keypress="txtUnitDestNoKeypress($event, $scope)" fontsize="18" fontunit="px" class="input-lg" placeholder="SecNo."></wm-text> 
+                        </wm-container> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow17_1"> 
+                    <wm-gridcolumn padding="unset 5px unset unset" horizontalalign="right" name="gridcolumn17_1" columnwidth="12"> 
+                        <wm-button on-tap="button8Tap($event, $scope)" name="button8" iconclass="wi wi-keyboard-arrow-left" class="btn-default" caption="Back" type="button" margin="unset 0.5em"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+</wm-page>

@@ -1,0 +1,197 @@
+<wm-page name="page1" data-ng-controller="FabricInspectionCertificatePageController" pagetitle="Fabric Inspection Certificate"> 
+    <wm-content name="content1"> 
+        <wm-page-content accessroles="DYEFLR_INSPECTION" name="page_content1" columnwidth="12"> 
+            <wm-layoutgrid name="layoutgrid1"> 
+                <wm-gridrow name="gridrow1" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn name="gridcolumn1" horizontalalign="center" columnwidth="11"> 
+                        <wm-label name="label1" fontsize="2" fontunit="em" fontweight="bold" class="h3" borderwidth="1.5px" caption="100% Inspection" color="#000000" padding="unset 0.5em"></wm-label> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn2" horizontalalign="right" padding="10px unset unset unset" columnwidth="1"> 
+                        <wm-button name="button1" on-tap="Actions.logoutAction.invoke()" class="btn-default btn-warning" caption="Log Out" type="button" margin="unset 0.5em unset 0.1em"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow2" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn name="gridcolumn3" columnwidth="12"> 
+                        <wm-prefab defaultvalue="bind:pageParams.pBarcode" name="SY1000PF1" on-change="SY1000PF1Change($scope, newVal, oldVal)" width="95%" caption="Scan Qr code" prefabname="SY1000PF"></wm-prefab> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow3" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn name="gridcolumn4" columnwidth="3"></wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn5" columnwidth="6"> 
+                        <wm-layoutgrid name="layoutgrid2"> 
+                            <wm-gridrow name="gridrow4" padding="unset 0px unset unset"> 
+                                <wm-gridcolumn name="gridcolumn6" horizontalalign="center" columnwidth="12"> 
+                                    <wm-label name="lblFabDet" textalign="left" fontsize="14" fontweight="bold" caption="bind:&quot;Fabric Details : &quot;+Variables.svProcFd723pk0GetFabDetails.dataSet.poutDyejobDet.split(&quot;<br>&quot;).join(&quot; &quot;)" borderwidth="1px" backgroundcolor="#ffffff" borderstyle="solid" bordercolor="#1c5c86" padding="unset 0.5em"></wm-label> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                        </wm-layoutgrid> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn8" columnwidth="3"></wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow9"> 
+                    <wm-gridcolumn padding="unset 5% unset unset" name="gridcolumn13" columnwidth="12"> 
+                        <wm-tabs defaultpaneindex="0" show="bind:Widgets.lblFabDet.show === true ? true:false" name="tabs1"> 
+                            <wm-tabpane title="Countable Defects" name="tabpane1"> 
+                                <wm-list padding="10px unset unset unset" name="list1" navigation="None" dataset="bind:Variables.svProcFd107pk0GetInspectionCondList.dataSet.poutCondlist" listclass="list-group" itemsperrow="xs-2 sm-3 md-3 lg-3" template="true" class="list-card panel-primary"> 
+                                    <wm-listtemplate name="listtemplate1" layout="media"> 
+                                        <wm-card name="Picture"> 
+                                            <wm-card-content name="card_content1"> 
+                                                <wm-layoutgrid name="layoutgrid4"> 
+                                                    <wm-gridrow padding="unset 0px unset unset" name="gridrow12"> 
+                                                        <wm-gridcolumn padding="5px unset unset unset" name="gridcolumn17" columnwidth="6"> 
+                                                            <wm-label fontweight="bold" caption="bind:Widgets.list1.currentItem.qualdesc" name="label6" padding="unset 0.5em"></wm-label> 
+                                                        </wm-gridcolumn> 
+                                                        <wm-gridcolumn name="gridcolumn18" columnwidth="6"> 
+                                                            <wm-container horizontalalign="center" name="containerCounter"> 
+                                                                <wm-layoutgrid name="layoutgrid5"> 
+                                                                    <wm-gridrow padding="unset 0px unset unset" name="gridrow15"> 
+                                                                        <wm-gridcolumn padding="unset 0px unset unset" horizontalalign="right" name="gridcolumn22" columnwidth="4"> 
+                                                                            <wm-button accessroles="DYEFLR_INSPECTCONDUPD" on-click="btnCounterSubClick($event, $scope, item, currentItemWidgets)" iconclass="wi wi-minus fa-2x" name="btnCounterSub" class="btn-default btn-primary" caption="" type="button" margin="unset 0em"></wm-button> 
+                                                                        </wm-gridcolumn> 
+                                                                        <wm-gridcolumn padding="unset 0px" name="gridcolumn23" columnwidth="4"> 
+                                                                            <wm-label borderwidth="1px" borderstyle="solid" bordercolor="#134560" caption="bind:Variables.svProcFd107pk0GetInspectionCondList.dataSet.poutCondlist[$i].actval === null || Variables.svProcFd107pk0GetInspectionCondList.dataSet.poutCondlist[$i].actval === undefined ? &quot;0&quot;:Variables.svProcFd107pk0GetInspectionCondList.dataSet.poutCondlist[$i].actval" backgroundcolor="#ffffff" height="26.8" width="100%" margin=".5px unset unset unset" name="label9" padding="0.2em 0.5em unset 0.5em"></wm-label> 
+                                                                        </wm-gridcolumn> 
+                                                                        <wm-gridcolumn padding="unset unset unset 0px" horizontalalign="left" name="gridcolumn26" columnwidth="4"> 
+                                                                            <wm-button accessroles="DYEFLR_INSPECTCONDUPD" on-click="btnCounterAddClick($event, $scope, item, currentItemWidgets)" iconclass="wi wi-add fa-2x" name="btnCounterAdd" class="btn-default btn-primary" caption="" type="button" margin="unset 0.5em unset 0em"></wm-button> 
+                                                                        </wm-gridcolumn> 
+                                                                    </wm-gridrow> 
+                                                                </wm-layoutgrid> 
+                                                            </wm-container> 
+                                                        </wm-gridcolumn> 
+                                                    </wm-gridrow> 
+                                                </wm-layoutgrid> 
+                                            </wm-card-content> 
+                                        </wm-card> 
+                                    </wm-listtemplate> 
+                                </wm-list> 
+                            </wm-tabpane> 
+                            <wm-tabpane title="Defects" name="tabpane2"> 
+                                <wm-list groupby="condcat" padding="10px unset unset unset" name="listtab2" navigation="None" dataset="bind:Variables.svProcFd107pk0GetInspectionCondListTab2.dataSet.poutCondlist" listclass="list-group" itemsperrow="xs-2 sm-3 md-3 lg-3" template="true" class="list-card"> 
+                                    <wm-listtemplate name="listtemplate2" layout="media"> 
+                                        <wm-card name="Picture"> 
+                                            <wm-card-content name="card_content2"> 
+                                                <wm-layoutgrid name="layoutgrid5_1"> 
+                                                    <wm-gridrow padding="unset 0px unset unset" name="gridrow12_1"> 
+                                                        <wm-gridcolumn padding="10px unset unset unset" name="gridcolumn20" columnwidth="6"> 
+                                                            <wm-label fontsize="13" fontweight="bold" name="Name" margin="0px unset" caption="bind:Variables.svProcFd107pk0GetInspectionCondListTab2.dataSet.poutCondlist.qualdesc" whitespace="nowrap"></wm-label> 
+                                                        </wm-gridcolumn> 
+                                                        <wm-gridcolumn name="gridcolumn21" columnwidth="6"> 
+                                                            <wm-radioset disabled="bind:Variables.loggedInUser.dataSet.roles.indexOf(&quot;DYEFLR_INSPECTCONDUPD&quot;)=== -1?true:false" on-change="radioset2Change($event, $scope, item, currentItemWidgets, newVal, oldVal)" selectedvalue="bind:Variables.svProcFd107pk0GetInspectionCondListTab2.dataSet.poutCondlist[$i].actval" datafield="All Fields" dataset="bind:Variables.svProcFd107pk0GetInspectionCondListTab2.dataSet.poutCondlist[$i].condval" show="bind:Variables.svProcFd107pk0GetInspectionCondListTab2.dataSet.poutCondlist[$i].condtype === &quot;TOGGLE&quot;?false:true" layout="inline" name="radioset2" height="auto"></wm-radioset> 
+                                                            <wm-checkbox disabled="bind:Variables.loggedInUser.dataSet.roles.indexOf(&quot;DYEFLR_INSPECTCONDUPD&quot;)=== -1?true:false" on-change="tgleCondChange($event, $scope, item, currentItemWidgets, newVal, oldVal)" show="bind:Variables.svProcFd107pk0GetInspectionCondListTab2.dataSet.poutCondlist[$i].condtype === &quot;TOGGLE&quot;?true:false" checkedvalue="Y" datavalue="bind:Variables.svProcFd107pk0GetInspectionCondListTab2.dataSet.poutCondlist[$i].actval" name="tgleCond" caption="Toggle" type="toggle"></wm-checkbox> 
+                                                        </wm-gridcolumn> 
+                                                    </wm-gridrow> 
+                                                </wm-layoutgrid> 
+                                            </wm-card-content> 
+                                        </wm-card> 
+                                    </wm-listtemplate> 
+                                </wm-list> 
+                            </wm-tabpane> 
+                            <wm-tabpane title="Other Defects" name="tabpane3"> 
+                                <wm-list orderby="cqcondseq:asc" name="list3" groupby="condcat" padding="10px unset unset unset" navigation="None" dataset="bind:Variables.svProcFd107pk0GetInspectionCondListTab3.dataSet.poutCondlist" listclass="list-group" itemsperrow="xs-2 sm-3 md-3 lg-3" template="true" class="list-card"> 
+                                    <wm-listtemplate name="listtemplate3" layout="media"> 
+                                        <wm-card name="card3"> 
+                                            <wm-card-content name="card_content3"> 
+                                                <wm-layoutgrid name="layoutgrid7"> 
+                                                    <wm-gridrow name="gridrow14" padding="unset 0px unset unset"> 
+                                                        <wm-gridcolumn name="gridcolumn25" padding="10px unset unset unset" columnwidth="6"> 
+                                                            <wm-label name="label8" fontsize="13" fontweight="bold" margin="0px unset" caption="bind:Variables.svProcFd107pk0GetInspectionCondListTab3.dataSet.poutCondlist.qualdesc" whitespace="nowrap"></wm-label> 
+                                                        </wm-gridcolumn> 
+                                                        <wm-gridcolumn name="gridcolumn26_1" columnwidth="6"> 
+                                                            <wm-radioset disabled="bind:Variables.loggedInUser.dataSet.roles.indexOf(&quot;DYEFLR_INSPECTCONDUPD&quot;)=== -1?true:false" on-change="radioset3Change($event, $scope, item, currentItemWidgets, newVal, oldVal)" selectedvalue="bind:Variables.svProcFd107pk0GetInspectionCondListTab3.dataSet.poutCondlist[$i].actval" name="radioset3" datafield="All Fields" dataset="bind:Variables.svProcFd107pk0GetInspectionCondListTab3.dataSet.poutCondlist[$i].condval" show="bind:Variables.svProcFd107pk0GetInspectionCondListTab3.dataSet.poutCondlist[$i].condtype === &quot;TOGGLE&quot;?false:true" layout="stacked" height="auto"></wm-radioset> 
+                                                            <wm-checkbox disabled="bind:Variables.loggedInUser.dataSet.roles.indexOf(&quot;DYEFLR_INSPECTCONDUPD&quot;)=== -1?true:false" on-change="toggle3Change($event, $scope, item, currentItemWidgets, newVal, oldVal)" name="toggle3" show="bind:Variables.svProcFd107pk0GetInspectionCondListTab3.dataSet.poutCondlist[$i].condtype === &quot;TOGGLE&quot;?true:false" checkedvalue="Y" datavalue="bind:Variables.svProcFd107pk0GetInspectionCondListTab3.dataSet.poutCondlist[$i].actval" caption="Toggle" type="toggle"></wm-checkbox> 
+                                                        </wm-gridcolumn> 
+                                                    </wm-gridrow> 
+                                                </wm-layoutgrid> 
+                                            </wm-card-content> 
+                                        </wm-card> 
+                                    </wm-listtemplate> 
+                                </wm-list> 
+                            </wm-tabpane> 
+                        </wm-tabs> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow5" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn padding="unset unset unset 10px" name="gridcolumn9" columnwidth="12"> 
+                        <wm-container show="bind:Widgets.lblFabDet.show === true ? true:false" name="container1" padding="5px unset"> 
+                            <wm-label name="label4" fontsize="18" fontunit="px" class="label-info btn-lg" borderwidth="1px" borderstyle="solid" bordercolor="#417194" caption="Remarks  :" padding="unset 0.5em"></wm-label> 
+                            <wm-composite name="composite1" margin="5px unset unset unset"> 
+                                <wm-container name="container2"> 
+                                    <wm-textarea datavalue="bind:Variables.svProcFd107pk0GetInspectionCondList.dataSet.poutCondlist[0].cqremark" name="txtRemarks" placeholder="Type your issues" width="95%"></wm-textarea> 
+                                </wm-container> 
+                            </wm-composite> 
+                        </wm-container> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow6"> 
+                    <wm-gridcolumn padding="10px unset 10px 10px" name="gridcolumn18_1" columnwidth="2"> 
+                        <wm-button accessroles="DYEFLR_REMOVEFAB" on-tap="Variables.svQrySy9200pk0CallWmakerapp.invoke()" showindevice="all" name="btnReject" width="100%" fontsize="2" fontunit="em" show="bind:Widgets.lblFabDet.show === true ? true:false" class="btn-default btn-primary" caption="Remove Fabric" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn10" padding="10px 0px 10px 10px" horizontalalign="left" columnwidth="2"> 
+                        <wm-button accessroles="DYEFLR_INSPECTREPROCESS" name="button11" on-tap="button11Tap($event, $scope)" width="100%" fontsize="2" fontunit="em" show="bind:Widgets.lblFabDet.show === true ? true:false" class="btn-default btn-primary" caption="Reprocess Job" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn padding="10px unset 10px 10px" name="gridcolumn19" columnwidth="2"> 
+                        <wm-button accessroles="DYEFLR_REJECT,DYEFLR_INSPECTREJECT" on-tap="button10_1Tap($event, $scope)" name="button10_1" width="100%" fontsize="2" fontunit="em" show="bind:Widgets.lblFabDet.show === true ? true:false" class="btn-default btn-danger" caption="Reject" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn padding="10px 0px 10px 10px" name="gridcolumn26_2" columnwidth="2"> 
+                        <wm-button accessroles="DYEFLR_SCANPROCESS_SUPERUSR,DYEFLR_INSPECTRELEASE,DYEFLR_INSPECTRELEASEHLD" name="btnHold" on-tap="btnHoldTap($event, $scope)" width="100%" fontsize="2" fontunit="em" show="bind:Widgets.lblFabDet.show === true ? true:false" class="btn-default btn-primary" caption="Hold" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn padding="10px 0px 10px 10px" name="gridcolumn28_1" columnwidth="2"> 
+                        <wm-button accessroles="DYEFLR_SCANPROCESS_SUPERUSR,DYEFLR_INSPECTRELEASE,DYEFLR_INSPECTRELEASEHLD" name="btnRelaese" on-tap="btnRelaeseTap($event, $scope)" width="100%" fontsize="2" fontunit="em" show="bind:Widgets.lblFabDet.show === true ? true:false" class="btn-default btn-success" caption="Release" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow7" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn name="gridcolumn11" padding="10px unset 10px 10px" horizontalalign="left" columnwidth="12"> 
+                        <wm-button name="button3" on-tap="button3Tap($event, $scope)" width="95%" fontsize="2" fontunit="em" show="bind:Widgets.lblFabDet.show === true ? true:false" class="btn-default btn-warning" caption="Cancel" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow8" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn name="gridcolumn12" padding="10px unset 10px 10px" columnwidth="12"> 
+                        <wm-button name="button4" width="95%" fontsize="2" fontunit="em" on-tap="Variables.goToPage_FabricIntersectionMenu.invoke()" iconclass="wi wi-keyboard-arrow-left" class="btn-default" caption="Back To Main" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-view name="view1" class="dialog-view"> 
+        <wm-alertdialog message="I am an alert box!" name="alertdialog1"></wm-alertdialog> 
+    </wm-view> 
+    <wm-view name="view2" class="dialog-view"> 
+        <wm-dialog height="100%" width="100%" name="iframepop" dialogtype="design-dialog" modal="true" title="" iconclass=""> 
+            <wm-layoutgrid name="layoutgrid8"> 
+                <wm-gridrow name="gridrow16"> 
+                    <wm-gridcolumn name="gridcolumn28" columnwidth="12"> 
+                        <wm-iframe name="iframe1" height="500" iframesrc="bind:Variables.statModifyJobUrl.dataSet.dataValue" width="100%"></wm-iframe> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow17"> 
+                    <wm-gridcolumn name="gridcolumn29" padding="10px unset unset unset" horizontalalign="right" columnwidth="12"> 
+                        <wm-button name="button10" class="btn-default btn-lg" caption="Back To Inspection" on-click="Widgets.iframepop.close()"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+    <wm-view name="view3" class="dialog-view"> 
+        <wm-dialog width="100%" name="RejectPop" dialogtype="design-dialog" modal="true" title="Reject Inspection" iconclass="fa fa-close"> 
+            <wm-layoutgrid name="layoutgrid11"> 
+                <wm-gridrow name="gridrow26" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn name="gridcolumn42" columnwidth="12"> 
+                        <wm-container name="container11" content="partRejectSignOff" class="bordered"> 
+                            <wm-param name="pDyejob" value="bind:Variables.svProcFd723pk0GetFabDetails.dataSet.poutDyejob" type="string"></wm-param> 
+                            <wm-param name="pFabseq" value="bind:Variables.svProcFd723pk0GetFabDetails.dataSet.poutFabseq" type="integer"></wm-param> 
+                            <wm-param name="pCqsheetid" value="bind:Variables.svProcFd107pk0GetInspectionCondList.dataSet.poutCondlist[0].cqsheetid" type="string"></wm-param> 
+                            <wm-param name="pAppCall" value="INSP" type="string"></wm-param> 
+                        </wm-container> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow27" padding="unset 0px unset unset"> 
+                    <wm-gridcolumn name="gridcolumn43" columnwidth="4"></wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn44" columnwidth="4"></wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn45" horizontalalign="left" columnwidth="4"> 
+                        <wm-button name="button14" on-tap="Widgets.RejectPop.close()" fontunit="px" fontsize="16" class="btn-default btn-warning btn-lg" caption="Cancel" type="button" margin="unset 0.5em"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+</wm-page>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="QryDelDN">
+        <![CDATA[
+        delete from fdt730_wktdet 
+    where ddelnum = :pDDelNum
+        ]]>
+    <query-param name="pDDelNum" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QryDefEmpcode">
+        <![CDATA[
+        select paycode 
+from rft160 
+where usrid = :p_usrid
+        ]]>
+    <query-param name="p_usrid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QryDefEmpcode__count">
+        <![CDATA[
+        select count(*) from (select paycode 
+from rft160 
+where usrid = :p_usrid) wmTempTable
+        ]]>
+    <query-param name="p_usrid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QryDyejobFabRoutes">
+        <![CDATA[
+        --AG101-V2 Modification: concatenation of sortseq and sortsubseq for new column
+select fdt101.dyejob, fdt101.redye, fdt101.fabseq, fdt101.procseq, fdt101.SORTSEQ,fdt101.SORTSUBSEQ, (fdt101.sortseq || fdt101.sortsubseq) sortsub, fdt101.PROCESS,fdt101.SCNCOD,fdt101.OPTIND,trunc(sysdate) + (fdt101.esthrs/24) EstHrs,fdt101.PROCSTS,fdt101.ACTDAT,fdt101.scanmts, fdt101.startdat,fdt101.procsubsts,
+  fdt101.postcq_req postcqreq,  
+  (select fdt107c.apvsts || ' ' || to_char(fdt107c.trgdat,'dd/mm/yy hh24:mi') from fdt107_cqprocmain fdt107c where fdt107c.cqsheetid = fdt101.postcq_sheetid) signoffrem, fdt101.postcq_cmpdat postcqcmpdat
+from fdt101, fdt100
+where fdt101.dyejob = :dyejob
+ and fdt101.fabseq = :fabseq
+ and fdt100.dyejob = fdt101.dyejob
+ and ((fdt100.redye = fdt101.redye)
+     or (fdt100.redye >  fdt101.redye and fdt101.procsts ='Y'))
+order by fdt101.redye, fdt101.procseq
+        ]]>
+    <query-param name="dyejob" type="java.lang.String"/>
+    <query-param name="fabseq" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QryDyejobFabRoutes__count">
+        <![CDATA[
+        select count(*) from (--AG101-V2 Modification: concatenation of sortseq and sortsubseq for new column
+select fdt101.dyejob, fdt101.redye, fdt101.fabseq, fdt101.procseq, fdt101.SORTSEQ,fdt101.SORTSUBSEQ, (fdt101.sortseq || fdt101.sortsubseq) sortsub, fdt101.PROCESS,fdt101.SCNCOD,fdt101.OPTIND,trunc(sysdate) + (fdt101.esthrs/24) EstHrs,fdt101.PROCSTS,fdt101.ACTDAT,fdt101.scanmts, fdt101.startdat,fdt101.procsubsts,
+  fdt101.postcq_req postcqreq,  
+  (select fdt107c.apvsts || ' ' || to_char(fdt107c.trgdat,'dd/mm/yy hh24:mi') from fdt107_cqprocmain fdt107c where fdt107c.cqsheetid = fdt101.postcq_sheetid) signoffrem, fdt101.postcq_cmpdat postcqcmpdat
+from fdt101, fdt100
+where fdt101.dyejob = :dyejob
+ and fdt101.fabseq = :fabseq
+ and fdt100.dyejob = fdt101.dyejob
+ and ((fdt100.redye = fdt101.redye)
+     or (fdt100.redye >  fdt101.redye and fdt101.procsts ='Y'))
+order by fdt101.redye, fdt101.procseq) wmTempTable
+        ]]>
+    <query-param name="dyejob" type="java.lang.String"/>
+    <query-param name="fabseq" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QrySy9200pk0CallWmakerapp">
+        <![CDATA[
+        select sy9200pk0.sproc_call_wmakerapp(:pWmprogid,:pParamList) as urlwavemaker from dual
+        ]]>
+    <query-param name="pWmprogid" type="java.lang.String"/>
+    <query-param name="pParamList" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QrySy9200pk0CallWmakerapp__count">
+        <![CDATA[
+        select count(*) from (select sy9200pk0.sproc_call_wmakerapp(:pWmprogid,:pParamList) as urlwavemaker from dual) wmTempTable
+        ]]>
+    <query-param name="pWmprogid" type="java.lang.String"/>
+    <query-param name="pParamList" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qyProcessCQRadioset2Values">
+        <![CDATA[
+        SELECT '1.APV' displayvalue,'APV' itemvalue from dual
+UNION ALL SELECT '2.REJ','REJ' from dual
+UNION ALL SELECT '3.NA','NA' from dual
+UNION ALL SELECT '4.HLD','HLD' from dual
+        ]]>
+    </sql-query>
+
+    <sql-query name="qyProcessCQRadioset2Values__count">
+        <![CDATA[
+        select count(*) from (SELECT '1.APV' displayvalue,'APV' itemvalue from dual
+UNION ALL SELECT '2.REJ','REJ' from dual
+UNION ALL SELECT '3.NA','NA' from dual
+UNION ALL SELECT '4.HLD','HLD' from dual) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="qyProcessCQRadiosetValues">
+        <![CDATA[
+        SELECT 'Ok' displayvalue,'APV' itemvalue from dual
+UNION ALL SELECT 'Reject','REJ' from dual
+UNION ALL SELECT 'Hold','HLD' from dual
+        ]]>
+    </sql-query>
+
+    <sql-query name="qyProcessCQRadiosetValues__count">
+        <![CDATA[
+        select count(*) from (SELECT 'Ok' displayvalue,'APV' itemvalue from dual
+UNION ALL SELECT 'Reject','REJ' from dual
+UNION ALL SELECT 'Hold','HLD' from dual) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="QrySignOffReldoubtDyeJobFabRoute">
+        <![CDATA[
+        select fdt101.dyejob, fdt101.redye, fdt101.fabseq, fdt101.procseq, fdt101.SORTSEQ,fdt101.SORTSUBSEQ,fdt101.PROCESS,fdt101.SCNCOD,OPTIND,trunc(sysdate) + (fdt101.esthrs/24) EstHrs,fdt101.PROCSTS,fdt101.ACTDAT,fdt101.scanmts, fdt101.startdat,fdt101.procsubsts,
+  fdt101.postcq_req postcqreq,  
+  (select fdt107c.apvsts || ' ' || to_char(fdt107c.trgdat,'dd/mm/yy hh24:mi') from fdt107_cqprocmain fdt107c where fdt107c.cqsheetid = fdt101.postcq_sheetid) signoffrem, fdt101.postcq_cmpdat postcqcmpdat
+from fdt101, fdt100
+where fdt101.dyejob = :dyejob
+ and fdt101.fabseq = :fabseq
+ and fdt100.dyejob = fdt101.dyejob
+ and ((fdt101.procsts = 'Y' and fdt101.procsubsts = 'TBREL') or fdt101.procsts is null)
+ and ((fdt100.redye = fdt101.redye)
+     or (fdt100.redye >  fdt101.redye and fdt101.procsts ='Y'))
+order by fdt101.redye, fdt101.procseq
+        ]]>
+    <query-param name="dyejob" type="java.lang.String"/>
+    <query-param name="fabseq" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="QrySignOffReldoubtDyeJobFabRoute__count">
+        <![CDATA[
+        select count(*) from (select fdt101.dyejob, fdt101.redye, fdt101.fabseq, fdt101.procseq, fdt101.SORTSEQ,fdt101.SORTSUBSEQ,fdt101.PROCESS,fdt101.SCNCOD,OPTIND,trunc(sysdate) + (fdt101.esthrs/24) EstHrs,fdt101.PROCSTS,fdt101.ACTDAT,fdt101.scanmts, fdt101.startdat,fdt101.procsubsts,
+  fdt101.postcq_req postcqreq,  
+  (select fdt107c.apvsts || ' ' || to_char(fdt107c.trgdat,'dd/mm/yy hh24:mi') from fdt107_cqprocmain fdt107c where fdt107c.cqsheetid = fdt101.postcq_sheetid) signoffrem, fdt101.postcq_cmpdat postcqcmpdat
+from fdt101, fdt100
+where fdt101.dyejob = :dyejob
+ and fdt101.fabseq = :fabseq
+ and fdt100.dyejob = fdt101.dyejob
+ and ((fdt101.procsts = 'Y' and fdt101.procsubsts = 'TBREL') or fdt101.procsts is null)
+ and ((fdt100.redye = fdt101.redye)
+     or (fdt100.redye >  fdt101.redye and fdt101.procsts ='Y'))
+order by fdt101.redye, fdt101.procseq) wmTempTable
+        ]]>
+    <query-param name="dyejob" type="java.lang.String"/>
+    <query-param name="fabseq" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="QryEmployeeCodeSignOff">
+        <![CDATA[
+        select paycode
+from rft160
+where usrid = :p_usrid
+        ]]>
+    <query-param name="p_usrid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QryEmployeeCodeSignOff__count">
+        <![CDATA[
+        select count(*) from (select paycode
+from rft160
+where usrid = :p_usrid) wmTempTable
+        ]]>
+    <query-param name="p_usrid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QryFabseqLOV">
+        <![CDATA[
+        select fabseq
+from fdt150
+where dyejob = :pdyejob
+and wgtreq is null
+        ]]>
+    <query-param name="pdyejob" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QryFabseqLOV__count">
+        <![CDATA[
+        select count(*) from (select fabseq
+from fdt150
+where dyejob = :pdyejob
+and wgtreq is null) wmTempTable
+        ]]>
+    <query-param name="pdyejob" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QrySignOffRejectDyeJobFabRoute">
+        <![CDATA[
+        select fdt101.dyejob, fdt101.redye, fdt101.fabseq, fdt101.procseq, fdt101.SORTSEQ,fdt101.SORTSUBSEQ,fdt101.PROCESS,fdt101.SCNCOD,OPTIND,trunc(sysdate) + (fdt101.esthrs/24) EstHrs,fdt101.PROCSTS,fdt101.ACTDAT,fdt101.scanmts, fdt101.startdat,fdt101.procsubsts,
+  fdt101.postcq_req postcqreq,  
+  (select fdt107c.apvsts || ' ' || to_char(fdt107c.trgdat,'dd/mm/yy hh24:mi') from fdt107_cqprocmain fdt107c where fdt107c.cqsheetid = fdt101.postcq_sheetid) signoffrem, fdt101.postcq_cmpdat postcqcmpdat
+from fdt101, fdt100
+where fdt101.dyejob = :dyejob
+and fdt101.fabseq = :fabseq
+and fdt100.dyejob = fdt101.dyejob
+and fdt100.redye = fdt101.redye
+and fdt101.procsts is null
+and fdt101.startprocsts is null
+order by fdt101.redye, fdt101.procseq
+        ]]>
+    <query-param name="dyejob" type="java.lang.String"/>
+    <query-param name="fabseq" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="QrySignOffRejectDyeJobFabRoute__count">
+        <![CDATA[
+        select count(*) from (select fdt101.dyejob, fdt101.redye, fdt101.fabseq, fdt101.procseq, fdt101.SORTSEQ,fdt101.SORTSUBSEQ,fdt101.PROCESS,fdt101.SCNCOD,OPTIND,trunc(sysdate) + (fdt101.esthrs/24) EstHrs,fdt101.PROCSTS,fdt101.ACTDAT,fdt101.scanmts, fdt101.startdat,fdt101.procsubsts,
+  fdt101.postcq_req postcqreq,  
+  (select fdt107c.apvsts || ' ' || to_char(fdt107c.trgdat,'dd/mm/yy hh24:mi') from fdt107_cqprocmain fdt107c where fdt107c.cqsheetid = fdt101.postcq_sheetid) signoffrem, fdt101.postcq_cmpdat postcqcmpdat
+from fdt101, fdt100
+where fdt101.dyejob = :dyejob
+and fdt101.fabseq = :fabseq
+and fdt100.dyejob = fdt101.dyejob
+and fdt100.redye = fdt101.redye
+and fdt101.procsts is null
+and fdt101.startprocsts is null
+order by fdt101.redye, fdt101.procseq) wmTempTable
+        ]]>
+    <query-param name="dyejob" type="java.lang.String"/>
+    <query-param name="fabseq" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="QryCheckEmpcode">
+        <![CDATA[
+        select wrknam
+from rft270
+where wrkid = :p_usrid
+and  scncod in ('DY','FN')
+and wrksts is null
+        ]]>
+    <query-param name="p_usrid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QryCheckEmpcode__count">
+        <![CDATA[
+        select count(*) from (select wrknam
+from rft270
+where wrkid = :p_usrid
+and  scncod in ('DY','FN')
+and wrksts is null) wmTempTable
+        ]]>
+    <query-param name="p_usrid" type="java.lang.String"/>
+    </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<wm-partial name="partial1" data-ng-controller="partRejectSignOffPageController"> 
+    <wm-layoutgrid name="layoutgrid1"> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow4"> 
+            <wm-gridcolumn name="gridcolumn8" columnwidth="3"> 
+                <wm-label backgroundcolor="#ffffff" caption="Choose Reject Reason :" fontweight="bold" fontsize="18" fontunit="px" name="label14" padding="unset 0.5em"></wm-label> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn padding="5px unset unset unset" name="gridcolumn9" columnwidth="5"> 
+                <wm-search displaylabel="description" datafield="rejcod" dataset="bind:Variables.svSprocFd107pk0_cqprocGetRejCod.dataSet.poutRejcodLov" type="autocomplete" class="input-group-lg" name="searchRejCod"></wm-search> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn10" columnwidth="4"></wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow name="gridrow1" padding="unset 0px unset unset"> 
+            <wm-gridcolumn name="gridcolumn1" columnwidth="12"> 
+                <wm-label name="label1" caption="Choose which process to keep after reject :" fontweight="bold" backgroundcolor="#ffffff" fontunit="px" fontsize="18" padding="unset 0.5em"></wm-label> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow name="gridrow2" padding="unset 0px unset unset"> 
+            <wm-gridcolumn columnwidth="1" name="gridcolumn7"> 
+                <wm-label padding="unset 0.5em" name="label3" caption="bind:'Job<br>' + pageParams.pDyejob + '<br>' + ' Fb ' + pageParams.pFabseq" class="col-md-12"></wm-label> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn2" columnwidth="11"> 
+                <wm-list name="list1" navigation="None" dataset="bind:Variables.svQrySignOffDyeJobFabRoute.dataSet" listclass="list-group" itemsperrow="xs-2 sm-3 md-6 lg-6" template="true" class="list-card" loadingicon=""> 
+                    <wm-listtemplate name="listtemplate1" layout="media"> 
+                        <wm-container name="container1" padding="5px"> 
+                            <wm-button iconclass="bind:currentItemWidgets.cbSelected.caption === &quot;Y&quot;?&quot;wi wi-check fa-lg&quot;:&quot;&quot;" on-tap="btnRejectProcessTap($event, $scope, item, currentItemWidgets)" fontweight="bold" fontsize="12" fontunit="pt" conditionalclass="bind:Widgets.list1.currentItem.procsubsts === &quot;CMP&quot;?&quot;cmp&quot;:Widgets.list1.currentItem.procsubsts === &quot;TDEL&quot;?&quot;todel&quot;:Widgets.list1.currentItem.procsubsts === &quot;TRCV&quot;?&quot;torec&quot;:Widgets.list1.currentItem.procsubsts === &quot;WIP&quot;?&quot;wip&quot;:Widgets.list1.currentItem.procsubsts === &quot;QUE&quot;?&quot;trg&quot;:Widgets.list1.currentItem.procsubsts === &quot;TBREL&quot; ? &quot;red-d2&quot; : &quot;grey-l3&quot;" width="140" name="btnRejectProcess" caption="bind:Variables.svQrySignOffDyeJobFabRoute.dataSet[$i].procseq+&quot;.&quot;+Variables.svQrySignOffDyeJobFabRoute.dataSet[$i].process" type="button" margin="unset 0.5em unset unset"></wm-button> 
+                        </wm-container> 
+                        <wm-label show="false" caption="N" name="cbSelected" padding="unset 0.5em"></wm-label> 
+                    </wm-listtemplate> 
+                </wm-list> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow3"> 
+            <wm-gridcolumn name="gridcolumn3" columnwidth="3"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn4" columnwidth="3"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn5" columnwidth="3"></wm-gridcolumn> 
+            <wm-gridcolumn horizontalalign="right" name="gridcolumn6" columnwidth="3"> 
+                <wm-button on-tap="button15Tap($event, $scope)" name="button15" fontunit="em" fontsize="2" class="btn-default btn-success btn-lg" caption="Save" type="button" margin="unset 0.5em 0.2em 0.5em"></wm-button> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+    </wm-layoutgrid> 
+</wm-partial>

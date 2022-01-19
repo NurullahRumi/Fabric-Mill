@@ -1,0 +1,15 @@
+.wm-app .dropdown-menu {
+   width: auto !important;
+   font-size: 15px !important;
+}
+.wm-app .dropdown-menu > li > a {
+  padding: 20px 20px !important;
+}
+
+.wm-app .input-lg {
+    /*height: 23.6px;*/
+    padding: 1px 1px!important;
+    /*font-size: 15px;*/
+    /*line-height: 1.3333333;*/
+    border-radius: 3px !important;
+}

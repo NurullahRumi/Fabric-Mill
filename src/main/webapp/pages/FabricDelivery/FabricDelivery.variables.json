@@ -1,0 +1,527 @@
+{
+  "notifMsg" : {
+    "_id" : "wm-notifM-wm.NotificationVariable-1562575514972",
+    "name" : "notifMsg",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ ],
+    "operation" : "alert"
+  },
+  "statDNDestScn" : {
+    "_id" : "wm-statDNDestScn-wm.Variable-1564050221254",
+    "name" : "statDNDestScn",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statPrgid" : {
+    "_id" : "wm-statPrgid-wm.Variable-1491891982656",
+    "name" : "statPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "FD1015W09"
+    } ],
+    "dataSet" : {
+      "dataValue" : "FD1015W09"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statPrgName" : {
+    "_id" : "wm-statPrgname-wm.Variable-1491892002592",
+    "name" : "statPrgName",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "Fabric Delivery"
+    } ],
+    "dataSet" : {
+      "dataValue" : "Fabric Delivery"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statQryDelDN" : {
+    "_id" : "wm-svQryDelDN-wm.ServiceVariable-1563520121950",
+    "name" : "statQryDelDN",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pDDelNum",
+      "value" : "bind:Widgets.listDN.selecteditem.ddelnum",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "pfsdb",
+    "operation" : "executeQryDelDN",
+    "operationId" : "QueryExecutionController_executeQryDelDN",
+    "operationType" : "delete",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "statQryDelDNonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "statSelectedDN" : {
+    "_id" : "wm-statSelectedDN-wm.Variable-1564045141964",
+    "name" : "statSelectedDN",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statSelectedJobIndex" : {
+    "_id" : "wm-statselectedJobIndex-wm.Variable-1564044504710",
+    "name" : "statSelectedJobIndex",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svProcFD730WPK0_DelDeliveredJobs" : {
+    "_id" : "wm-svProcFD730WPK0_DelDeliveredJobs-wm.ServiceVariable-1562156453846",
+    "name" : "svProcFD730WPK0_DelDeliveredJobs",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgId",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pDDelNum",
+      "value" : "bind:Widgets.listDN.selecteditem.ddelnum",
+      "type" : "string"
+    }, {
+      "target" : "pDyejob",
+      "value" : "bind:Widgets.listDyeJobs.selecteditem.dyejob",
+      "type" : "string"
+    }, {
+      "target" : "pFabseq",
+      "value" : "bind:Widgets.listDyeJobs.selecteditem.fabseq",
+      "type" : "integer"
+    }, {
+      "target" : "pRedye",
+      "value" : "bind:Widgets.listDyeJobs.selecteditem.redye",
+      "type" : "integer"
+    } ],
+    "service" : "pfsdb",
+    "operation" : "executeProcFD730WPK0_DelDeliveredJobs",
+    "operationId" : "ProcedureExecutionController_executeProcFD730WPK0_DelDeliveredJobs",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onBeforeUpdate" : "svProcFD730WPK0_DelDeliveredJobsonBeforeUpdate($event, $scope)",
+    "onSuccess" : "svProcFD730WPK0_DelDeliveredJobsonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFD730WPK0_DelDN" : {
+    "_id" : "wm-svProcFD730WPK0_DelDN-wm.ServiceVariable-1563181146750",
+    "name" : "svProcFD730WPK0_DelDN",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgId",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pDDelNum",
+      "value" : "bind:Widgets.listDN.selecteditem.ddelnum",
+      "type" : "string"
+    } ],
+    "service" : "pfsdb",
+    "operation" : "executeProcFD730WPK0_DelDN",
+    "operationId" : "ProcedureExecutionController_executeProcFD730WPK0_DelDN",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Javascript",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFD730WPK0_GetDelDestLOV" : {
+    "_id" : "wm-svProcFD730WPK0_GetDelDestLOV-wm.ServiceVariable-1562225011530",
+    "name" : "svProcFD730WPK0_GetDelDestLOV",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgId",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pRackbin",
+      "value" : "bind:Widgets.searchRackbin.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd730wpk0GetDelDestLovResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFD730WPK0_GetDelDestLOV",
+    "operationId" : "ProcedureExecutionController_executeProcFD730WPK0_GetDelDestLOV",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onBeforeUpdate" : "svProcFD730WPK0_GetDelDestLOVonBeforeUpdate($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFD730WPK0_GetDelivery" : {
+    "_id" : "wm-sProcFD730WPK0_GetDelivery-wm.ServiceVariable-1562674870226",
+    "name" : "svProcFD730WPK0_GetDelivery",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgId",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pRackbin",
+      "value" : "bind:Widgets.searchRackbin.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd730wpk0GetDeliveryResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFD730WPK0_GetDelivery",
+    "operationId" : "ProcedureExecutionController_executeProcFD730WPK0_GetDelivery",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onBeforeUpdate" : "svProcFD730WPK0_GetDeliveryonBeforeUpdate($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFD730WPK0_GetDeliveryDet" : {
+    "_id" : "wm-svFD730WPK0_GetDeliveryDet-wm.ServiceVariable-1561625824434",
+    "name" : "svProcFD730WPK0_GetDeliveryDet",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pDDelNum",
+      "value" : "bind:Widgets.listDN.selecteditem.ddelnum",
+      "type" : "string"
+    }, {
+      "target" : "pRackbin",
+      "value" : "bind:Widgets.searchRackbin.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pPrgId",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd730wpk0GetDeliveryDetResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFD730WPK0_GetDeliveryDet",
+    "operationId" : "ProcedureExecutionController_executeProcFD730WPK0_GetDeliveryDet",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onBeforeUpdate" : "svProcFD730WPK0_GetDeliveryDetonBeforeUpdate($event, $scope)",
+    "onSuccess" : "svProcFD730WPK0_GetDeliveryDetonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFD730WPK0_GetLastLocation" : {
+    "_id" : "wm-svProcFD730WPK0_GetLastLocation-wm.ServiceVariable-1562934853258",
+    "name" : "svProcFD730WPK0_GetLastLocation",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgId",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd730wpk0GetLastLocationResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFD730WPK0_GetLastLocation",
+    "operationId" : "ProcedureExecutionController_executeProcFD730WPK0_GetLastLocation",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onResult" : "svProcFD730WPK0_GetLastLocationonResult($event, $scope)",
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFD730WPK0_GetRackbin" : {
+    "_id" : "wm-svProcFD730WPK0_GetRackbin-wm.ServiceVariable-1561697600998",
+    "name" : "svProcFD730WPK0_GetRackbin",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgId",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd730wpk0GetRackbinResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFD730WPK0_GetRackbin",
+    "operationId" : "ProcedureExecutionController_executeProcFD730WPK0_GetRackbin",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onBeforeUpdate" : "svProcFD730WPK0_GetRackbinonBeforeUpdate($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFD730WPK0_GetUndeliveredJobs" : {
+    "_id" : "wm-svProcFD730WPK0_GetUndeliveredJobs-wm.ServiceVariable-1561978154726",
+    "name" : "svProcFD730WPK0_GetUndeliveredJobs",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pRackbin",
+      "value" : "bind:Widgets.searchRackbin.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pPrgId",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "p_DestScn",
+      "value" : "bind:Variables.statDNDestScn.dataSet.dataValue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd730wpk0GetUndeliveredJobsResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFD730WPK0_GetUndeliveredJobs",
+    "operationId" : "ProcedureExecutionController_executeProcFD730WPK0_GetUndeliveredJobs",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onBeforeUpdate" : "svProcFD730WPK0_GetUndeliveredJobsonBeforeUpdate($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFD730WPK0_InsDeliveredJobs" : {
+    "_id" : "wm-svProcFD730WPK0_InsDeliveredJobs-wm.ServiceVariable-1562140832618",
+    "name" : "svProcFD730WPK0_InsDeliveredJobs",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "service" : "pfsdb",
+    "operation" : "executeProcFD730WPK0_InsDeliveredJobs",
+    "operationId" : "ProcedureExecutionController_executeProcFD730WPK0_InsDeliveredJobs",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcFD730WPK0_InsDeliveredJobsonSuccess($event, $scope);svProcFD730WPK0_InsDeliveredJobsonSuccess1($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFD730WPK0_InsNewDN" : {
+    "_id" : "wm-svProcFD730WPK0_InsNewDN-wm.ServiceVariable-1562841768106",
+    "name" : "svProcFD730WPK0_InsNewDN",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgId",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pDesLcn",
+      "value" : "bind:Widgets.selectAddDestLcn.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pRackbin",
+      "value" : "bind:Widgets.searchRackbin.datavalue",
+      "type" : "string"
+    } ],
+    "service" : "pfsdb",
+    "operation" : "executeProcFD730WPK0_InsNewDN",
+    "operationId" : "ProcedureExecutionController_executeProcFD730WPK0_InsNewDN",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFD730WPK0_InsScanDyejobFab" : {
+    "_id" : "wm-svProcFD730WPK0_GetScanDyejobFab-wm.ServiceVariable-1563434561952",
+    "name" : "svProcFD730WPK0_InsScanDyejobFab",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgId",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pBarcode",
+      "value" : "bind:Widgets.txtItemBarcode.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pRackbin",
+      "value" : "bind:Widgets.searchRackbin.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pDDelNum",
+      "value" : "bind:Widgets.listDN.selecteditem.ddelnum",
+      "type" : "string"
+    }, {
+      "target" : "p_DestScn",
+      "value" : "bind:Variables.statDNDestScn.dataSet.dataValue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd730wpk0InsScanDyejobFabResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFD730WPK0_InsScanDyejobFab",
+    "operationId" : "ProcedureExecutionController_executeProcFD730WPK0_InsScanDyejobFab",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcFD730WPK0_InsScanDyejobFabonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svUpdateProcFD730WPK0_UpdJobCount" : {
+    "_id" : "wm-svUpdateProcFD730WPK0_UpdJobCount-wm.ServiceVariable-1563176950478",
+    "name" : "svUpdateProcFD730WPK0_UpdJobCount",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pDDelNum",
+      "value" : "bind:Widgets.listDN.selecteditem.ddelnum",
+      "type" : "string"
+    }, {
+      "target" : "pPrgId",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    } ],
+    "service" : "pfsdb",
+    "operation" : "executeUpdateProcFD730WPK0_UpdJobCount",
+    "operationId" : "ProcedureExecutionController_executeUpdateProcFD730WPK0_UpdJobCount",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onCanUpdate" : "svUpdateProcFD730WPK0_UpdJobCountonCanUpdate($event, $scope)",
+    "onBeforeUpdate" : "svUpdateProcFD730WPK0_UpdJobCountonBeforeUpdate($event, $scope)",
+    "onSuccess" : "svUpdateProcFD730WPK0_UpdJobCountonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svUpdateProcFD730WPK_LastRackbin" : {
+    "_id" : "wm-svUpdateProcFD730WPK_LastRackbin-wm.ServiceVariable-1562930731074",
+    "name" : "svUpdateProcFD730WPK_LastRackbin",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgId",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pRackbin",
+      "value" : "bind:Widgets.searchRackbin.datavalue",
+      "type" : "string"
+    } ],
+    "service" : "pfsdb",
+    "operation" : "executeUpdateProcFD730WPK_LastRackbin",
+    "operationId" : "ProcedureExecutionController_executeUpdateProcFD730WPK_LastRackbin",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

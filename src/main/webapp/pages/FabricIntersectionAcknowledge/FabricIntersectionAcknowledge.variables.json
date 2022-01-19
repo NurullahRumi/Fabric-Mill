@@ -1,0 +1,77 @@
+{
+  "statPrgid" : {
+    "_id" : "wm-statPrgid-wm.Variable-1510651100146",
+    "name" : "statPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "FD1005W02",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svProcFd723pk0GetDeliveryInDetails" : {
+    "_id" : "wm-svProcFd723pk0GetDeliveryInDetails-wm.ServiceVariable-1510649858295",
+    "name" : "svProcFd723pk0GetDeliveryInDetails",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pUsrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue == \"\" ?pageParams.pGenid:Variables.statAppUsrid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pBarcode",
+      "value" : "bind:Widgets.txtBarcode.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd723pk0getDeliveryInDetailsResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd723pk0GetDeliveryInDetails",
+    "operationId" : "ProcedureExecutionController_executeProcFd723pk0GetDeliveryInDetails",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcFd723pk0GetDeliveryInDetailsonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFd723pk0UpdateDeliveryIn" : {
+    "_id" : "wm-svProcFd723pk0UpdateDeliveryIn-wm.ServiceVariable-1510659909414",
+    "name" : "svProcFd723pk0UpdateDeliveryIn",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd723pk0updateDeliveryInResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd723pk0UpdateDeliveryIn",
+    "operationId" : "ProcedureExecutionController_executeProcFd723pk0UpdateDeliveryIn",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcFd723pk0UpdateDeliveryInonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

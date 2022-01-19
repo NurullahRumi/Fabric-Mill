@@ -1,0 +1,139 @@
+{
+  "statPrgid" : {
+    "_id" : "wm-statPrgid-wm.Variable-1511524677738",
+    "name" : "statPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "FD1015W08",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statStsTyp" : {
+    "_id" : "wm-statStsTyp-wm.Variable-1548141698443",
+    "name" : "statStsTyp",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "itemcod" : "TBREL",
+      "itemdes" : "Sign-Off"
+    }, {
+      "itemcod" : "HLD",
+      "itemdes" : "Held"
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "svProcFd107pk0_cqprocCqPendingList" : {
+    "_id" : "wm-svProcFd107pk0_cqprocCqPendingList-wm.ServiceVariable-1511524554740",
+    "name" : "svProcFd107pk0_cqprocCqPendingList",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pUsrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue ",
+      "type" : "string"
+    }, {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pStatusType",
+      "value" : "bind:Widgets.radioset1.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pProcess",
+      "value" : "bind:Widgets.sltProcess.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pLocation",
+      "value" : "bind:Widgets.select2.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd107pk0CqprocCqPendingListResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd107pk0_cqprocCqPendingList",
+    "operationId" : "ProcedureExecutionController_executeProcFd107pk0_cqprocCqPendingList",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Javascript",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFd107pk0_cqprocGetLocationList" : {
+    "_id" : "wm-svProcFd107pk0_cqprocGetLocationList-wm.ServiceVariable-1553581542012",
+    "name" : "svProcFd107pk0_cqprocGetLocationList",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pUsrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd107pk0CqprocGetLocationListResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd107pk0_cqprocGetLocationList",
+    "operationId" : "ProcedureExecutionController_executeProcFd107pk0_cqprocGetLocationList",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFd107pk0_cqprocGetProcessList" : {
+    "_id" : "wm-svProcFd107pk0_cqprocGetProcessList-wm.ServiceVariable-1549864980811",
+    "name" : "svProcFd107pk0_cqprocGetProcessList",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pUsrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd107pk0CqprocGetProcessListResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd107pk0_cqprocGetProcessList",
+    "operationId" : "ProcedureExecutionController_executeProcFd107pk0_cqprocGetProcessList",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

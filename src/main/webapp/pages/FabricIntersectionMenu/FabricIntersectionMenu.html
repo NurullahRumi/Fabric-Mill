@@ -1,0 +1,189 @@
+<wm-page name="page1" data-ng-controller="FabricIntersectionMenuPageController" pagetitle="Fabric Intersection Menu">
+    <wm-content name="content1">
+        <wm-page-content name="page_content1" columnwidth="12">
+            <wm-layoutgrid show="bind:(Variables.svProcFd107pk0_cqprocCheckUser.dataSet.poutUserid === null || Variables.svProcFd107pk0_cqprocCheckUser.dataSet.poutUserid === undefined || Variables.svProcFd107pk0_cqprocCheckUser.dataSet.poutUserid === &quot;&quot; ) &amp;&amp; (Variables.loggedInUser.dataSet.name === undefined || Variables.loggedInUser.dataSet.name === &quot;&quot; || Variables.loggedInUser.dataSet.name === null)? true : true"
+                width="95%" height="100%" class="bordered" name="layoutgrid1">
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow1">
+                    <wm-gridcolumn padding="5px unset unset unset" name="gridcolumn31_1" columnwidth="1">
+                        <wm-button name="btnLogin" show="bind:Variables.statAppUsrid.dataSet.dataValue === &quot;&quot; || Variables.statAppUsrid.dataSet.dataValue === undefined ||Variables.statAppUsrid.dataSet.dataValue === null ?true:false" on-tap="Actions.goToPage_authenticate_user.invoke()"
+                            class="btn-default btn-lg btn-primary" caption="Sign In" type="button" margin="unset 0.5em"></wm-button>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn padding="5px unset unset unset" horizontalalign="center" name="gridcolumn2" columnwidth="9">
+                        <wm-label fontsize="2" fontunit="em" fontweight="bold" class="h3" name="lblMenuHeader" borderwidth="1.5px" caption="Fabric Scanning Menu" color="#000000" padding="unset 0.5em unset 5em"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn horizontalalign="center" padding="10px unset unset unset" name="gridcolumn29" columnwidth="2">
+                        <wm-label caption="bind:&quot;Operator <br> &quot;+Variables.statOperatorName.dataSet.dataValue+&quot;<br>&quot; + Variables.statOperator.dataSet.dataValue" fontweight="bold" name="lblOperator" padding="unset 0.5em"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow9">
+                    <wm-gridcolumn name="gridcolumn32" columnwidth="3">
+                        <wm-label show="false" caption="bind:Variables.svProcFd107pk0_cqprocCheckUser.dataSet.poutUserid" name="lblUser" class="col-md-3 control-label"></wm-label>
+                        <wm-label name="lblAPPKEY" show="false" caption="bind:pageParams.pappky" class="col-md-3 control-label"></wm-label>
+                        <wm-label show="false" caption="bind:Variables.svProcFd724pk0CheckEmpCode.dataSet.pempname" name="lblOperatorName" padding="unset 0.5em"></wm-label>
+                        <wm-label show="false" caption="bind:Variables.svProcFd724pk0CheckEmpCode.dataSet.pempcode" name="lblOperatorEmpcode" padding="unset 0.5em"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn horizontalalign="center" name="gridcolumn10" columnwidth="6">
+                        <wm-prefab on-change="SY1000PF1Change($scope, newVal, oldVal)" caption="Scan Qr Code" name="SY1000PF1" prefabname="SY1000PF"></wm-prefab>
+                        <wm-layoutgrid name="layoutgrid6">
+                            <wm-gridrow padding="unset 0px unset unset" name="gridrow15_1">
+                                <wm-gridcolumn name="gridcolumn27" columnwidth="4">
+                                    <wm-label textalign="left" fontsize="14" fontweight="bold" caption="bind:&quot;Fabric Details <br>&quot;+Variables.svProcFd723pk0GetFabDetails.dataSet.poutDyejobDet" borderwidth="1px" backgroundcolor="#ffffff" borderstyle="solid"
+                                        bordercolor="#1c5c86" name="lblDet" padding="unset 0.5em"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn name="gridcolumn28_1" columnwidth="5">
+                                    <wm-label show="bind:Widgets.lblDet.show === true?true:false
+" name="lblStsdet" textalign="left" on-click="lblStsdetClick($event, $scope)" fontsize="14" fontweight="bold" caption="bind:&quot;Process Details <br>&quot;+Variables.svProcFd723pk0GetFabDetails.dataSet.pouStsDet" borderwidth="1px" backgroundcolor="#ffffff"
+                                        borderstyle="solid" bordercolor="#1c5c86" padding="unset 0.5em"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn name="gridcolumn31" columnwidth="3">
+                                    <wm-button show="bind:Widgets.lblDet.show === true?true:false" on-tap="Widgets.FabHisPop.open();Variables.svQryDyejobFabRoutes.invoke()" name="btnViewHis" class="btn-default btn-primary col-md-12 btn-lg" caption="Fab History"
+                                        type="button" margin="unset 0.5em"></wm-button>
+                                    <wm-button show="bind:Widgets.lblDet.show === true?true:false" name="btnWO" class="btn-default btn-primary col-md-12 btn-lg btn-success" caption="W/O" type="button" margin="1em 0.5em" on-click="Actions.goToPage_FabricProcessWorkOrder.invoke()"></wm-button>
+                                    <wm-label padding="0.5em" name="label13" caption="bind:Variables.svProcFd723pk0GetFabDetails.dataSet.poutDoubtful" class="doubtful ProcStsborder" margin="2px unset unset unset" fontsize="14" show="bind:Widgets.lblDet.show === true &amp;&amp; (!!Variables.svProcFd723pk0GetFabDetails.dataSet.poutDoubtful)?true:false "
+                                        fontweight="bold"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn name="gridcolumn9" columnwidth="3"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow9_1">
+                    <wm-gridcolumn horizontalalign="center" name="gridcolumn10_1" columnwidth="3"></wm-gridcolumn>
+                    <wm-gridcolumn name="gridcolumn14_1" columnwidth="6">
+                        <wm-container horizontalalign="center" borderwidth="1px" borderstyle="solid" bordercolor="#144b6c" name="container3">
+                            <wm-layoutgrid name="layoutgrid3">
+                                <wm-gridrow padding="unset 0px unset unset" name="gridrow12">
+                                    <wm-gridcolumn padding="unset unset 1px unset" name="gridcolumn17_1" columnwidth="12">
+                                        <wm-label name="label8" fontsize="12" fontunit="px" fontweight="bold" borderwidth="1.5px" caption="PROCESS SCAN" color="#000000" padding="unset 0.5em" width="75%"></wm-label>
+                                        <wm-button fontunit="em" fontsize="2" accessroles="Everyone" fontweight="bold" on-tap="Variables.goToPage_FabricProcessScan.invoke()" name="btnGoToProcessScan" class="btn-default btn-primary btn-lg" caption="Scan"
+                                            type="button" width="75%" margin="unset unset 10px unset"></wm-button>
+                                        <wm-button fontunit="em" fontsize="2" accessroles="DYEFLR_REMOVEFAB" fontweight="bold" on-tap="btnRemoveFabricTap($event, $scope)" name="btnRemoveFabric" class="btn-default btn-primary btn-lg" caption="Remove Fabric"
+                                            type="button" width="75%" margin="unset unset 10px unset"></wm-button>
+                                        <wm-button class="btn-default btn-primary btn-lg" caption="Scan Batch Weight" type="button" name="BtnBatchWgt" fontsize="2" fontunit="em" fontweight="bold" on-tap="BtnBatchWgtTap($event, $scope)" width="75%"
+                                            show="bind:Widgets.lblOperatorEmpcode.caption ? true : false"></wm-button>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn name="gridcolumn13" columnwidth="3"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow padding="5px 0px unset unset" name="gridrow14">
+                    <wm-gridcolumn name="gridcolumn17_2" columnwidth="3"></wm-gridcolumn>
+                    <wm-gridcolumn name="gridcolumn19" columnwidth="6">
+                        <wm-container name="container4" horizontalalign="center" borderwidth="1px" borderstyle="solid" bordercolor="#144b6c">
+                            <wm-layoutgrid name="layoutgrid3_1">
+                                <wm-gridrow padding="unset 0px unset unset" name="gridrow16">
+                                    <wm-gridcolumn name="gridcolumn24" columnwidth="12" padding="unset unset 1.5px unset">
+                                        <wm-label name="label6" fontsize="12" fontunit="px" fontweight="bold" borderwidth="1.5px" caption="PROCESS SIGN-OFF" color="#000000" padding="unset 0.5em" width="75%"></wm-label>
+                                        <wm-button accessroles="DYEFLR_INSPECTCONDUPD,DYEFLR_INSPECTREJECT,DYEFLR_INSPECTRELEASE,DYEFLR_INSPECTRELEASEHLD,DYEFLR_INSPECTREPROCESS,DYEFLR_RELDOUBT,DYEFLR_RELEASE,DYEFLR_RELEASEHLD,DYEFLR_RELREJECT,DYEFLR_RELREPROCESS,DYEFLR_REMOVEFAB,DYEFLR_REQSIGNOFF,DYEFLR_SCANPROCESS_SUPERUSR"
+                                            show="true" name="btnFlag" margin="unset unset 10px unset" on-tap="Actions.goToPage_FabricIntersectionIssues.invoke()" fontsize="2" fontunit="em" fontweight="bold" width="75%" class="btn-default btn-primary btn-lg"
+                                            caption="Flag Issues" type="button"></wm-button>
+                                        <wm-button accessroles="Everyone" margin="unset unset 10px 5px" on-tap="Variables.goToPage_FabricProcessCQ.invoke()" fontsize="2" fontunit="em" fontweight="bold" name="btnGoToProcessCQ" width="75%" class="btn-default btn-primary btn-lg"
+                                            caption="Sign-Off" type="button"></wm-button>
+                                        <wm-button show="true" accessroles="DYEFLR_RELREJECT,DYEFLR_RELREPROCESS,DYEFLR_RELEASEHLD,DYEFLR_RELEASE,DYEFLR_INSPECTRELEASE,DYEFLR_INSPECTREJECT,DYEFLR_INSPECTRELEASEHLD,DYEFLR_INSPECTREPROCESS,DYEFLR_INSPECTCONDUPD,DYEFLR_SCANPROCESS_SUPERUSR,DYEFLR_RELDOUBT,DYEFLR_REQSIGNOFF,DYEFLR_QRYSIGNOFFLIST"
+                                            margin="unset unset 10px unset" fontsize="2" fontunit="em" name="btnGoToCqPendLst" fontweight="bold" on-tap="Variables.goToPage_FabricCQPending.invoke()" width="75%" class="btn-default btn-primary btn-lg" caption="Sign-Off &amp; Held List"
+                                            type="button"></wm-button>
+                                        <wm-button show="true" name="btnInspection" accessroles="DYEFLR_INSPECTREJECT,DYEFLR_INSPECTRELEASE,DYEFLR_INSPECTRELEASEHLD,DYEFLR_INSPECTREPROCESS" fontsize="2" fontunit="em" fontweight="bold" on-tap="btnInspectionTap($event, $scope)"
+                                            width="75%" class="btn-default btn-primary btn-lg" caption="100% Inspection" type="button"></wm-button>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn name="gridcolumn18" columnwidth="3"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow padding="5px 0px unset unset" name="gridrow13">
+                    <wm-gridcolumn name="gridcolumn16" columnwidth="3"></wm-gridcolumn>
+                    <wm-gridcolumn name="gridcolumn21" columnwidth="6">
+                        <wm-container show="true" name="container5" horizontalalign="center" borderwidth="1px" borderstyle="solid" bordercolor="#144b6c">
+                            <wm-layoutgrid name="layoutgrid4">
+                                <wm-gridrow padding="unset 0px unset unset" name="gridrow17">
+                                    <wm-gridcolumn name="gridcolumn26" columnwidth="12" padding="unset unset 1.5px unset">
+                                        <wm-label name="label7" fontsize="12" fontunit="px" fontweight="bold" borderwidth="1.5px" caption="LOGISTIC" color="#000000" padding="unset 0.5em" width="75%"></wm-label>
+                                        <wm-button accessroles="Everyone" fontsize="2" fontunit="em" fontweight="bold" on-tap="Variables.goToPage_FabricIntersectionPlacement.invoke()" width="75%" name="btnGoToPlacement" class="btn-default btn-primary btn-lg"
+                                            caption="Placement" type="button"></wm-button>
+                                        <wm-button accessroles="Everyone" fontsize="2" fontunit="em" fontweight="bold" on-tap="Actions.goToPage_FabricDelivery.invoke()" width="75%" class="btn-default btn-primary btn-lg" caption="Delivery"
+                                            type="button" name="btnGoToDelivery" show="bind:&quot;&quot;"></wm-button>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn name="gridcolumn20_1" columnwidth="3"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow18_1">
+                    <wm-gridcolumn name="gridcolumn33" columnwidth="3"></wm-gridcolumn>
+                    <wm-gridcolumn horizontalalign="center" name="gridcolumn34" columnwidth="3">
+                        <wm-prefab defaultvalue="bind:Variables.svQryDefEmpcode.dataSet.paycode" on-change="txtOperatorChange($scope, newVal, oldVal)" caption="Scan Operator" name="txtOperator" prefabname="SY1000PF"></wm-prefab>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn padding="20px unset unset unset" horizontalalign="center" name="gridcolumn33_1" columnwidth="3">
+                        <wm-button show="true" on-tap="button10Tap($event, $scope)" name="button10" class="btn-default btn-lg btn-warning" caption="Log Out" type="button" margin="unset 0.5em"></wm-button>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn name="gridcolumn35" columnwidth="3"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow16_1" padding="unset 0px unset unset">
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn31_2"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn32_2" horizontalalign="center">
+                        <wm-prefab prefabname="SY1000PF" name="txtScanMachine" caption="Scan Machine" placeholder="Scan Machine" defaultvalue="bind:Variables.statScanMachine.dataSet.dataValue"></wm-prefab>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn33_3"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn34_2"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-view name="view1" class="dialog-view">
+        <wm-dialog width="100%" name="FabHisPop" dialogtype="design-dialog" modal="true" title="Fabric History" iconclass="wi wi-file-text">
+            <wm-layoutgrid name="layoutgrid6_1">
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow18_2">
+                    <wm-gridcolumn name="gridcolumn34_1" columnwidth="12">
+                        <wm-list name="livelistProccessSts" navigation="None" dataset="bind:Variables.svQryDyejobFabRoutes.dataSet" listclass="list-group" itemsperrow="xs-2 sm-3 md-6 lg-6" template="true" class="list-card" loadingicon="">
+                            <wm-listtemplate name="listtemplate2" layout="media">
+                                <wm-container padding="unset 5px" name="container15">
+                                    <wm-label padding="unset unset 3px unset" fontweight="bold" textalign="center" conditionalclass="bind:Widgets.livelistProccessSts.currentItem.procsubsts === &quot;CMP&quot;?&quot;cmp&quot;:Widgets.livelistProccessSts.currentItem.procsubsts === &quot;TDEL&quot;?&quot;todel&quot;:Widgets.livelistProccessSts.currentItem.procsubsts === &quot;TRCV&quot;?&quot;torec&quot;:Widgets.livelistProccessSts.currentItem.procsubsts === &quot;WIP&quot;?&quot;wip&quot;:Widgets.livelistProccessSts.currentItem.procsubsts === &quot;QUE&quot;?&quot;trg&quot;:Widgets.livelistProccessSts.currentItem.procsubsts === &quot;TBREL&quot; ? &quot;red-d2&quot; : &quot;grey-l3&quot;"
+                                        height="100%" name="Name" class="h4 ProcStsborder" margin="0px unset" caption="bind:Variables.svQryDyejobFabRoutes.dataSet[$i].sortsub+'. '+Variables.svQryDyejobFabRoutes.dataSet[$i].process" whitespace="nowrap"></wm-label>
+                                </wm-container>
+                            </wm-listtemplate>
+                        </wm-list>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow14_1">
+                    <wm-gridcolumn name="gridcolumn25" columnwidth="12">
+                        <wm-table class="panel-primary" name="table1" navigation="None" dataset="bind:Variables.svProcfd723pk0GetJobissueHis.dataSet.poutIssueList" title="Issue List">
+                            <wm-table-column binding="trgdat" caption="Date" edit-widget-type="datetime" type="datetime" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="process" caption="Process" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="apvsts" caption="Sign-Off<br>Sts" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="cqremark" caption="Remarks" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="reqby" caption="Req By" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="hldby" caption="Held By" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="signoffby" caption="Sign-Off By" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        </wm-table>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow15_2">
+                    <wm-gridcolumn horizontalalign="right" name="gridcolumn27_1" columnwidth="12">
+                        <wm-button on-tap="Widgets.FabHisPop.close()" name="button9" class="btn-default" caption="Back" type="button" margin="unset 0.5em"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-dialog>
+    </wm-view>
+    <wm-view name="view3" class="dialog-view">
+        <wm-dialog closable="false" height="100%" width="100%" name="iframepop" dialogtype="design-dialog" modal="true" title="" iconclass="">
+            <wm-layoutgrid name="layoutgrid7">
+                <wm-gridrow name="gridrow17_1">
+                    <wm-gridcolumn name="gridcolumn32_1" columnwidth="12">
+                        <wm-iframe height="500" iframesrc="bind:Variables.statModifyJobUrl.dataSet.dataValue+Widgets.SY1000PF1.datavalue+&quot;&amp;pAppid=&quot;+Variables.statPrgid.dataSet.dataValue" width="100%" name="iframe1"></wm-iframe>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow18_3">
+                    <wm-gridcolumn padding="10px unset unset unset" horizontalalign="right" name="gridcolumn33_2" columnwidth="12">
+                        <wm-button name="button13" class="btn-default btn-lg" caption="Back To Main" on-click="Widgets.iframepop.close()"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-dialogactions name="dialogactions1"></wm-dialogactions>
+        </wm-dialog>
+    </wm-view>
+</wm-page>

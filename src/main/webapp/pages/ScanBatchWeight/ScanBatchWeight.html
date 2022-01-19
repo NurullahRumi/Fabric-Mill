@@ -1,0 +1,143 @@
+<wm-page data-ng-controller="ScanBatchWeightPageController" name="mainpage" pagetitle="bind:Variables.statPrgName.dataSet.dataValue">
+    <wm-header name="header1" content="header">
+        <wm-param name="pTitle" value="bind:Variables.statPrgName.dataSet.dataValue" type="string"></wm-param>
+    </wm-header>
+    <wm-content name="content">
+        <wm-page-content padding="unset 10px" columnwidth="12" name="mainContent">
+            <wm-layoutgrid name="layoutGridMain">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn1"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn5">
+                        <wm-layoutgrid name="layoutGridBody">
+                            <wm-gridrow name="gridrow11_2" padding="unset unset 10px unset">
+                                <wm-gridcolumn columnwidth="11" name="gridcolumn20_1" horizontalalign="center">
+                                    <wm-label padding="unset 0.5em" name="lblScanBatchWgt" caption="Scan Batch Weight" class="h3" fontweight="bold"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="1" name="gridcolumn20_2" horizontalalign="right">
+                                    <wm-button class="btn-warning" caption="Log Out" type="button" margin="unset 0.5em" name="btnLogOut" show="bind:!!Variables.statAppUsrid.dataSet.dataValue || Variables.statOperatorName.dataSet.dataValue !=&quot;&quot; ? true : false"
+                                        on-tap="Actions.logoutAction.invoke()"></wm-button>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow5">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn11" padding="unset unset 2em unset">
+                                    <wm-container name="container2">
+                                        <wm-label class="control-label" name="lblBatchBarcode" caption="Batch No / Barcode" fontsize="15" fontweight="bold"></wm-label>
+                                        <wm-text name="txtBatchBarcode" placeholder="" class="input-lg" on-change="txtBatchBarcodeChange($event, $scope, newVal, oldVal)" datavalue="bind:(!!pageParams.pBarcode) ? pageParams.pBarcode : &quot;&quot;"
+                                            fontunit="em" autofocus="false"></wm-text>
+                                    </wm-container>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow8">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn16" padding="unset unset 2em unset">
+                                    <wm-panel iconclass="fa fa-balance-scale fa-lg" autoclose="outsideClick" title="Batch Weight" name="panelScanWeight" class="panel-info" show="bind:Widgets.txtBatch.datavalue ? true : false">
+                                        <wm-label padding="unset 0.5em" name="lblBtchDet" caption="bind:Variables.svProcFD350PK0_MODJOB_GetBatchDetail.dataSet.poutBatchDetails[$i].batchdetails ? ('Batch Detail: ' + Variables.svProcFD350PK0_MODJOB_GetBatchDetail.dataSet.poutBatchDetails[$i].batchdetails) : ''"
+                                            fontsize="18" fontweight="bold" textalign="center" bordercolor="#417194" borderstyle="solid" borderwidth="1px" width="100%" margin="0.5em unset 2em unset" show="bind:Variables.svProcFD350PK0_MODJOB_GetBatchDetail.dataSet.poutBatchDetails[$i].batchdetails ? true : false"></wm-label>
+                                        <wm-layoutgrid name="layoutGridScanWeight">
+                                            <wm-label padding="unset 0.5em" name="lblBatch" caption="Batch" fontsize="18" fontweight="bold" class="col-label-info btn-lg btn-info" borderwidth="1px" borderstyle="solid" bordercolor="#417194" margin="unset unset unset 0.1em"
+                                                width="15%" textalign="center"></wm-label>
+                                            <wm-gridrow name="gridrow14_1" padding="unset unset 1.75em unset">
+                                                <wm-gridcolumn columnwidth="3" name="gridcolumn23">
+                                                    <wm-text name="txtBatch" placeholder="" class="input-lg" disabled="false" readonly="true" datavalue="bind:Variables.svProcFD350PK0_MODJOB_GetBatchDetail.dataSet.poutBatchDetails[$i].bchseq"></wm-text>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="9" name="gridcolumn24"></wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-label padding="unset 0.5em" name="lblWgt" fontsize="18" fontweight="bold" caption="Weight" class="col-label-info btn-lg btn-info" borderwidth="1px" bordercolor="#417194" borderstyle="solid" margin="unset unset unset 0.1%"
+                                                width="15%" textalign="center"></wm-label>
+                                            <wm-gridrow name="gridrow14_2" padding="unset unset 0.5em unset">
+                                                <wm-gridcolumn columnwidth="3" name="gridcolumn22_2">
+                                                    <wm-text placeholder="" class="input-lg" name="txtWgt" datavalue="bind:(Variables.svProcFD350PK0_MODJOB_GetBatchDetail.dataSet.poutBatchDetails[$i].predyeBchwgt) ? Variables.svProcFD350PK0_MODJOB_GetBatchDetail.dataSet.poutBatchDetails[$i].predyeBchwgt : &quot;&quot;"
+                                                        type="number" disabled="bind:(!!Variables.svProcFD350PK0_MODJOB_GetBatchDetail.dataSet.poutBatchDetails[$i].predyeBchwgt) || ( Widgets.lblLoginWarning.show == true) ? true : false" step="0.01" autofocus="false"></wm-text>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="1" name="gridcolumn23_3" horizontalalign="right">
+                                                    <wm-icon name="iconLoginWarning" iconclass="wi wi-info fa-lg" class="red" caption="" show="bind:Widgets.lblLoginWarning.show == true ? true : false"></wm-icon>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="8" name="gridcolumn19" horizontalalign="left">
+                                                    <wm-label padding="unset 0.5em" name="lblLoginWarning" caption="Log in to input weight" fontweight="bold" fontsize="1" fontunit="em" color="red" show="bind:!Variables.statAppUsrid.dataSet.dataValue &amp;&amp; Variables.statOperatorName.dataSet.dataValue ==&quot;&quot; ? true : false"
+                                                        textalign="left"></wm-label>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-panel>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow13_1" padding="10px unset unset unset">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn20">
+                                    <wm-container name="containerBtns" show="bind:Widgets.txtBatch.datavalue ? true : false">
+                                        <wm-button class="btn-lg btn-danger" caption="Reset Batch Weight To Zero" type="button" iconclass="" name="btnResetWgtToZero" width="100%" fontunit="em" fontsize="2" on-tap="btnResetWgtToZeroTap($event, $scope)" margin="10px unset unset unset"
+                                            accessroles="SCANBCHWGT_RESET_WGT" show="bind:((!!Variables.svProcFD350PK0_MODJOB_GetBatchDetail.dataSet.poutBatchDetails[$i].predyeBchwgt) &amp;&amp; (Variables.svProcFD350PK0_MODJOB_GetBatchDetail.dataSet.poutBatchDetails[$i].canreset == 'Y')) ? true : false"
+                                            disabled="bind:(Variables.statWorkInProgress.dataSet.dataValue == 'Y')?true:false"></wm-button>
+                                        <wm-button class="btn-lg btn-success" caption="Save" type="button" iconclass="" name="btnSave" on-tap="btnSaveTap($event, $scope)" fontsize="2" fontunit="em" width="100%" margin="10px unset unset unset"
+                                            show="bind:(!Widgets.txtWgt.disabled) ? true : false" disabled="bind:(Variables.statWorkInProgress.dataSet.dataValue == 'Y')?true:false"></wm-button>
+                                        <wm-button class="btn-lg  btn-warning" caption="Cancel" type="button" iconclass="" name="btnCancel" fontsize="2" fontunit="em" width="100%" margin="10px unset unset unset" on-tap="btnCancelTap($event, $scope)"></wm-button>
+                                    </wm-container>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow12" padding="10px unset unset unset">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn21_1">
+                                    <wm-button class="btn-default" caption="Back To Main" type="button" name="btnBackToMain" fontsize="2" fontunit="em" width="100%" iconclass="wi wi-keyboard-arrow-left" on-tap="btnBackToMainTap($event, $scope)"></wm-button>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn2"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer1" content="footer"></wm-footer>
+    <wm-view name="view1" class="dialog-view">
+        <wm-alertdialog on-close="variableOnClose()" on-ok="variableOnOk()" alerttype="{{notification.alerttype}}" oktext="{{notification.okButtonText}}" title="{{notification.title}}" message="{{notification.text}}" notificationdialog="alert" controller="NotificationDialogController"
+            name="notificationalertdialog"></wm-alertdialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="view2">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="Successful Save" iconclass="" name="dialogSaveSuccess" on-close="dialogSaveSuccessClose($event, $scope)">
+            <wm-layoutgrid name="layoutgrid5">
+                <wm-gridrow name="gridrow10_1" padding="15px unset unset unset">
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn18_1">
+                        <wm-icon name="icon1" iconclass="wi wi-check-circle fa-2x" color="#95bd0b"></wm-icon>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="11" name="gridcolumn17_1">
+                        <wm-label padding="unset 0.5em" caption="Weight for batch saved." name="lblSuccessMsg" fontsize="15" fontweight="bold" color="#000000"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-dialogactions name="dialogactions1">
+                <wm-button class="btn-success" caption="OK" on-click="closeDialog()" name="btnOk" fontweight="bold" fontsize="15"></wm-button>
+            </wm-dialogactions>
+        </wm-dialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="view4">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="Error" iconclass="" name="dialogErrSave">
+            <wm-layoutgrid name="layoutGridWarningMsg">
+                <wm-gridrow name="gridrow11_1" padding="15px unset unset unset">
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn23_1">
+                        <wm-icon name="icon2" iconclass="wi wi-error fa-2x" color="red"></wm-icon>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="11" name="gridcolumn19_1">
+                        <wm-label padding="unset 0.5em" caption="Please input weight!" name="lblErrSaveWarning" fontsize="15" fontweight="bold"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-dialogactions name="dialogactions2">
+                <wm-button class="btn-primary btn-danger" caption="Dismiss" on-click="closeDialog()" name="btnDismiss" fontsize="15" fontweight="bold"></wm-button>
+            </wm-dialogactions>
+        </wm-dialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="view4_1">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="Successful Reset" iconclass="" name="dialogResetSuccess" on-opened="dialogResetSuccessOpened($event, $scope)">
+            <wm-dialogactions name="dialogactions3">
+                <wm-button class="btn-primary btn-success" caption="OK" on-click="closeDialog()" fontsize="15" fontweight="bold" name="btnDismissResetDialog"></wm-button>
+            </wm-dialogactions>
+            <wm-layoutgrid name="layoutGridResetMsg">
+                <wm-gridrow padding="15px unset unset unset" name="gridrow14">
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn23_2">
+                        <wm-icon iconclass="wi wi-settings-backup-restore fa-2x" color="#95bd0b" name="icon3"></wm-icon>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="11" name="gridcolumn24_1">
+                        <wm-label padding="unset 0.5em" caption="Batch weight has been reset to 0 kg!" fontsize="15" fontweight="bold" name="lblResetMsg"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-dialog>
+    </wm-view>
+</wm-page>

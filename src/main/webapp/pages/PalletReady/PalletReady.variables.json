@@ -1,0 +1,133 @@
+{
+  "notifMsg" : {
+    "_id" : "wm-notifMsg-wm.NotificationVariable-1491895850484",
+    "name" : "notifMsg",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "alerttype",
+      "value" : "information",
+      "type" : "string"
+    } ],
+    "operation" : "alert"
+  },
+  "statPrgid" : {
+    "_id" : "wm-statPrgid-wm.Variable-1491891982656",
+    "name" : "statPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "FD1015W10"
+    } ],
+    "dataSet" : {
+      "dataValue" : "FD1015W10"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statPrgName" : {
+    "_id" : "wm-statPrgname-wm.Variable-1491892002592",
+    "name" : "statPrgName",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "Pallet Ready"
+    } ],
+    "dataSet" : {
+      "dataValue" : "Pallet Ready"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statWorkInProgress" : {
+    "_id" : "wm-statWorkInProgress-wm.Variable-1568108791254",
+    "name" : "statWorkInProgress",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : "N"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svProcFD1000WPK0_MODJOB_isPalletReady" : {
+    "_id" : "wm-svProcFD1000WPK0_MODJOB_isPalletReady-wm.ServiceVariable-1566454016462",
+    "name" : "svProcFD1000WPK0_MODJOB_isPalletReady",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pprgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pdyejob",
+      "value" : "bind:Widgets.txtDyejob.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pbarcode",
+      "value" : "bind:Widgets.txtBarcodeScanner.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd1000wpk0ModjobIsPalletReadyResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFD1000WPK0_MODJOB_isPalletReady",
+    "operationId" : "ProcedureExecutionController_executeProcFD1000WPK0_MODJOB_isPalletReady",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcFD1000WPK0_MODJOB_isPalletReadyonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svUpdateProcFD1000WPK0_MODJOB_updJobWeight" : {
+    "_id" : "wm-svUpdateProcFD1000WPK0_MODJOB_updJobWeight-wm.ServiceVariable-1566476834880",
+    "name" : "svUpdateProcFD1000WPK0_MODJOB_updJobWeight",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pdyejob",
+      "value" : "bind:(!Widgets.txtDyejob.datavalue) ? (Variables.svProcFD1000WPK0_MODJOB_isPalletReady.dataSet.poutJobDetails[$i].dyejob) : (Widgets.txtDyejob.datavalue)",
+      "type" : "string"
+    }, {
+      "target" : "pprgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pweight",
+      "value" : "bind:Widgets.txtWeightAdd.datavalue",
+      "type" : "integer"
+    }, {
+      "target" : "pfabseq",
+      "value" : "bind:(!Widgets.selectFabSeq.datavalue) ? (Widgets.txtDefFabSeq.datavalue) : (Widgets.selectFabSeq.datavalue)",
+      "type" : "integer"
+    } ],
+    "service" : "pfsdb",
+    "operation" : "executeUpdateProcFD1000WPK0_MODJOB_updJobWeight",
+    "operationId" : "ProcedureExecutionController_executeUpdateProcFD1000WPK0_MODJOB_updJobWeight",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svUpdateProcFD1000WPK0_MODJOB_updJobWeightonSuccess($event, $scope)",
+    "onError" : "svUpdateProcFD1000WPK0_MODJOB_updJobWeightonError($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

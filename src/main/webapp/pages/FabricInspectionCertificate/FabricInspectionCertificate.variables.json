@@ -1,0 +1,262 @@
+{
+  "statListValues" : {
+    "_id" : "wm-statListValues-wm.Variable-1552287740800",
+    "name" : "statListValues",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statPrgid" : {
+    "_id" : "wm-ststPrgid-wm.Variable-1551163341531",
+    "name" : "statPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "FD1015W07",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : "FD1015W07"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statUpdSts" : {
+    "_id" : "wm-statUpdSts-wm.Variable-1553170041512",
+    "name" : "statUpdSts",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svProcFd107pk0_cqprocUpdInspectCondition" : {
+    "_id" : "wm-svProcFd107pk0_cqprocUpdInspectCondition-wm.ServiceVariable-1556624023020",
+    "name" : "svProcFd107pk0_cqprocUpdInspectCondition",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "java.lang.Void",
+    "service" : "pfsdb",
+    "operation" : "executeUpdateProcFd107pk0_cqprocUpdInspectCondition",
+    "operationId" : "ProcedureExecutionController_executeUpdateProcFd107pk0_cqprocUpdInspectCondition",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFd107pk0_CqprocUpdInspectionSts" : {
+    "_id" : "wm-svProcFd107pk0_CqprocUpdInspectionSts-wm.ServiceVariable-1553228878667",
+    "name" : "svProcFd107pk0_CqprocUpdInspectionSts",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.UpdateProcFd107pk0CqprocUpdInspectionStsResponse",
+    "service" : "pfsdb",
+    "operation" : "executeUpdateProcFd107pk0_CqprocUpdInspectionSts",
+    "operationId" : "ProcedureExecutionController_executeUpdateProcFd107pk0_CqprocUpdInspectionSts",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcFd107pk0_CqprocUpdInspectionStsonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFd107pk0GetInspectionCondList" : {
+    "_id" : "wm-svProcFd107pk0GetInspectionCondList-wm.ServiceVariable-1551163256935",
+    "name" : "svProcFd107pk0GetInspectionCondList",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "p_usrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "p_prgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "p_inslayout",
+      "value" : "1",
+      "type" : "integer"
+    }, {
+      "target" : "pBarcode",
+      "value" : "bind:(pageParams.pBarcode === undefined || pageParams.pBarcode === null)? Widgets.SY1000PF1.datavalue:pageParams.pBarcode",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd107pk0getInspectionCondListResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd107pk0GetInspectionCondList",
+    "operationId" : "ProcedureExecutionController_executeProcFd107pk0GetInspectionCondList",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Variables.svProcFd107pk0GetInspectionCondListTab2.invoke()",
+    "onError" : "svProcFd107pk0GetInspectionCondListonError($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFd107pk0GetInspectionCondListTab2" : {
+    "_id" : "wm-svProcFd107pk0GetInspectionCondListTab2-wm.ServiceVariable-1551245985493",
+    "name" : "svProcFd107pk0GetInspectionCondListTab2",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "p_usrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "p_prgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "p_inslayout",
+      "value" : "2",
+      "type" : "integer"
+    }, {
+      "target" : "pBarcode",
+      "value" : "bind:(pageParams.pBarcode === undefined || pageParams.pBarcode === null)? Widgets.SY1000PF1.datavalue:pageParams.pBarcode",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd107pk0getInspectionCondListResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd107pk0GetInspectionCondList",
+    "operationId" : "ProcedureExecutionController_executeProcFd107pk0GetInspectionCondList",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Variables.svProcFd107pk0GetInspectionCondListTab3.invoke()",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFd107pk0GetInspectionCondListTab3" : {
+    "_id" : "wm-svProcFd107pk0GetInspectionCondListTab3-wm.ServiceVariable-1551865820701",
+    "name" : "svProcFd107pk0GetInspectionCondListTab3",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "p_usrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "p_prgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pBarcode",
+      "value" : "bind:(pageParams.pBarcode === undefined || pageParams.pBarcode === null)? Widgets.SY1000PF1.datavalue:pageParams.pBarcode",
+      "type" : "string"
+    }, {
+      "target" : "p_inslayout",
+      "value" : "3",
+      "type" : "integer"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd107pk0getInspectionCondListResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd107pk0GetInspectionCondList",
+    "operationId" : "ProcedureExecutionController_executeProcFd107pk0GetInspectionCondList",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFd723pk0GetFabDetails" : {
+    "_id" : "wm-svProcFd723pk0GetFabDetails-wm.ServiceVariable-1551170883672",
+    "name" : "svProcFd723pk0GetFabDetails",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd723pk0getFabDetailsResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd723pk0GetFabDetails",
+    "operationId" : "ProcedureExecutionController_executeProcFd723pk0GetFabDetails",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcFd723pk0GetFabDetailsonSuccess($event, $scope);Variables.svProcFd107pk0GetInspectionCondList.invoke()",
+    "onError" : "svProcFd723pk0GetFabDetailsonError($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svQrySy9200pk0CallWmakerapp" : {
+    "_id" : "wm-svQrySy9200pk0CallWmakerapp-wm.ServiceVariable-1559563859493",
+    "name" : "svQrySy9200pk0CallWmakerapp",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pWmprogid",
+      "value" : "FD1000W11",
+      "type" : "string"
+    }, {
+      "target" : "pParamList",
+      "value" : "bind:\"pBarcode=\"+Widgets.SY1000PF1.datavalue+\"&pAppid=\"+Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.query.QrySy9200pk0callWmakerappResponse",
+    "service" : "pfsdb",
+    "operation" : "executeQrySy9200pk0CallWmakerapp",
+    "operationId" : "QueryExecutionController_executeQrySy9200pk0CallWmakerapp",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svQrySy9200pk0CallWmakerapponSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  }
+}

@@ -1,0 +1,3204 @@
+{
+  "ProcFd723pk0UpdateDeliveryOut" : {
+    "procedureString" : "CALL fd723pk0.sproc_upd_deliveryout(?,?,?,?,?,?,?,\n             ?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "D022",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "FD1005W01",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBarcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "00277038111",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pSaveOption",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "FABSEQ",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pSrcLcn",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "LTK",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDestLcn",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "CDF",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pManualdn",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "test",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD730WPK0_GetNextProcess" : {
+    "procedureString" : "CALL FD730WPK0.proc_get_NextProcess(?, upper(?), ?, ?, ?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1000WB0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002404000",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutNextProcess",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD730WPK0_GetLastLocation" : {
+    "procedureString" : "CALL FD730WPK0.proc_get_LastLocation(?, upper(?), ?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W09",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutLastLocation",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD730WPK0_GetRackbin" : {
+    "procedureString" : "CALL FD730WPK0.proc_get_rackbinLOV(?, upper(?), ?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015WB0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutRackbin",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "SprocFd107pk0_cqprocGetRejCod" : {
+    "procedureString" : "CALL Fd107pk0_cqproc.sproc_get_rejcod(?, upper(?), ?)",
+    "parameters" : [ {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W06",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D022",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_OutRejcodLOV",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD730WPK0_GetUndeliveredJobs" : {
+    "procedureString" : "CALL FD730WPK0.proc_get_undeliveredJobs(?, upper(?), ?, ?,                                                 ?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W09",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRackbin",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FM1DL1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_DestScn",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "CU",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutUndelJobs",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD730WPK0_InsScanDyejobFab" : {
+    "procedureString" : "CALL FD730WPK0.proc_Ins_ScanDyejobFab(?, upper(?), ?, ?, ?,                                       ?, ?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W09",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBarcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002400303235102",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDDelNum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LK000072",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRackbin",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LTK-AP3",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_DestScn",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "CU",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutBarcodeDetails",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFd107pk0_cqprocGetLocationList" : {
+    "procedureString" : "CALL fd107pk0_cqproc.sproc_getCQLocationList(?,?,?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1005W05",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutLocationList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD730WPK0_GetDelDestLOV" : {
+    "procedureString" : "CALL FD730WPK0.proc_get_DelDestLOV(?, ?, ?, ?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1000WB0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRackbin",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LTK-AP3",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutDelDestLOV",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "Procfd723pk0GetJobissueHis" : {
+    "procedureString" : "CALL fd723pk0.sproc_get_jobissuehis(?,?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1000W06",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBarcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002400300891001",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutIssueList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutProcessCmp",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutProcessDue",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD730WPK0_DelDN" : {
+    "procedureString" : "CALL FD730WPK0.proc_Del_DN(?, upper(?), ?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W09",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDDelNum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LK000039",
+      "required" : false,
+      "parameterType" : "IN"
+    } ]
+  },
+  "ProcFD730WPK0_InsNewDN" : {
+    "procedureString" : "CALL FD730WPK0.proc_Ins_NewDN(?, upper(?), ?, ?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015WB0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRackbin",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LTK-AP3",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDesLcn",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "CPE",
+      "required" : false,
+      "parameterType" : "IN"
+    } ]
+  },
+  "ProcFD800WPK0_MCSETUPSprocUpdWOValue" : {
+    "procedureString" : "CALL FD800WPK0_MCSETUP.sproc_update_wovalue(?, ?, ?,?,?, ?,?, ?,?)",
+    "parameters" : [ {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W02",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_wrkid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "00037748",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_dyejoblist",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "003093590,1;",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_redye",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_procseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "4",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_paramcod",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "001",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_actval",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "10",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_outmsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD730WPK0_GetJobGroups" : {
+    "procedureString" : "CALL FD730WPK0.proc_get_JobGroups(?, ?, ?, ?, ?, ?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015WB",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D0031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "003065547",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pJobGroup",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "ltk",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutJobs",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "updateProcFd107pk0_CqprocUpdInspectionSts" : {
+    "procedureString" : "CALL fd107pk0_cqproc.sproc_upd_InspecionSts(?,?,?,?,?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1005W08",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_cqsheetid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1190000146",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_remarks",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_Mainsts",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "HLD",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_CondList",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1,1;2,;3,;4,1;5,;6,;7,1;8,;9,;10,1;11,;12,;13,;14,;15,;16,;17,;18,;19,;20,;21,;22,Y;23,;24,;25,;26,Y;27,;38,;39,;40,;41,;42,;34,;35,;36,Y;37,;28,;29,;30,;31,;32,;33,Y;43,MINOR;44,;45,;46,;47,;48,MAJOR;49,;50,;51,;52,;53,Y;54,;55,10;56,;57,;58,3-5sec;59,Strongly Acidic;",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_Processlist",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "\"\"",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_rejectcod",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0001",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_fabupdated",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFd723pk0GetDeliveryInDetails" : {
+    "procedureString" : "CALL fd723pk0.sproc_get_deliveryin_fabdet(?,?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "D022",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "FD1005W01",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBarcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "00277039911",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutDestLcn",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDyejobDet",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutFabdet",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD800WPK0_MCSETUPSprocGetFmchpic" : {
+    "procedureString" : "CALL FD800WPK0_MCSETUP.sproc_get_fmchpic(?,?,?,?)",
+    "parameters" : [ {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W08",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fmchgrp",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "SU001",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fmchpic",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFd107pk0_cqprocUptCQ" : {
+    "procedureString" : "CALL fd107pk0_cqproc.sproc_upd_qcresult(?,?,?,?,?,?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1005WB01",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pCqsheetid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1190000142",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRemarks",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pMainsts",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "HLD",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pCondList",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1,Y;",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRejectcod",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabseqlist",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "5",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOperator",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "00037748",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutErrmsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD730WPK0_InsDeliveredJobs" : {
+    "procedureString" : "CALL FD730WPK0.proc_Ins_DeliveredJobs(?, upper(?), ?, ?, ?,                                        ?, ?, ?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1000WB",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDDelNum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LC079894",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRackbin",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LTK-AP3",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDyejobList",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "001986437,2",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRedye",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pCanDeliver",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "Y",
+      "required" : false,
+      "parameterType" : "IN"
+    } ]
+  },
+  "ProcFD730WPK0_GetDelivery" : {
+    "procedureString" : "CALL FD730WPK0.proc_get_delivery(?, upper(?), ?, ?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUserid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "d00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRackbin",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LTK-AP3",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutDelList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD800WPK0_MCSETUPSprocGetProcessWO" : {
+    "procedureString" : "CALL FD800WPK0_MCSETUP.sproc_get_processwo(?, ?, ?,?, ?, ?, ?, ?, ?,?,?,?)",
+    "parameters" : [ {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W12",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_dyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "null",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_redye",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_procseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "4",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_option",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "null",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_out_jobdetails",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_out_fnparamlist",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_barcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002400308369101",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_wrkid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "00037748",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutDyejobList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD730WPK0_DelDeliveredJobs" : {
+    "procedureString" : "CALL FD730WPK0.proc_Del_DeliveredJobs(?, upper(?), ?, ?, ?,                                         ?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1000WB",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDDelNum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LC079894",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "003032342",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "8",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRedye",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    } ]
+  },
+  "ProcFd107pk0_cqprocCqPendingList" : {
+    "procedureString" : "CALL fd107pk0_cqproc.sproc_cq_pending(?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1005W08",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutPendList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "pStatusType",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "HLD",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pProcess",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pLocation",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LTK",
+      "required" : false,
+      "parameterType" : "IN"
+    } ]
+  },
+  "updateProcFd107pk0_cqprocUpdInspectCondition" : {
+    "procedureString" : "CALL fd107pk0_cqproc.sproc_upd_inspectcondlist(?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W08",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_cqsheetid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1190000110",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_cqcondseq",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_condval",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "10",
+      "required" : false,
+      "parameterType" : "IN"
+    } ]
+  },
+  "ProcFd723pk0DeliveryOutDetails" : {
+    "procedureString" : "CALL fd723pk0.sproc_get_deloutfabdet(?,?,?,?,?,?, ?, ? ,     ?,?,?,?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "FD1005W01",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBarcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "002400277821611",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutDyejobDet",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutFabdet",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDefSrclcn",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDefDestlcn",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDefDsestMainlcn",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutSrclcnList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDestlcnList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutMainDestlcnList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFd723pk0PlacementDetails" : {
+    "procedureString" : "CALL fd723pk0.sproc_get_placefabdet(?,?,?,?,?,?,?,?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1005W03",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBarcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002400265759501",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutDyejobDet",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutFabdet",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutLcncod",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDefFabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDeffabdes",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutRackbinList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutFabseqlist",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDyejobList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDefDyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD800WPK0_MCSETUPSprocGetTestResults" : {
+    "procedureString" : "CALL FD800WPK0_MCSETUP.sproc_get_testresults(?,?,?,?,?,?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W20",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_dyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "003083003",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_redye",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_procseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "4",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_cqstage",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "PRE-PROCESS",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_barcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002400309359001",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_out_testresults",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_out_canupdactual",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDyejobList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD350PK0_MODJOB_GetBatchDetail" : {
+    "procedureString" : "CALL FD350PK0_MODJOB.proc_get_BatchDetail(?, upper(?), ?,                                                     ?)",
+    "parameters" : [ {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W11",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBatchSeqBarcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002400305953405",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutBatchDetails",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFd107pk0_CqprocUpdateIssue" : {
+    "procedureString" : "CALL fd107pk0_cqproc.sproc_upd_issueremark(?,?,?,?)",
+    "parameters" : [ {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1005W06",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_barcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002400301575004",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_remarks",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : false,
+      "parameterType" : "IN"
+    } ]
+  },
+  "ProcFD1000WPK0_MODJOB_isPalletReady" : {
+    "procedureString" : "CALL FD1000WPK0_MODJOB.proc_isPalletReady (?, upper(?), ?, ?,                                                   ?, ?, ?)",
+    "parameters" : [ {
+      "name" : "pprgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W09",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pusrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pdyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002240132",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pbarcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002400224013211",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutIsPalletReady",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "pOutJobDetails",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_Out_FabseqLOV",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD730WPK0_GetMakLcn" : {
+    "procedureString" : "CALL FD730WPK0.proc_get_MakLcn(?, upper(?), ?, ?, ?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015WB",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "003065547",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutMakLcn",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFd107pk0_CqprocGetDetailsAndSheet" : {
+    "procedureString" : "CALL  fd107pk0_cqproc.sproc_get_processcq_sheet(?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1005W01",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBarcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002400308674103",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutJobDet",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutCondList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutPendingReasonList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDeffabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDeffabdes",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutFabseqlist",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDyejobList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDefDyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutProcess",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutStsList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFd107pk0GetInspectionCondList" : {
+    "procedureString" : "CALL fd107pk0_cqproc.sproc_getInspectionCondList(?,?,?,?,?,                                              ?,?, ?)",
+    "parameters" : [ {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1005W07",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBarcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002400303374503",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_inslayout",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_outMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_outCondlist",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_outCqsheetid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "pOutCallplacement",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "UpdateProcFD730WPK_LastRackbin" : {
+    "procedureString" : "CALL FD730WPK0.proc_Upd_LastRackbin(?, upper(?), ?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015WB01",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRackbin",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FM1FN6",
+      "required" : false,
+      "parameterType" : "IN"
+    } ]
+  },
+  "ProcFd107pk0_cqprocCheckUser" : {
+    "procedureString" : "CALL fd107pk0_cqproc.sproc_checkUser(?,?,?,?)",
+    "parameters" : [ {
+      "name" : "pUser",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "DFDL",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W01",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pAccessKey",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "4191L3T42",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutUserid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFd724pk0ScanDet" : {
+    "procedureString" : "CALL fd724pk0.sproc_get_scanfabdet(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, ?,?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1005W03",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBarcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002400308369101",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOperatorEmpCode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "00037748",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutDyejobDet",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutFabdet",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDefProcessAction",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDefProcess",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDefOperator",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDefMchcod",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDeffabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDeffabdes",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutFabseqlist",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutProcessList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDyejobList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDefDyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutHaltProcessAction",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutHasWorkOrder",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFd107pk0_cqprocReqSignOffJobList" : {
+    "procedureString" : "CALL fd107pk0_cqproc.sproc_get_sigoff_joblist(?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W04",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBarcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002400303374503",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutDeffabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDyejobList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDefDyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFd723pk0UpdateDeliveryIn" : {
+    "procedureString" : "CALL fd723pk0.sproc_upd_deliveryin(?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "D022",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "FD1005W01",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBarcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "00277038110",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pSaveOption",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "FABSEQ",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDestLcn",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "CGF",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFd724pk0CheckEmpCode" : {
+    "procedureString" : "CALL fd724pk0.sproc_check_empcode(?,?,?,?)",
+    "parameters" : [ {
+      "name" : "p_empcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "004136",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W01",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pEmpname",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "pEmpcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD730WPK0_GetDeliveryDet" : {
+    "procedureString" : "CALL FD730WPK0.proc_get_deliveryDet(?, upper(?), ?, ?,?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015WB0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDDelNum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LD104143",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRackbin",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LTK-AP3",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutDelDetList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFd723pk0UpdPlacement" : {
+    "procedureString" : "CALL fd723pk0.sproc_upd_placement(?,?,?,?,?,?,?,?,?,?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1005W03",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBarcode2",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002400300477703",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pSaveOption",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FABSEQ",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPlaceLcn",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LFD",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPlaceRackbin",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LTK-AP1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOperator",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "00037748",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabseqlist",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "3,4",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutErrmsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFD800WPK0_MCSETUPSprocUpdTstRslt" : {
+    "procedureString" : "CALL FD800WPK0_MCSETUP.sproc_update_testresult(?, ?, ?,?, ?, ?,?,?, ?,?,? )",
+    "parameters" : [ {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1000W20",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_wrkid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "00037748",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_dyejoblist",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "003093590,1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_redye",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_procseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "4",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_cqcod",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "TEST",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_actval",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "20",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_cqstage",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "PRE-PROCESS",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_riblance",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "null",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_outmsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFd107pk0_cqprocGetProcessList" : {
+    "procedureString" : "CALL fd107pk0_cqproc.sproc_getCQProcessList(?,?,?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1005W04",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutProcesslist",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFd723pk0GetFabDetails" : {
+    "procedureString" : "CALL fd723pk0.get_fab_details (?,?,?,?,?,?,?,?,?, ?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1005W01",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBarcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002400308674103",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutDyejobDet",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "pouStsDet",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutAction",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutFabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutDoubtful",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ]
+  },
+  "ProcFd724UpdateScanProcess" : {
+    "procedureString" : "CALL fd724pk0.sproc_upd_scanprocess(?,?,?,?,?,?,?,?,?, ?,? ,?,?, ?)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1005W04",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBarcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002400279864001",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pSaveOption",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FABSEQ",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pProcess",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "SL",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOperator",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "00037748",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pMchcod",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "SL1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pScanmts",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pProcessAction",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "END-PROCESS",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabseqlist",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1,2",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutNextAction",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "poutErrmsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "pHaltRemarks",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "aaa",
+      "required" : false,
+      "parameterType" : "IN"
+    } ]
+  },
+  "UpdateProcFD1000WPK0_MODJOB_updJobWeight" : {
+    "procedureString" : "CALL FD1000WPK0_MODJOB.proc_updJobWeight (?, upper(?), ?, ?, ?)",
+    "parameters" : [ {
+      "name" : "pprgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W10",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pusrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pdyejob",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "002240132",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pfabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "11",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pweight",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "12",
+      "required" : false,
+      "parameterType" : "IN"
+    } ]
+  },
+  "UpdateProcFD730WPK0_UpdJobCount" : {
+    "procedureString" : "CALL FD730WPK0.proc_Upd_JobCount(?, ?, ?)",
+    "parameters" : [ {
+      "name" : "pPrgId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W09",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDDelNum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LC079894",
+      "required" : false,
+      "parameterType" : "IN"
+    } ]
+  },
+  "ProcFD350PK0_MODJOB_SaveBatchWgt" : {
+    "procedureString" : "CALL FD350PK0_MODJOB.proc_save_BatchWgt (?, upper(?), ?, ?, ?)",
+    "parameters" : [ {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FD1015W11",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00031",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBchseq",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "L0896099R",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pWgt",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "24.1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pWrkid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "00038247",
+      "required" : false,
+      "parameterType" : "IN"
+    } ]
+  },
+  "updateFd107pk0_cqprocRequestSignoff" : {
+    "procedureString" : "CALL fd107pk0_cqproc.sproc_request_signoff(?, upper(?), ?,\n             ?, ?)",
+    "parameters" : [ {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "DFD",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUusrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D009",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDyejoblist",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0029678,1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutmsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "pOuterrmsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ]
+  }
+}

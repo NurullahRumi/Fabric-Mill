@@ -1,0 +1,47 @@
+{
+  "statDyejobList" : {
+    "_id" : "wm-statDyejobList-wm.Variable-1558935282215",
+    "name" : "statDyejobList",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "dyejob" : "",
+      "fabseq" : 0,
+      "procseq" : 0
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "svQrySignOffDyeJobFabRoute" : {
+    "_id" : "wm-svQrySignOffDyeJobFabRoute-wm.ServiceVariable-1558611636362",
+    "name" : "svQrySignOffDyeJobFabRoute",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "dyejob",
+      "value" : "bind:pageParams.pDyejob",
+      "type" : "string"
+    }, {
+      "target" : "fabseq",
+      "value" : "bind:pageParams.pFabseq",
+      "type" : "integer"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.query.QrySignOffReldoubtDyeJobFabRouteResponse",
+    "service" : "pfsdb",
+    "operation" : "executeQrySignOffReldoubtDyeJobFabRoute",
+    "operationId" : "QueryExecutionController_executeQrySignOffReldoubtDyeJobFabRoute",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 50,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  }
+}

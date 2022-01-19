@@ -1,0 +1,4 @@
+input, button {vertical-align:middle}
+.qrcode-text {padding-right:1.7em; margin-right:0; height:25px;}
+.qrcode-text-btn {display:inline-block; text-align:right; width:1.7em;  margin-top:0.2em;margin-left:-1.8em;  cursor:pointer}
+.qrcode-text-btn > input[type=file] {position:absolute; overflow:hidden; width:1px; height:1px; opacity:0}

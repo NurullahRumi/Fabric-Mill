@@ -1,0 +1,10 @@
+/* Dialog Title */
+.wm-app .modal-title {
+    font-weight: bold !important;
+}
+
+/*Panel Heading*/
+.wm-app .panel-title {
+    font-size: 18px;
+    color: inherit;
+}

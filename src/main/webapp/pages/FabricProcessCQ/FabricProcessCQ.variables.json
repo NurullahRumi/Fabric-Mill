@@ -1,0 +1,53 @@
+{
+  "statPrgid" : {
+    "_id" : "wm-statPrgid-wm.Variable-1554097172669",
+    "name" : "statPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "FD1015W05",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svProcFd107pk0_cqprocCheckUser" : {
+    "_id" : "wm-svProcFd107pk0_cqprocCheckUser-wm.ServiceVariable-1554097070576",
+    "name" : "svProcFd107pk0_cqprocCheckUser",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pUser",
+      "value" : "bind:pageParams.psyslocusr",
+      "type" : "string"
+    }, {
+      "target" : "pAccessKey",
+      "value" : "bind:pageParams.pappky",
+      "type" : "string"
+    }, {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd107pk0CqprocCheckUserResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd107pk0_cqprocCheckUser",
+    "operationId" : "ProcedureExecutionController_executeProcFd107pk0_cqprocCheckUser",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

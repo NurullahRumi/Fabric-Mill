@@ -1,0 +1,161 @@
+{
+  "statFilterDest" : {
+    "_id" : "wm-statFilterDest-wm.Variable-1510553068104",
+    "name" : "statFilterDest",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "dataValue" : ""
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "statFilterDestIndex" : {
+    "_id" : "wm-statFilterDestIndex-wm.Variable-1511957187029",
+    "name" : "statFilterDestIndex",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "dataValue" : ""
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "statPrgid" : {
+    "_id" : "wm-statPrgid-wm.Variable-1510638887642",
+    "name" : "statPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "FD1005W01",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statPrgName" : {
+    "_id" : "wm-statPrgName-wm.Variable-1510638859430",
+    "name" : "statPrgName",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "Delivery Scanning",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statSaveOption" : {
+    "_id" : "wm-statSaveOption-wm.Variable-1510638643676",
+    "name" : "statSaveOption",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svProcFd723pk0DeliveryOutDetails" : {
+    "_id" : "wm-sv-wm.ServiceVariable-1510305245534",
+    "name" : "svProcFd723pk0DeliveryOutDetails",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pUsrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue == \"\" ?pageParams.pGenid:Variables.statAppUsrid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pBarcode",
+      "value" : "bind:Widgets.txtBarcode.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd723pk0deliveryOutDetailsResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd723pk0DeliveryOutDetails",
+    "operationId" : "ProcedureExecutionController_executeProcFd723pk0DeliveryOutDetails",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Javascript",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFd723pk0UpdateDeliveryOut" : {
+    "_id" : "wm-svProcFd723pk0UpdateDeliveryOut-wm.ServiceVariable-1510639813445",
+    "name" : "svProcFd723pk0UpdateDeliveryOut",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pUsrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue == \"\" ?pageParams.pGenid:Variables.statAppUsrid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pBarcode",
+      "value" : "bind:Widgets.txtBarcode.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pSaveOption",
+      "value" : "bind:Variables.statSaveOption.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pSrcLcn",
+      "value" : "bind:Widgets.txtChooseSrc.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pDestLcn",
+      "value" : "bind:Widgets.txtUnitDest.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pManualdn",
+      "value" : "bind:Widgets.txtDnNo.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd723pk0updateDeliveryOutResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd723pk0UpdateDeliveryOut",
+    "operationId" : "ProcedureExecutionController_executeProcFd723pk0UpdateDeliveryOut",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcFd723pk0UpdateDeliveryOutonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

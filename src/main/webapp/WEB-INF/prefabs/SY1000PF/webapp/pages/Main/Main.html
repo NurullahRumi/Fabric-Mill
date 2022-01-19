@@ -1,0 +1,19 @@
+<wm-page name="page1" data-ng-controller="SY1000PFController"> 
+    <wm-content name="content1"> 
+        <wm-composite show="bind:show" width="100%" name="composite1"> 
+            <wm-label caption="bind:caption" name="lblQr" class="col-md-12 control-label"></wm-label> 
+            <wm-container opacity="1" padding="0px" width="100%" name="cointainer_wrapper"> 
+                <div class="input-group"> 
+                    <wm-text hint="bind:id" datavalue="bind:defaultvalue" height="56" class="qrcode-text" readonly="bind:readonly" disabled="bind:disable" on-change="txtQrChange($event, $scope, newVal, oldVal)" margin="0px" placeholder="bind:placeholder" name="txtQr" id="txtQr"></wm-text>
+                    <span class="input-group-addon">
+                        <wm-button textalign="left" disabled="bind:disable" iconclass="fa fa-qrcode" on-click="btnQrClick($event, $scope)" name="btnQr" class="btn-primary" caption="" type="button"></wm-button></span>
+                </div> 
+            </wm-container> 
+        </wm-composite> 
+    </wm-content> 
+    <wm-view name="view1" class="dialog-view"> 
+        <wm-dialog width="100%" on-opened="QrPopOpened($event, $scope)" name="QrPop" dialogtype="design-dialog" modal="true" title="Scan Qr" iconclass="wi wi-scanner"> 
+            <wm-container margin="0px unset unset unset" padding="0px unset unset unset" horizontalalign="center" name="scanner" id="scanner"></wm-container> 
+        </wm-dialog> 
+    </wm-view> 
+</wm-page>

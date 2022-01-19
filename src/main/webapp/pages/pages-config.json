@@ -1,0 +1,201 @@
+[ {
+  "name" : "Common",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "FabricCQPending",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "pGenid",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "FabricDelivery",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "FabricInspectionCertificate",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "pBarcode",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "FabricIntersectionAcknowledge",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "pGenid",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "FabricIntersectionDelivery",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "pGenid",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "FabricIntersectionIssues",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "pBarcode",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "FabricIntersectionMenu",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "psyslocusr",
+    "type" : "string"
+  }, {
+    "name" : "pappky",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "FabricIntersectionPlacement",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "pBarcode",
+    "type" : "string"
+  }, {
+    "name" : "psyslocusr",
+    "type" : "string"
+  }, {
+    "name" : "pappky",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "FabricProcessCQ",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "pBarcode",
+    "type" : "string"
+  }, {
+    "name" : "psyslocusr",
+    "type" : "string"
+  }, {
+    "name" : "pappky",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "FabricProcessScan",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "pBarcode",
+    "type" : "string"
+  }, {
+    "name" : "psyslocusr",
+    "type" : "string"
+  }, {
+    "name" : "pappky",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "FabricProcessWorkOrder",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "psyslocusr",
+    "type" : "string"
+  }, {
+    "name" : "Pbarcode",
+    "type" : "string"
+  }, {
+    "name" : "psysoprid",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "Login",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "PalletReady",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ScanBatchWeight",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "pBarcode",
+    "type" : "string"
+  }, {
+    "name" : "psyslocusr",
+    "type" : "string"
+  }, {
+    "name" : "pappky",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "authenticate_user",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "footer",
+  "type" : "FOOTER",
+  "params" : [ ]
+}, {
+  "name" : "header",
+  "type" : "HEADER",
+  "params" : [ {
+    "name" : "pTitle",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "leftnav",
+  "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "partFabricProcessCQ",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "pBarcode",
+    "type" : "string"
+  }, {
+    "name" : "pGenid",
+    "type" : "string"
+  }, {
+    "name" : "pCallingPage",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "partRejectSignOff",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "pDyejob",
+    "type" : "string"
+  }, {
+    "name" : "pFabseq",
+    "type" : "integer"
+  }, {
+    "name" : "pCqsheetid",
+    "type" : "string"
+  }, {
+    "name" : "pAppCall",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "partReleaseDoubtful",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "pDyejob",
+    "type" : "string"
+  }, {
+    "name" : "pFabseq",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "rightnav",
+  "type" : "RIGHTNAV",
+  "params" : [ ]
+}, {
+  "name" : "scanning_test",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "topnav",
+  "type" : "TOPNAV",
+  "params" : [ ]
+} ]

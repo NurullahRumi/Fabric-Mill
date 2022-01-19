@@ -1,0 +1,381 @@
+<wm-page data-ng-controller="FabricDeliveryPageController" name="mainpage" pagetitle="bind:Variables.statPrgName.dataSet.dataValue"> 
+    <wm-header name="header1" content="header"> 
+        <wm-param name="pTitle" value="bind:Variables.statPrgName.dataSet.dataValue" type="string"></wm-param> 
+    </wm-header> 
+    <wm-content name="content"> 
+        <wm-page-content padding="unset 10px" columnwidth="12" name="mainContent" color="#000000"> 
+            <wm-layoutgrid name="layoutGridDelivery"> 
+                <wm-gridrow name="gridrow20"> 
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn52"></wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn54" padding="unset unset 20px unset"> 
+                        <wm-icon name="icon7" iconclass="resources/images/imagelists/delivery.png"></wm-icon> 
+                        <wm-label class="h3" fontunit="em" fontweight="bold" borderwidth="1.5px" caption="Fabric Delivery" color="#000000" padding="unset 0.5em" name="lblHeader" textalign="center" fontsize="2"></wm-label> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn55"></wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow19_2"> 
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn48"></wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn49_3"> 
+                        <wm-container name="containerSearch" opacity="1" borderwidth="1px" margin="unset 2px unset unset" class="backgroundGradientSearch shadow"> 
+                            <wm-layoutgrid name="layoutGridLocation"> 
+                                <wm-gridrow name="gridrow29"> 
+                                    <wm-gridcolumn columnwidth="7" name="gridcolumn65"> 
+                                        <wm-layoutgrid name="layoutGridParkingZone"> 
+                                            <wm-gridrow name="gridrow24" padding="8px 2px 4px 2px"> 
+                                                <wm-gridcolumn columnwidth="1" name="gridcolumn56_2" horizontalalign="left" padding="unset unset unset 8px"> 
+                                                    <wm-icon name="iconParkingArea" iconclass="wi wi-location-on fa-lg" color="#ffffff" class="input-lg" iconposition="left"></wm-icon> 
+                                                </wm-gridcolumn> 
+                                                <wm-gridcolumn columnwidth="3" name="gridcolumn52_2" horizontalalign="left" padding="3px 5px unset unset"> 
+                                                    <wm-label name="lblRackbin" caption="Parking Zone" fontweight="bold" fontunit="px" fontsize="15" textalign="left" color="#ffffff"></wm-label> 
+                                                </wm-gridcolumn> 
+                                                <wm-gridcolumn columnwidth="5" name="gridcolumn49_2" horizontalalign="left"> 
+                                                    <wm-select name="searchRackbin" dataset="bind:Variables.svProcFD730WPK0_GetRackbin.dataSet.poutRackbin" datafield="rackbin" displayfield="rackbin" orderby="rackbin:asc" width="100%" on-change="Variables.svUpdateProcFD730WPK_LastRackbin.invoke();searchRackbinChange($event, $scope, newVal, oldVal)" datavalue="bind:Variables.svProcFD730WPK0_GetLastLocation.dataSet.poutLastLocation" fontsize="15" fontweight="bold" fontunit="px" height="30" color="#00223e"></wm-select> 
+                                                </wm-gridcolumn> 
+                                                <wm-gridcolumn columnwidth="3" name="gridcolumn69_1"></wm-gridcolumn> 
+                                            </wm-gridrow> 
+                                        </wm-layoutgrid> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn columnwidth="5" name="gridcolumn70_1"></wm-gridcolumn> 
+                                </wm-gridrow> 
+                            </wm-layoutgrid> 
+                        </wm-container> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn63_2"></wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow1"> 
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn13_1"></wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="5" name="gridcolumn1"> 
+                        <wm-layoutgrid name="layoutGridMain"> 
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn33" padding="3px unset unset unset"> 
+                                <wm-panel iconclass="fa fa-truck fa-lg" autoclose="outsideClick" title="Parked For Delivery" class="shadow panel-default" name="panelUndelJobs" margin="10px unset unset unset" collapsible="true" on-swipedown="panelUndelJobsSwipedown($event, $isolateScope)"> 
+                                    <wm-container name="containerOptionHeader" class="shadow backgroundGradientSubHeader"> 
+                                        <wm-layoutgrid name="layoutGridOptions"> 
+                                            <wm-gridrow name="gridrow27_1" padding="10px unset unset unset"> 
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn57_2" horizontalalign="right" padding="2px 5px unset unset"> 
+                                                    <wm-layoutgrid name="layoutGridSwitch"> 
+                                                        <wm-gridrow name="gridrow30" padding="unset unset unset 2px"> 
+                                                            <wm-gridcolumn columnwidth="6" name="gridcolumn66_1" horizontalalign="left"> 
+                                                                <wm-label class="col-md-3 control-label" name="lblSelMode" caption="Instant Add" fontsize="15" fontweight="bold" textalign="center" padding="3px unset unset unset" margin="unset unset unset 2px" color="#ffffff"></wm-label> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn columnwidth="6" name="gridcolumn64" horizontalalign="left"> 
+                                                                <wm-checkbox caption="Toggle" type="toggle" name="toggleInstantAdd" width="45" height="25" checkedvalue="Y" uncheckedvalue="N" backgroundcolor="#8BC34A"></wm-checkbox> 
+                                                            </wm-gridcolumn> 
+                                                        </wm-gridrow> 
+                                                    </wm-layoutgrid> 
+                                                </wm-gridcolumn> 
+                                                <wm-gridcolumn columnwidth="5" name="gridcolumn60" horizontalalign="center" padding="1px unset unset unset"> 
+                                                    <wm-button class="btn-lg btn-success" caption="Add To DN" type="button" margin="unset 0.5px" name="btnAddToDN" fontweight="bold" iconclass="wi wi-done-all fa-lg" on-tap="btnAddToDNTap($event, $scope)" textalign="left" color="#ffffff" show="bind:(Widgets.toggleInstantAdd.datavalue == 'N') ? true : false"></wm-button> 
+                                                </wm-gridcolumn> 
+                                            </wm-gridrow> 
+                                        </wm-layoutgrid> 
+                                    </wm-container> 
+                                    <wm-container name="containerUndelJob" padding="10px unset unset unset"> 
+                                        <wm-list listclass="list-group media-list" template="true" itemsperrow="xs-1 sm-2 md-2 lg-3" class="list-card" navigation="Scroll" name="listUndelJobs" dataset="bind:Variables.svProcFD730WPK0_GetUndeliveredJobs.dataSet.poutUndelJobs" orderby="dyejob:asc" groupby="jobgroup" multiselect="false" loadingicon="fa fa-spinner" pagesize="200" showcount="true" disableitem="bind:(!(Variables.statSelectedDN.dataSet.dataValue) || (Variables.svProcFD730WPK0_GetUndeliveredJobs.dataSet.poutUndelJobs[$i].canDeliver == 'N')) ? true : false"> 
+                                            <wm-listtemplate layout="media" name="listtemplate4"> 
+                                                <wm-container name="containerUndelJobs" conditionalclass="bind:Widgets.listUndelJobs.currentItemWidgets.checkboxAdd.datavalue == 'Y' ? 'theme-a1' : &quot;&quot;"> 
+                                                    <wm-card name="cardUndelJobs" on-tap="cardUndelJobsTap($event, $scope, item, currentItemWidgets)" showindevice="all" on-doubletap="cardUndelJobsDoubletap($event, $scope, item, currentItemWidgets)"> 
+                                                        <wm-card-content fontsize="0.8" fontunit="em" name="card_contentUndelJobs"> 
+                                                            <wm-container name="containerBackground"> 
+                                                                <wm-layoutgrid name="layoutGridUndelJobs"> 
+                                                                    <wm-gridrow name="gridrow20_1"> 
+                                                                        <wm-gridcolumn columnwidth="9" name="gridcolumn51_3"> 
+                                                                            <wm-label padding="0.9em 0.5em unset 0.5em" name="lblDyeJobNo" caption="bind:Variables.svProcFD730WPK0_GetUndeliveredJobs.dataSet.poutUndelJobs[$i].dyejob" fontweight="bold" fontsize="15" color="#003137"></wm-label> 
+                                                                        </wm-gridcolumn> 
+                                                                        <wm-gridcolumn columnwidth="1" name="gridcolumn69" horizontalalign="right"> 
+                                                                            <wm-container name="containerCheckbox" horizontalalign="right" show="bind:((Variables.statDNDestScn.dataSet.dataValue == 'CU') &amp;&amp; (Variables.svProcFD730WPK0_GetUndeliveredJobs.dataSet.poutUndelJobs[$i].canDeliver == 'N')) ? false : true"> 
+                                                                                <wm-checkbox caption="" class="col-md-push-3 col-md-9" name="checkboxAdd" checkedvalue="Y" uncheckedvalue="N" show="bind:((Variables.statDNDestScn.dataSet.dataValue == 'CU') &amp;&amp; (Variables.svProcFD730WPK0_GetUndeliveredJobs.dataSet.poutUndelJobs[$i].canDeliver == 'N')) ? false : true"></wm-checkbox> 
+                                                                            </wm-container> 
+                                                                        </wm-gridcolumn> 
+                                                                        <wm-gridcolumn columnwidth="2" name="gridcolumn71_2" horizontalalign="right"> 
+                                                                            <wm-container name="containerAccess" show="bind:((Variables.statDNDestScn.dataSet.dataValue == 'CU') &amp;&amp; (Variables.svProcFD730WPK0_GetUndeliveredJobs.dataSet.poutUndelJobs[$i].canDeliver == 'N')  &amp;&amp; (Widgets.containerDNDetails.show == true)) ? true : false "> 
+                                                                                <wm-icon name="iconAccessToCutting" caption="" iconclass="wi wi-not-interested fa-2x red" show="true"></wm-icon> 
+                                                                            </wm-container> 
+                                                                        </wm-gridcolumn> 
+                                                                    </wm-gridrow> 
+                                                                    <wm-gridrow name="gridrow21_3"> 
+                                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn53"> 
+                                                                            <wm-label padding="unset 0.5em" caption="bind: 'Fb '+Variables.svProcFD730WPK0_GetUndeliveredJobs.dataSet.poutUndelJobs[$i].fabseq+ ' '+Variables.svProcFD730WPK0_GetUndeliveredJobs.dataSet.poutUndelJobs[$i].fabtyp" fontweight="bold" fontsize="15" color="#000000" name="lblFabsqNo"></wm-label> 
+                                                                        </wm-gridcolumn> 
+                                                                    </wm-gridrow> 
+                                                                    <wm-gridrow name="gridrow22_3"> 
+                                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn47"> 
+                                                                            <wm-label padding="unset 0.5em" name="lblNextStep" caption="bind:Variables.svProcFD730WPK0_GetUndeliveredJobs.dataSet.poutUndelJobs[$i].nextstep" fontweight="bold" fontsize="15" color="#000000" show="true"></wm-label> 
+                                                                        </wm-gridcolumn> 
+                                                                    </wm-gridrow> 
+                                                                </wm-layoutgrid> 
+                                                            </wm-container> 
+                                                        </wm-card-content> 
+                                                    </wm-card> 
+                                                </wm-container> 
+                                            </wm-listtemplate> 
+                                        </wm-list> 
+                                    </wm-container> 
+                                </wm-panel> 
+                            </wm-gridcolumn> 
+                        </wm-layoutgrid> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="5" name="gridcolumn50_2" style="position: sticky; top: 0;"> 
+                        <wm-layoutgrid name="layoutGrid"> 
+                            <wm-gridrow name="gridrow21"> 
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn50_1"> 
+                                    <wm-container name="containerMenu"> 
+                                        <wm-layoutgrid name="layoutgridMenu"> 
+                                            <wm-gridrow name="gridrow22_1" padding="10px unset 3px unset"> 
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn52_1" height="100" padding="3px"> 
+                                                    <wm-container name="containerbtnNewDN" width="100%" height="100%" margin="unset unset unset 4px" padding="unset 3px unset unset"> 
+                                                        <wm-button showindevice="all" width="100%" fontsize="2" fontunit="em" show="true" caption="New DN" type="button" name="btnNewDN" iconclass="wi wi-note-add" on-tap="Widgets.dialogAddDN.open();Variables.svProcFD730WPK0_GetDelDestLOV.invoke()" height="100%" fontweight="bold" backgroundcolor="#002b50" color="#ffffff" class="shadow"></wm-button> 
+                                                    </wm-container> 
+                                                </wm-gridcolumn> 
+                                            </wm-gridrow> 
+                                            <wm-gridrow name="gridrow24_2" padding="unset unset unset 6px"> 
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn52_3" padding="5px 3px unset unset"> 
+                                                    <wm-container name="containerLblExistingDN" backgroundcolor="#002b50" width="100%" height="35px" horizontalalign="left"> 
+                                                        <wm-layoutgrid name="layoutGridPendingLbl"> 
+                                                            <wm-gridrow name="gridrow33" padding="4px unset unset unset"> 
+                                                                <wm-gridcolumn columnwidth="1" name="gridcolumn74_1" horizontalalign="center"> 
+                                                                    <wm-container name="container23" width="100%" horizontalalign="right"> 
+                                                                        <wm-icon name="icon9" iconclass="fa fa-exclamation-triangle fa-lg" color="#ffffff" iconposition="right" iconsize="15px"></wm-icon> 
+                                                                    </wm-container> 
+                                                                </wm-gridcolumn> 
+                                                                <wm-gridcolumn columnwidth="11" name="gridcolumn75_1" horizontalalign="left"> 
+                                                                    <wm-label padding="unset 0.5em" name="lblExistingDN" caption="Pending DN" fontsize="16" fontweight="bold" color="#ffffff" textalign="left"></wm-label> 
+                                                                </wm-gridcolumn> 
+                                                            </wm-gridrow> 
+                                                        </wm-layoutgrid> 
+                                                    </wm-container> 
+                                                </wm-gridcolumn> 
+                                            </wm-gridrow> 
+                                            <wm-gridrow name="gridrow23"> 
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn54_1"> 
+                                                    <wm-container name="containerDNList" padding="unset 9px unset unset"> 
+                                                        <wm-list listclass="list-group" itemsperrow="xs-1 sm-1 md-1 lg-1" template="true" class="list-card" dataset="bind:Variables.svProcFD730WPK0_GetDelivery.dataSet.poutDelList" navigation="None" name="listDN" orderby="ddelnum:asc" title="" on-reorder="Variables.svProcFD730WPK0_GetDelivery.invoke()" loadingicon="fa fa-spinner" on-tap="Variables.svProcFD730WPK0_GetDeliveryDet.invoke();listDNTap($event, $scope)" enablereorder="true" disableitem="false"> 
+                                                            <wm-listtemplate layout="media" name="listtemplate4_1"> 
+                                                                <wm-card name="cardExistingDelivery" margin="0px unset" width="100%"> 
+                                                                    <wm-card-content horizontalalign="center" name="card_content1" borderwidth="0px" padding="unset unset 0px unset"> 
+                                                                        <wm-layoutgrid name="layoutGridDN"> 
+                                                                            <wm-gridrow name="gridrow21_2" padding="5px unset unset unset"> 
+                                                                                <wm-gridcolumn columnwidth="10" name="gridcolumn55_2" horizontalalign="right"> 
+                                                                                    <wm-container name="containerClick" on-tap="containerClickTap($event, $isolateScope, item, currentItemWidgets)" show="true"> 
+                                                                                        <wm-layoutgrid name="layoutGridDNDetails"> 
+                                                                                            <wm-gridrow name="gridrow32"> 
+                                                                                                <wm-gridcolumn columnwidth="3" name="gridcolumn77" horizontalalign="left" padding="8px 10px unset unset"> 
+                                                                                                    <wm-container name="containerIconDN"> 
+                                                                                                        <wm-icon name="iconDN" iconclass="wi wi-file-text fa-4x" opacity="0.7" caption="bind:(Variables.svProcFD730WPK0_GetDelivery.dataSet.poutDelList[$i].jobcount) ? Variables.svProcFD730WPK0_GetDelivery.dataSet.poutDelList[$i].jobcount : '0'" iconposition="right"></wm-icon> 
+                                                                                                    </wm-container> 
+                                                                                                </wm-gridcolumn> 
+                                                                                                <wm-gridcolumn columnwidth="9" name="gridcolumn78"> 
+                                                                                                    <wm-layoutgrid name="layoutGridDNDet"> 
+                                                                                                        <wm-gridrow name="gridrow26_2"> 
+                                                                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn60_2" horizontalalign="left"> 
+                                                                                                                <wm-label padding="unset 0.5em" caption="DN :" fontweight="bold" fontunit="px" name="lblDN" textalign="right" fontsize="15" show="true"></wm-label> 
+                                                                                                            </wm-gridcolumn> 
+                                                                                                            <wm-gridcolumn columnwidth="9" name="gridcolumn65_1" horizontalalign="left"> 
+                                                                                                                <wm-label padding="unset 0.5em" name="lblDDelNum" caption="bind:Variables.svProcFD730WPK0_GetDelivery.dataSet.poutDelList[$i].ddelnum" fontweight="bold" fontunit="em" color="#244363" fontsize="1.2" show="true" required="false"></wm-label> 
+                                                                                                            </wm-gridcolumn> 
+                                                                                                        </wm-gridrow> 
+                                                                                                        <wm-gridrow name="gridrow27"> 
+                                                                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn62_1" horizontalalign="left"> 
+                                                                                                                <wm-label padding="unset 0.5em" name="lblFromSrclcncod" caption="From :" fontsize="1.2" fontunit="em" fontweight="bold"></wm-label> 
+                                                                                                            </wm-gridcolumn> 
+                                                                                                            <wm-gridcolumn columnwidth="4" name="gridcolumn66" horizontalalign="left"> 
+                                                                                                                <wm-label padding="unset 0.5em" name="lblsrcLcn" caption="bind:Variables.svProcFD730WPK0_GetDelivery.dataSet.poutDelList[$i].srclcn" fontsize="1.2" fontweight="bold" fontunit="em" textalign="left"></wm-label> 
+                                                                                                            </wm-gridcolumn> 
+                                                                                                        </wm-gridrow> 
+                                                                                                        <wm-gridrow name="gridrow31_2"> 
+                                                                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn70_2" horizontalalign="left"> 
+                                                                                                                <wm-label padding="unset 0.5em" caption="To :" fontsize="1.2" fontunit="em" fontweight="bold" textalign="left" name="lblToDestLncod"></wm-label> 
+                                                                                                            </wm-gridcolumn> 
+                                                                                                            <wm-gridcolumn columnwidth="4" name="gridcolumn71_1" horizontalalign="left"> 
+                                                                                                                <wm-label padding="unset 0.5em" caption="bind:Variables.svProcFD730WPK0_GetDelivery.dataSet.poutDelList[$i].destlcn" fontsize="1.2" fontweight="bold" fontunit="em" name="lbldesLcn" textalign="left"></wm-label> 
+                                                                                                            </wm-gridcolumn> 
+                                                                                                        </wm-gridrow> 
+                                                                                                    </wm-layoutgrid> 
+                                                                                                </wm-gridcolumn> 
+                                                                                            </wm-gridrow> 
+                                                                                        </wm-layoutgrid> 
+                                                                                    </wm-container> 
+                                                                                </wm-gridcolumn> 
+                                                                                <wm-gridcolumn columnwidth="2" name="gridcolumn51" horizontalalign="right"> 
+                                                                                    <wm-container name="container12" borderwidth="0px 0px 0px 1px" bordercolor="#848282" borderstyle="solid" width="100%" height="45%" opacity="1" horizontalalign="right" padding="15px unset 20px unset"> 
+                                                                                        <wm-button caption="" type="button" margin="unset 0.5em" name="btnDelDN" iconclass="wi wi-delete-forever fa-2x" fontweight="bold" backgroundcolor="WHITE" color="#e11212" fontsize="1.5" fontunit="em" on-tap="Widgets.dialogDelDN.open();btnDelDNTap($event, $scope, item, currentItemWidgets)"></wm-button> 
+                                                                                    </wm-container> 
+                                                                                </wm-gridcolumn> 
+                                                                            </wm-gridrow> 
+                                                                        </wm-layoutgrid> 
+                                                                    </wm-card-content> 
+                                                                </wm-card> 
+                                                            </wm-listtemplate> 
+                                                        </wm-list> 
+                                                    </wm-container> 
+                                                </wm-gridcolumn> 
+                                            </wm-gridrow> 
+                                        </wm-layoutgrid> 
+                                    </wm-container> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow22" padding="12px unset unset 6px"> 
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn51_1"> 
+                                    <wm-container name="containerDNDetails" show="bind:&quot;&quot;"> 
+                                        <wm-panel iconclass="fa fa-edit fa-lg" autoclose="outsideClick" title="Jobs" name="panelDelDet" expanded="true" show="true" class="panel-default shadow" collapsible="true" badgetype="default"> 
+                                            <wm-layoutgrid name="layoutGridDetails" class="shadow"> 
+                                                <wm-gridrow name="gridrow17"> 
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn41_1"> 
+                                                        <wm-container name="containerDeliveryDetails" class="backgroundGradientDNDet" color="#ffffff" borderwidth="0px" margin="unset 1px unset unset" width="100%"> 
+                                                            <wm-layoutgrid name="layoutGridDeliveryDetails"> 
+                                                                <wm-gridrow name="gridrow33_1" padding="unset unset 3px unset"> 
+                                                                    <wm-gridcolumn columnwidth="1" name="gridcolumn72_1" padding="5px 7px unset unset" horizontalalign="center"> 
+                                                                        <wm-container name="containerBackToDelMenu" on-tap="containerBackToDelMenuTap($event, $isolateScope)" horizontalalign="center"> 
+                                                                            <wm-icon name="iconBackToDelMenu" iconclass="fa fa-arrow-left fa-lg" iconsize="15px" color="#ffffff"></wm-icon> 
+                                                                        </wm-container> 
+                                                                    </wm-gridcolumn> 
+                                                                    <wm-gridcolumn columnwidth="10" name="gridcolumn76_1" horizontalalign="center"> 
+                                                                        <wm-label padding="0.4em 0.5em unset 0.5em" name="lblDeliveryDetails" fontweight="bold" textalign="center" caption="Delivery Details" fontsize="15" fontunit="px" bordercolor="#ffffff"></wm-label> 
+                                                                    </wm-gridcolumn> 
+                                                                    <wm-gridcolumn columnwidth="1" name="gridcolumn77_2"></wm-gridcolumn> 
+                                                                </wm-gridrow> 
+                                                                <wm-gridrow name="gridrow34"> 
+                                                                    <wm-gridcolumn columnwidth="1" name="gridcolumn83"></wm-gridcolumn> 
+                                                                    <wm-gridcolumn columnwidth="2" name="gridcolumn74" horizontalalign="left"> 
+                                                                        <wm-label padding="unset 0.5em" caption="DN :" fontweight="bold" fontunit="px" textalign="left" name="lblDNNo" fontsize="15"></wm-label> 
+                                                                    </wm-gridcolumn> 
+                                                                    <wm-gridcolumn columnwidth="8" name="gridcolumn75"> 
+                                                                        <wm-label padding="unset 0.5em" name="lblDelNum" caption="bind:Widgets.listDN.selecteditem.ddelnum" fontweight="bold" fontsize="15" fontunit="px" color="#ffffff" borderstyle="none" textalign="left"></wm-label> 
+                                                                    </wm-gridcolumn> 
+                                                                    <wm-gridcolumn columnwidth="1" name="gridcolumn78_1"></wm-gridcolumn> 
+                                                                </wm-gridrow> 
+                                                                <wm-gridrow name="gridrow35" padding="unset unset 2px unset"> 
+                                                                    <wm-gridcolumn columnwidth="1" name="gridcolumn85"></wm-gridcolumn> 
+                                                                    <wm-gridcolumn columnwidth="2" name="gridcolumn79" horizontalalign="left"> 
+                                                                        <wm-label padding="unset 0.5em" caption="From :" fontsize="15" fontunit="px" fontweight="bold" name="lblFrom" textalign="left"></wm-label> 
+                                                                    </wm-gridcolumn> 
+                                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn80"> 
+                                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listDN.selecteditem.srclcn" fontsize="15" fontweight="bold" fontunit="px" textalign="left" name="lblStrtLcn"></wm-label> 
+                                                                    </wm-gridcolumn> 
+                                                                    <wm-gridcolumn columnwidth="2" name="gridcolumn81" horizontalalign="right"> 
+                                                                        <wm-label padding="unset 0.5em" caption="To :" fontsize="15" fontunit="px" fontweight="bold" textalign="left" name="lblTo"></wm-label> 
+                                                                    </wm-gridcolumn> 
+                                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn82"> 
+                                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listDN.selecteditem.destlcn" fontsize="15" fontweight="bold" fontunit="px" name="lblDesLcn" textalign="left"></wm-label> 
+                                                                    </wm-gridcolumn> 
+                                                                    <wm-gridcolumn columnwidth="1" name="gridcolumn84"></wm-gridcolumn> 
+                                                                </wm-gridrow> 
+                                                            </wm-layoutgrid> 
+                                                        </wm-container> 
+                                                    </wm-gridcolumn> 
+                                                </wm-gridrow> 
+                                                <wm-gridrow name="gridrow12_1"> 
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn56_1"> 
+                                                        <wm-container name="containerDyeJobs" margin="-1px unset unset unset" backgroundcolor="#ffffff"> 
+                                                            <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" dataset="bind:Variables.svProcFD730WPK0_GetDeliveryDet.dataSet.poutDelDetList" navigation="None" name="listDyeJobs" loadingicon="fa fa-spinner" orderby="dyejob:asc" enablereorder="true" pagesize="200" nodatamessage="No data found"> 
+                                                                <wm-listtemplate layout="inline" name="listtemplate4_2"> 
+                                                                    <wm-layoutgrid name="layoutGridDyeJob"> 
+                                                                        <wm-gridrow name="gridrow22_2"> 
+                                                                            <wm-gridcolumn columnwidth="5" name="gridcolumn51_4"> 
+                                                                                <wm-label padding="4px 0.5px 5px 0.5px" caption="bind:Variables.svProcFD730WPK0_GetDeliveryDet.dataSet.poutDelDetList[$i].dyejob" fontweight="bold" fontunit="px" fontsize="15" color="#828282" name="lblDyeJobs"></wm-label> 
+                                                                            </wm-gridcolumn> 
+                                                                            <wm-gridcolumn columnwidth="4" name="gridcolumn53_1"> 
+                                                                                <wm-label padding="4px 0.5px unset 0.5px" caption="bind: 'Fb '+Variables.svProcFD730WPK0_GetDeliveryDet.dataSet.poutDelDetList[$i].fabseq+ '-'+Variables.svProcFD730WPK0_GetDeliveryDet.dataSet.poutDelDetList[$i].fabtyp" name="lblFabseq" fontweight="bold" fontsize="15" fontunit="px" color="#828282"></wm-label> 
+                                                                            </wm-gridcolumn> 
+                                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn52_2"> 
+                                                                                <wm-container name="containerDeleteDyeJob" on-tap="containerDeleteDyeJobTap($event, $isolateScope, item, currentItemWidgets)" margin="unset unset unset 3px" horizontalalign="right"> 
+                                                                                    <wm-icon name="iconDeleteDyeJob" iconclass="wi wi-delete-forever fa-lg" iconsize="20px" iconposition="left" caption="" color="#e00d0d"></wm-icon> 
+                                                                                </wm-container> 
+                                                                            </wm-gridcolumn> 
+                                                                        </wm-gridrow> 
+                                                                    </wm-layoutgrid> 
+                                                                </wm-listtemplate> 
+                                                            </wm-list> 
+                                                        </wm-container> 
+                                                    </wm-gridcolumn> 
+                                                </wm-gridrow> 
+                                                <wm-gridrow name="gridrow21_1" padding="2em 2em unset 1.3em"> 
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn55_1"> 
+                                                        <wm-container name="containerBarcode" borderwidth="0px"> 
+                                                            <wm-layoutgrid name="layoutGridBarcode"> 
+                                                                <wm-gridrow name="gridrow35_1"> 
+                                                                    <wm-gridcolumn columnwidth="1" name="gridcolumn79_1" padding="6px unset unset unset" class="theme-a1"> 
+                                                                        <wm-container name="containerAddNewLbl" width="100%" height="100%" padding="2px unset 6px unset" horizontalalign="center"> 
+                                                                            <wm-icon name="icon6" iconclass="wi wi-add-to-photos fa-lg" iconsize="18px" color="#ffffff"></wm-icon> 
+                                                                        </wm-container> 
+                                                                    </wm-gridcolumn> 
+                                                                    <wm-gridcolumn columnwidth="11" name="gridcolumn80_1" horizontalalign="left"> 
+                                                                        <wm-container name="containerScanBarcode" width="100%" backgroundcolor="#e0dbda" padding="4px 4px 5px 4px" borderwidth="0px" margin="unset 3px 4px unset"> 
+                                                                            <wm-text name="txtItemBarcode" placeholder="bind:'   Enter barcode to add job'" class="input-lg" fontsize="15" fontweight="bold" on-change="txtItemBarcodeChange($event, $scope, newVal, oldVal)" height="35" color="#828282" fontstyle="italic" textalign="left"></wm-text> 
+                                                                        </wm-container> 
+                                                                    </wm-gridcolumn> 
+                                                                </wm-gridrow> 
+                                                            </wm-layoutgrid> 
+                                                        </wm-container> 
+                                                    </wm-gridcolumn> 
+                                                </wm-gridrow> 
+                                            </wm-layoutgrid> 
+                                        </wm-panel> 
+                                    </wm-container> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                        </wm-layoutgrid> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn51_2"></wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow23_1" padding="15px unset unset unset"> 
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn60_1"></wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn62"> 
+                        <wm-button width="100%" fontunit="em" on-tap="btnBackToMainTap($event, $scope)" fontsize="2" iconclass="wi wi-keyboard-arrow-left" caption="Back To Main" type="button" textalign="center" name="btnBackToMain" backgroundcolor="#002b50" color="#ffffff" class="shadow"></wm-button> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn63"></wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer name="footer1" content="footer"></wm-footer> 
+    <wm-view class="dialog-view" name="view3"> 
+        <wm-alertdialog name="notificationalertdialog" controller="NotificationDialogController" notificationdialog="alert" message="{{notification.text}}" title="{{notification.title}}" oktext="{{notification.okButtonText}}" alerttype="{{notification.alerttype}}" on-ok="variableOnOk()" on-close="variableOnClose()"></wm-alertdialog> 
+    </wm-view> 
+    <wm-view class="dialog-view" name="addNewDN"> 
+        <wm-dialog dialogtype="design-dialog" modal="true" title="New DN" iconclass="wi wi-note-add fa-2x" name="dialogAddDN" width="60%" class="theme-a2" height="130"> 
+            <wm-dialogactions name="dialogactions2"> 
+                <wm-button class="btn-success btn-lg" caption="Add" name="btnAddDN" fontsize="18" fontunit="px" fontweight="bold" iconclass="wi wi-add fa-lg" disabled="bind:(!Widgets.selectAddDestLcn.datavalue ? true : false)" color="#ffffff" on-tap="Widgets.dialogAddDN.close();btnAddDNTap($event, $scope)" show="true"></wm-button> 
+            </wm-dialogactions> 
+            <wm-container name="containerLocationsAdd" padding="15px unset unset unset"> 
+                <wm-layoutgrid name="layoutGridNewDN"> 
+                    <wm-gridrow name="gridrow25" padding="unset unset 5px unset"> 
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn53" horizontalalign="left"> 
+                            <wm-label padding="unset 0.5em" caption="From:" fontweight="bold" fontsize="1.5" fontunit="em" name="lblFromLcn" textalign="left"></wm-label> 
+                        </wm-gridcolumn> 
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn54_1" horizontalalign="left"> 
+                            <wm-text placeholder="" fontunit="px" fontsize="15" readonly="true" datavalue="bind:Widgets.searchRackbin.datavalue" name="txtAddSrcLcn" type="text" margin="3px unset unset unset" class="input-lg"></wm-text> 
+                        </wm-gridcolumn> 
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn55_1"></wm-gridcolumn> 
+                    </wm-gridrow> 
+                    <wm-gridrow name="gridrow26"> 
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn56" horizontalalign="left"> 
+                            <wm-label padding="unset 0.5em" caption="To:" fontweight="bold" fontsize="1.5" fontunit="em" name="lblToLcn" textalign="left"></wm-label> 
+                        </wm-gridcolumn> 
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn57" horizontalalign="left"> 
+                            <wm-select name="selectAddDestLcn" dataset="bind:Variables.svProcFD730WPK0_GetDelDestLOV.dataSet.poutDelDestLov" datafield="lcncod" displayfield="lcncod" orderby="lcncod:asc" fontsize="15" height="25" width="100%" margin="3px unset unset unset"></wm-select> 
+                        </wm-gridcolumn> 
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn58"></wm-gridcolumn> 
+                    </wm-gridrow> 
+                </wm-layoutgrid> 
+            </wm-container> 
+        </wm-dialog> 
+    </wm-view> 
+    <wm-view class="dialog-view" name="view4"> 
+        <wm-dialog dialogtype="design-dialog" modal="true" title="Delete" iconclass="" name="dialogDelDN" width="40%" height="100" on-opened="dialogDelDNOpened($event, $scope)"> 
+            <wm-layoutgrid name="layoutgrid14"> 
+                <wm-gridrow name="gridrow31" padding="15px unset unset unset"> 
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn71"> 
+                        <wm-icon name="icon4" iconclass="fa fa-warning fa-2x" class="red"></wm-icon> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="11" name="gridcolumn67_1"> 
+                        <wm-label padding="unset 0.5em" caption="Are you sure you want to delete this DN ?" name="lblConfirmDel" fontsize="15" fontweight="bold" color="#000000" margin="1px unset unset unset"></wm-label> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+            <wm-dialogactions name="dialogactions2_1"> 
+                <wm-button class="btn-success" caption="Cancel" type="button" margin="unset 0.5em" name="btnCancel" color="#ffffff" fontsize="15" fontweight="bold" backgroundcolor="red" on-tap="Widgets.dialogDelDN.close()"></wm-button> 
+                <wm-button caption="Delete" name="btnDelete" backgroundcolor="red" color="#ffffff" fontweight="bold" fontsize="15" on-tap="btnDeleteTap($event, $scope)" fontunit="px"></wm-button> 
+            </wm-dialogactions> 
+        </wm-dialog> 
+    </wm-view> 
+</wm-page>

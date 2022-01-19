@@ -1,0 +1,205 @@
+{
+  "statDefaultMachine" : {
+    "_id" : "wm-statDefaultMachine-wm.Variable-1605679125234",
+    "name" : "statDefaultMachine",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statMachines" : {
+    "_id" : "wm-statMachines-wm.Variable-1510909912623",
+    "name" : "statMachines",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "dataValue" : ""
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "statPrgid" : {
+    "_id" : "wm-statPrgid-wm.Variable-1510830930511",
+    "name" : "statPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "FD1015W04",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statProcessAction" : {
+    "_id" : "wm-statProcessAction-wm.Variable-1510920869383",
+    "name" : "statProcessAction",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statSaveOption" : {
+    "_id" : "wm-statSaveOption-wm.Variable-1510892482733",
+    "name" : "statSaveOption",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statTrnWIP" : {
+    "_id" : "wm-statTrnWIP-wm.Variable-1561697386580",
+    "name" : "statTrnWIP",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : "N"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svProcFd107pk0_cqprocCheckUser" : {
+    "_id" : "wm-svProcFd107pk0_cqprocCheckUser-wm.ServiceVariable-1554096146397",
+    "name" : "svProcFd107pk0_cqprocCheckUser",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pUser",
+      "value" : "bind:Variables.statUSER.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pAccessKey",
+      "value" : "bind:pageParams.pappky",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd107pk0CqprocCheckUserResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd107pk0_cqprocCheckUser",
+    "operationId" : "ProcedureExecutionController_executeProcFd107pk0_cqprocCheckUser",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFd724pk0CheckEmpCode" : {
+    "_id" : "wm-svProcFd724pk0CheckEmpCode-wm.ServiceVariable-1554898374688",
+    "name" : "svProcFd724pk0CheckEmpCode",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd724pk0checkEmpCodeResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd724pk0CheckEmpCode",
+    "operationId" : "ProcedureExecutionController_executeProcFd724pk0CheckEmpCode",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onError" : "svProcFd724pk0CheckEmpCodeonError($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFd724pk0ScanDet" : {
+    "_id" : "wm-sv-wm.ServiceVariable-1510829993783",
+    "name" : "svProcFd724pk0ScanDet",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pBarcode",
+      "value" : "bind:Widgets.txtBarcode.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pUsrid",
+      "value" : "bind:Variables.statUSER.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pOperatorEmpCode",
+      "value" : "bind:Variables.statOperator.dataSet.dataValue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd724pk0scanDetResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd724pk0ScanDet",
+    "operationId" : "ProcedureExecutionController_executeProcFd724pk0ScanDet",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcFd724pk0ScanDetonSuccess($event, $scope)",
+    "onError" : "svProcFd724pk0ScanDetonError($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFd724UpdateScanProcess" : {
+    "_id" : "wm-svProcFd724UpdateScanProcess-wm.ServiceVariable-1510920788738",
+    "name" : "svProcFd724UpdateScanProcess",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd724updateScanProcessResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFd724UpdateScanProcess",
+    "operationId" : "ProcedureExecutionController_executeProcFd724UpdateScanProcess",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcFd724UpdateScanProcessonSuccess($event, $scope)",
+    "onError" : "svProcFd724UpdateScanProcessonError($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

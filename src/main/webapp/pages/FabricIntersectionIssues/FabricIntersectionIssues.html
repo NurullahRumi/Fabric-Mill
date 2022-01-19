@@ -1,0 +1,64 @@
+<wm-page name="page1" data-ng-controller="FabricIntersectionIssuesPageController" pagetitle="Fabric Intersection Issues"> 
+    <wm-content name="content1"> 
+        <wm-page-content name="page_content1" columnwidth="12"> 
+            <wm-layoutgrid name="layoutgrid1"> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow1"> 
+                    <wm-gridcolumn horizontalalign="center" name="gridcolumn1" columnwidth="11"> 
+                        <wm-label name="label1" fontsize="2" fontunit="em" fontweight="bold" class="h3" borderwidth="1.5px" caption="Quality Issues" color="#000000" padding="unset 0.5em"></wm-label> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn horizontalalign="right" padding="10px unset unset unset" name="gridcolumn12" columnwidth="1"> 
+                        <wm-button name="button4" on-tap="Actions.logoutAction.invoke()" class="btn-default btn-warning" caption="Log Out" type="button" margin="unset 0.5em unset 0.1em"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow3"> 
+                    <wm-gridcolumn name="gridcolumn5" columnwidth="12"> 
+                        <wm-prefab defaultvalue="bind:pageParams.pBarcode" on-change="txtBarcodeChange($scope, newVal, oldVal)" width="95%" caption="Scan Qr code" name="txtBarcode" prefabname="SY1000PF"></wm-prefab> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow2"> 
+                    <wm-gridcolumn name="gridcolumn3" columnwidth="3"></wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn4_1" columnwidth="6"> 
+                        <wm-layoutgrid name="layoutgrid3"> 
+                            <wm-gridrow name="gridrow10" padding="unset 0px unset unset"> 
+                                <wm-gridcolumn horizontalalign="center" name="gridcolumn14" columnwidth="6"> 
+                                    <wm-label name="label7" textalign="left" fontsize="14" fontweight="bold" caption="bind:&quot;Fabric Details <br>&quot;+Variables.svProcFd723pk0GetFabDetails.dataSet.poutDyejobDet" borderwidth="1px" backgroundcolor="#ffffff" borderstyle="solid" bordercolor="#1c5c86" padding="unset 0.5em"></wm-label> 
+                                </wm-gridcolumn> 
+                                <wm-gridcolumn horizontalalign="center" name="gridcolumn15" columnwidth="6"> 
+                                    <wm-label name="label8" show="bind:Widgets.label7.show === true?true:false" textalign="left" fontsize="14" fontweight="bold" caption="bind:&quot;Process Details <br>&quot;+Variables.svProcFd723pk0GetFabDetails.dataSet.pouStsDet" borderwidth="1px" backgroundcolor="#ffffff" borderstyle="solid" bordercolor="#1c5c86" padding="unset 0.5em"></wm-label> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                        </wm-layoutgrid> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn4" columnwidth="3"></wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow6"> 
+                    <wm-gridcolumn name="gridcolumn10" columnwidth="12"> 
+                        <wm-container name="container1" padding="5px unset"> 
+                            <wm-label name="label6" fontsize="18" fontunit="px" class="label-info btn-lg" borderwidth="1px" borderstyle="solid" bordercolor="#417194" caption="Issue  :" padding="unset 0.5em"></wm-label> 
+                            <wm-composite margin="5px unset unset unset" name="composite1"> 
+                                <wm-container name="container2"> 
+                                    <wm-textarea placeholder="Type your issues" width="95%" name="txtIssue"></wm-textarea> 
+                                </wm-container> 
+                            </wm-composite> 
+                        </wm-container> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow7"> 
+                    <wm-gridcolumn padding="10px unset" horizontalalign="left" name="gridcolumn13" columnwidth="12"> 
+                        <wm-button on-tap="Variables.svProcFd107pk0_CqprocUpdateIssue.invoke()" name="btnSaveIssues" width="95%" fontsize="2" fontunit="em" show="bind:Widgets.txtIssue.datavalue === null || Widgets.txtIssue.datavalue === undefined || Widgets.txtIssue.datavalue === &quot;&quot; ? false:true" class="btn-default btn-success" caption="Save" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow8"> 
+                    <wm-gridcolumn padding="10px unset" horizontalalign="left" name="gridcolumn16" columnwidth="12"> 
+                        <wm-button name="btnCancel" on-tap="btnCancelTap($event, $scope)" width="95%" fontsize="2" fontunit="em" show="bind:Widgets.label7.show === true?true:false" class="btn-default btn-warning" caption="Cancel" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow9"> 
+                    <wm-gridcolumn padding="10px unset" name="gridcolumn19" columnwidth="12"> 
+                        <wm-button name="btnBack" width="95%" fontsize="2" fontunit="em" on-tap="Variables.goToPage_FabricIntersectionMenu.invoke()" iconclass="wi wi-keyboard-arrow-left" class="btn-default" caption="Back To Main" type="button"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+</wm-page>

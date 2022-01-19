@@ -1,0 +1,225 @@
+{
+  "statBtnTest" : {
+    "_id" : "wm-statBtnTest-wm.Variable-1595825245874",
+    "name" : "statBtnTest",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "BtnOrder" : "1",
+      "BtnTop" : "22",
+      "BtnLeft" : "10",
+      "BtnParam" : "RollA",
+      "BtnValue" : "10"
+    }, {
+      "BtnOrder" : "2",
+      "BtnTop" : "37",
+      "BtnLeft" : "10",
+      "BtnParam" : "CounterPile",
+      "BtnValue" : "7"
+    }, {
+      "BtnOrder" : "3",
+      "BtnTop" : "22",
+      "BtnLeft" : "58",
+      "BtnParam" : "RollB",
+      "BtnValue" : "20"
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "statHideLabel" : {
+    "_id" : "wm-statHideLabel-wm.Variable-1597406996150",
+    "name" : "statHideLabel",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statParamCod" : {
+    "_id" : "wm-statParamCod-wm.Variable-1596179821888",
+    "name" : "statParamCod",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statParamDesc" : {
+    "_id" : "wm-statParamName-wm.Variable-1595930186246",
+    "name" : "statParamDesc",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statParamValue" : {
+    "_id" : "wm-statParamValue-wm.Variable-1595930201872",
+    "name" : "statParamValue",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statPrgid" : {
+    "_id" : "wm-statPrgid-wm.Variable-1596023493482",
+    "name" : "statPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "FD1015W12",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statTestSltItem" : {
+    "_id" : "wm-statTestSltItem-wm.Variable-1597040888468",
+    "name" : "statTestSltItem",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svFD800WPK0_MCSETUPSprocGetPreTestResults" : {
+    "_id" : "wm-sveFD800WPK0_MCSETUPSprocGetTestResults-wm.ServiceVariable-1596779872056",
+    "name" : "svFD800WPK0_MCSETUPSprocGetPreTestResults",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd800wpk0McsetupsprocGetTestResultsResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFD800WPK0_MCSETUPSprocGetTestResults",
+    "operationId" : "ProcedureExecutionController_executeProcFD800WPK0_MCSETUPSprocGetTestResults",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svFD800WPK0_MCSETUPSprocGetProcessWO" : {
+    "_id" : "wm-svFD800WPK0_MCSETUPSprocGetProcessWO-wm.ServiceVariable-1596105307830",
+    "name" : "svFD800WPK0_MCSETUPSprocGetProcessWO",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd800wpk0McsetupsprocGetProcessWoResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFD800WPK0_MCSETUPSprocGetProcessWO",
+    "operationId" : "ProcedureExecutionController_executeProcFD800WPK0_MCSETUPSprocGetProcessWO",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svFD800WPK0_MCSETUPSprocGetProcessWOonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFD800WPK0_MCSETUPSprocGetPOSTTestResults" : {
+    "_id" : "wm-svProcFD800WPK0_MCSETUPSprocGetPOSTTestResults-wm.ServiceVariable-1600857192040",
+    "name" : "svProcFD800WPK0_MCSETUPSprocGetPOSTTestResults",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd800wpk0McsetupsprocGetTestResultsResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFD800WPK0_MCSETUPSprocGetTestResults",
+    "operationId" : "ProcedureExecutionController_executeProcFD800WPK0_MCSETUPSprocGetTestResults",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFD800WPK0_MCSETUPSprocUpdTstRslt" : {
+    "_id" : "wm-svProcFD800WPK0_MCSETUPSprocUpdTstRslt-wm.ServiceVariable-1600838744298",
+    "name" : "svProcFD800WPK0_MCSETUPSprocUpdTstRslt",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFd800wpk0McsetupsprocUpdTstRsltResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcFD800WPK0_MCSETUPSprocUpdTstRslt",
+    "operationId" : "ProcedureExecutionController_executeProcFD800WPK0_MCSETUPSprocUpdTstRslt",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcFD800WPK0_MCSETUPSprocUpdTstRsltonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcFD800WPK0_MCSETUPSprocUpdWOValue" : {
+    "_id" : "wm-svProcFD800WPK0_MCSETUPSprocUpdWOValue-wm.ServiceVariable-1600948704694",
+    "name" : "svProcFD800WPK0_MCSETUPSprocUpdWOValue",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "service" : "pfsdb",
+    "operation" : "executeProcFD800WPK0_MCSETUPSprocUpdWOValue",
+    "operationId" : "ProcedureExecutionController_executeProcFD800WPK0_MCSETUPSprocUpdWOValue",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcFD800WPK0_MCSETUPSprocUpdWOValueonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

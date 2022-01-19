@@ -1,0 +1,171 @@
+<style id="Main.css">
+input, button {vertical-align:middle}
+.qrcode-text {padding-right:1.7em; margin-right:0; height:25px;}
+.qrcode-text-btn {display:inline-block; text-align:right; width:1.7em;  margin-top:0.2em;margin-left:-1.8em;  cursor:pointer}
+.qrcode-text-btn > input[type=file] {position:absolute; overflow:hidden; width:1px; height:1px; opacity:0}
+</style>
+<script id="Main.js">
+Application.$controller("SY1000PFController", ["$scope", "DialogService", function($scope, DialogService) {
+    "use strict";
+
+    /*
+     * This function will be invoked when any of this prefab's property is changed
+     * @key: property name
+     * @newVal: new value of the property
+     * @oldVal: old value of the property
+     */
+    function propertyChangeHandler(key, newVal, oldVal) {
+        //        switch (key) {
+        //          case "labeltext":
+        //         // do something with newVal for property 'prop1'+
+        //              $scope.Widgets.lblQr.caption = $scope.labeltext;
+        //                break;
+        //         // 			case "prop2":
+        //         // 				// do something with newVal for property 'prop2'
+        //         // 				break;
+        //        }
+
+    }
+    /* register the property change handler */
+    $scope.propertyManager.add($scope.propertyManager.ACTIONS.CHANGE, propertyChangeHandler);
+
+    $scope.onInitPrefab = function() {
+        // this method will be triggered post initialization of the prefab.
+
+    };
+
+
+
+
+
+
+    $scope.txtQrChange = function($event, $isolateScope, newVal, oldVal) {
+        $scope.Widgets.QrPop.close();
+        $scope.datavalue = newVal;
+        $scope.onChange($isolateScope, newVal, oldVal);
+
+    };
+
+
+    $scope.cleartext = function() {
+        $scope.Widgets.txtQr.datavalue = "";
+        $scope.datavalue = "";
+
+    };
+
+
+    $scope.autoopen = function() {
+        $scope.Widgets.QrPop.open();
+    };
+
+
+
+    $scope.btnQrClick = function($event, $isolateScope) {
+        DialogService.open('QrPop', $scope, {});
+    };
+
+}]);
+
+
+
+
+
+Application.$controller("QrPopController", ["$scope", "DialogService",
+    function($scope, DialogService) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+
+
+        $scope.onQRCodeScanned = function(scannedText) {
+
+            var oldVal = "";
+            if ($scope.Widgets.txtQr.datavalue !== undefined) {
+                oldVal = $scope.Widgets.txtQr.datavalue;
+            }
+            // var scannedTextMemo = document.getElementById("txtQr");
+            // if (scannedTextMemo) {
+            //     scannedTextMemo.value = scannedText;
+            //     $scope.Widgets.txtQr.datavalue = scannedText;
+            //     $scope.datavalue = scannedText;
+            //     $scope.txtQrChange(null, null, scannedText, oldVal);
+            //     $scope.jbScanner.stopScanning();
+            //     var scannerParentElement = document.getElementById("scanner");
+            //     $scope.jbScanner.removeFrom(scannerParentElement);
+            //     $scope.Widgets.QrPop.close();
+
+            //     //
+            // }
+
+            $scope.$parent.Widgets.txtQr.datavalue = scannedText;
+            $scope.datavalue = scannedText;
+            $scope.txtQrChange(null, null, scannedText, oldVal);
+            $scope.jbScanner.stopScanning();
+            var scannerParentElement = document.getElementById("scanner");
+            $scope.jbScanner.removeFrom(scannerParentElement);
+
+
+        };
+
+        //this function will be called when JsQRScanner is ready to use
+        $scope.JsQRScannerReady = function() {
+
+            //create a new scanner passing to it a callback function that will be invoked when
+            //the scanner succesfully scan a QR code
+            $scope.jbScanner = new JsQRScanner($scope.onQRCodeScanned);
+            //reduce the size of analyzed image to increase performance on mobile devices
+            $scope.jbScanner.setSnapImageMaxSize(1000);
+            var scannerParentElement = document.getElementById("scanner");
+            if (scannerParentElement) {
+                //append the jbScanner to an existing DOM element
+                $scope.jbScanner.appendTo(scannerParentElement);
+            }
+
+        };
+
+
+
+
+        $scope.QrPopOpened = function($event, $isolateScope) {
+            $scope.JsQRScannerReady();
+        };
+
+    }
+]);
+</script>
+<script id="Main.variables.json">
+var _MainPage_Variables_ ={
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}
+</script>
+<script id="Main.html" type="text/ng-template">
+<wm-page name="page1" data-ng-controller="SY1000PFController"> 
+    <wm-content name="content1"> 
+        <wm-composite show="bind:show" width="100%" name="composite1"> 
+            <wm-label caption="bind:caption" name="lblQr" class="col-md-12 control-label"></wm-label> 
+            <wm-container opacity="1" padding="0px" width="100%" name="cointainer_wrapper"> 
+                <div class="input-group"> 
+                    <wm-text hint="bind:id" datavalue="bind:defaultvalue" height="56" class="qrcode-text" readonly="bind:readonly" disabled="bind:disable" on-change="txtQrChange($event, $scope, newVal, oldVal)" margin="0px" placeholder="bind:placeholder" name="txtQr" id="txtQr"></wm-text>
+                    <span class="input-group-addon">
+                        <wm-button textalign="left" disabled="bind:disable" iconclass="fa fa-qrcode" on-click="btnQrClick($event, $scope)" name="btnQr" class="btn-primary" caption="" type="button"></wm-button></span>
+                </div> 
+            </wm-container> 
+        </wm-composite> 
+    </wm-content> 
+    <wm-view name="view1" class="dialog-view"> 
+        <wm-dialog width="100%" on-opened="QrPopOpened($event, $scope)" name="QrPop" dialogtype="design-dialog" modal="true" title="Scan Qr" iconclass="wi wi-scanner"> 
+            <wm-container margin="0px unset unset unset" padding="0px unset unset unset" horizontalalign="center" name="scanner" id="scanner"></wm-container> 
+        </wm-dialog> 
+    </wm-view> 
+</wm-page>
+</script>
